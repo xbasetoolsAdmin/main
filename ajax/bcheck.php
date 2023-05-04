@@ -8,7 +8,6 @@ if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
    exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-
 function curl_get_contents($url)
 {
   $curl = curl_init($url);

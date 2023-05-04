@@ -4,26 +4,20 @@ ob_start();
 session_start();
 date_default_timezone_set('UTC');
 include "includes/config.php";
-
-if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
-    exit();
-}
+if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {header("location: ../");  
+								exit();}
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
-<!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content=""><meta name="author" content="">
     <title>Main - Admin Panel</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/all.min.css">
-	<link href="../assets/css/style.min.css" rel="stylesheet">	
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link href="../assets/css/xbaseleets.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="../assets/css/xbasetools.css">
 	<link rel="stylesheet" type="text/css" href="files/css/flags.css">
 	<link rel="stylesheet" href="../assets/fonts/iconic/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">

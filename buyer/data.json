@@ -2,8 +2,8 @@
 // US States available at:
 // http://pastebin.com/uJkgkb7Q
 
-$countrycodes = array (
- 'AF' => 'Afghanistan',
+$column = array (
+    'AF' => 'Afghanistan',
     'AX' => 'Aland Islands',
     'AL' => 'Albania',
     'DZ' => 'Algeria',

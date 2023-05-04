@@ -14,7 +14,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="support/vendors/css/vendor.bundle.addons.css" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
+<link rel="stylesheet" type="text/css" href="support/stylesheets/theme.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <script type="text/javascript" src="files/js/jquery.js?1"></script>
 <script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>

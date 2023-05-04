@@ -1,6 +1,4 @@
-<?php
-include"component/header.php";
-?>
+
 <?php
 ob_start();
 session_start();

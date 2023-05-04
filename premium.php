@@ -47,7 +47,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive">
-<table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<table id="premium_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
 <th data-priority="1"></th>
@@ -106,7 +106,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 </div>
 
-
 <div class="modal fade top" id="modalCoupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
 <div class="modal-dialog modal-frame modal-top modal-notify modal-danger" role="document">
 
@@ -114,7 +113,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <div class="modal-body">
 <div class="row d-flex justify-content-center align-items-center">
-<img src="layout/images/balance.png">
+<img src="assets/images/balance.png">
 <span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
 <a type="button" href="addBalance" onclick="window.open(this.href);return false;" class="btn btn-danger">Add Balance
 <i class="fas fa-book ml-1 white-text"></i>

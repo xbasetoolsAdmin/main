@@ -17,36 +17,122 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <ul>
 <li>For Any problem for account after buy just open report and seller will fix it or replace.</li>
 <li>There is <b> 0 </b> Accounts Available.</li>
+
+
+
+
+
+
 </ul>
 </div>
+
+
+
+
+
 <input type="hidden" id="cat" name="cat" value="6">
 <div class="row m-3 pt-1" style="color: var(--font-color);">
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Website Name :</label>
 <select name="sitename" id="sitename" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+    
+    
+    
+    
+    
 <option value="">All</option>
+
+
+
 </select>
 </div>
+
+
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+    
+    
 <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Details:</label>
+
+
+
+
 <input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
 </div>
+
+
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+    
+    
+    
+    
 <label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
+
+
+
 <select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+    
+    
 <option value="">All Countries</option>
+
+
+
 </select>
 </div>
+
+
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+    
+    
+    
 <label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
+
+
+
+
 <select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+    
+    
 <option value="">All</option>
+
+
 </select>
 </div>
 </div>
+
+
+
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+    
+    
 <div class="col-sm-12 table-responsive">
-<div id="premium_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="premium_data_length"><label>Show <select name="premium_data_length" aria-controls="premium_data" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="500">500</option><option value="10000">All</option></select> entries</label></div><div id="premium_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="premium_data"></label></div><div id="premium_data_processing" class="dataTables_processing" style="display: none;">Processing...</div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1178.33px; padding-right: 17px;"><table class="display responsive table-hover dataTable no-footer" style="width: 1178.33px; color: var(--font-color); background-color: var(--color-card); margin-left: 0px;" role="grid"><thead>
+<div id="premium_data_wrapper" class="dataTables_wrapper no-footer">
+    
+    
+    
+<div class="dataTables_length" id="premium_data_length"><label>Show 
+    
+    <select name="premium_data_length" aria-controls="premium_data" class="">
+    
+    
+    <option value="10">10</option>
+    
+    <option value="25">25</option>
+    
+    <option value="50">50</option>
+    
+    <option value="100">100</option>
+    
+    <option value="500">500</option>
+    
+    <option value="10000">All</option>
+    
+    </select> entries
+
+</label>
+</div>
+
+<div id="premium_data_filter"class="dataTables_filter">
+    <label>Search:<input type="search" class="" placeholder="" aria-controls="premium_data"></label></div><div id="premium_data_processing" class="dataTables_processing" style="display: none;">Processing...</div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1178.33px; padding-right: 17px;"><table class="display responsive table-hover dataTable no-footer" style="width: 1178.33px; color: var(--font-color); background-color: var(--color-card); margin-left: 0px;" role="grid"><thead>
 <tr role="row"><th class="all sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 34.7222px;" aria-label="ID: activate to sort column ascending">ID</th><th data-priority="3" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 146.806px;" aria-label="Website Name: activate to sort column ascending">Website Name</th><th data-priority="4" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 89.5312px;" aria-label="Country: activate to sort column ascending">Country</th><th data-priority="7" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 79.5486px;" aria-label="Details: activate to sort column ascending">Details</th><th data-priority="8" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 63.6111px;" aria-label="Price: activate to sort column ascending">Price</th><th data-priority="9" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 68.5938px;" aria-label="Seller: activate to sort column ascending">Seller</th><th data-priority="10" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 81.5451px;" aria-label="Source: activate to sort column ascending">Source</th><th class="all sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 66.5972px;" aria-label="Proof: activate to sort column ascending">Proof</th><th data-priority="11" class="sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 134.931px;" aria-label="Date Created: activate to sort column ascending">Date Created</th><th class="all sorting" tabindex="0" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 52.7257px;" aria-label="Buy: activate to sort column ascending">Buy</th></tr>
 </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table id="premium_data" class="display responsive table-hover dataTable no-footer dtr-inline" style="width: 100%; color: var(--font-color); background-color: var(--color-card);" role="grid" aria-describedby="premium_data_info"><thead>
 <tr role="row" style="height: 0px;"><th class="all sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 34.7222px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="ID: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">ID</div></th><th data-priority="3" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 146.806px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Website Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Website Name</div></th><th data-priority="4" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 89.5312px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Country: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Country</div></th><th data-priority="7" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 79.5486px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Details: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Details</div></th><th data-priority="8" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 63.6111px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Price: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Price</div></th><th data-priority="9" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 68.5938px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Seller: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Seller</div></th><th data-priority="10" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 81.5451px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Source: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Source</div></th><th class="all sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 66.5972px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Proof: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Proof</div></th><th data-priority="11" class="sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 134.931px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Date Created: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Date Created</div></th><th class="all sorting" aria-controls="premium_data" rowspan="1" colspan="1" style="width: 52.7257px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Buy: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Buy</div></th></tr>

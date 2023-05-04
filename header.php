@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
-include "../includes/config.php";
+include "includes/config.php";
 if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {header("location: login.btml");  
 								exit();}
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
@@ -13,46 +13,47 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=""><meta name="author" content="">
-    <title>Main - Admin Panel</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/all.min.css">
-	<link href="../assets/css/xbaseleets.css" rel="stylesheet">	
-	<link rel="stylesheet" type="text/css" href="../assets/css/xbasetools.css">
+    <title>Main - Panel</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link href="assets/css/xbaseleets.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="assets/css/xbasetools.css">
 	<link rel="stylesheet" type="text/css" href="files/css/flags.css">
-	<link rel="stylesheet" href="../assets/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 	<style>body{padding-top:80px}</style>
 	<font face="Arial">
-<script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../assets/js/bootbox.min.js"></script>
-<script type="text/javascript" src="../assets/js/clipboard.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/bootbox.min.js"></script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script src="../assets/main.js"></script>
+<script src="buyer/premium.js">
+		</script>
 <script type="text/javascript">
             // Notice how this gets configured before we load Font Awesome
             window.FontAwesomeConfig = { autoReplaceSvg: false }
 </script>
 <style>
-       <script type="text/javascript">
+<script type="text/javascript">
         // Notice how this gets configured before we load Font Awesome
         window.FontAwesomeConfig = {
             autoReplaceSvg: false
         }
-    </script>
-    <style>
+</script>
+ <style>
         @import url(//fonts.googleapis.com/css?family=Roboto:400);
             .navbar-nav .dropdown-menu
             {
             margin:0 !important
             }
-        </style>
+</style>
   
 </head>
   <style>  

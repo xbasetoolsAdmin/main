@@ -1,5 +1,5 @@
 <?php
-include"component/header.php";
+include"header.php";
 ?>
 <?php
 ob_start();

@@ -13,6 +13,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <!doctype html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="support/lib/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="support/vendors/css/vendor.bundle.addons.css" />
 <link rel="stylesheet" type="text/css" href="support/vendors/css/support/stylesheets/premium.css" />
 <link rel="stylesheet" type="text/css" href="support/stylesheets/theme.css" />

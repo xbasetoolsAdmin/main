@@ -28,7 +28,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootbox.min.js"></script>
-<script type="text/javascript" src="../assets/js/bootbox.min.js"></script>
+<script type="text/javascript" src="../assets/js/clipboard.min.js"></script>
 <script type="text/javascript" src="../assets/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>

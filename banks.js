@@ -48,7 +48,7 @@ var cntrlIsPressed = false; function pageDiv(n,t,u,x){  if(cntrlIsPressed){   wi
     success:    function(data)
     {
         $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
+        newTableObject = document.getElementById('premium_data');
         sorttable.makeSortable(newTableObject);
         $(".sticky-header").floatThead({top:60});
         if(x==0){ajaxinfo();}
@@ -61,7 +61,7 @@ $(window).on("popstate", function(e) { location.replace(document.location);
 });
 
 $(window).on('load', function() { $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(8,'Banks - JeruxShop','banks.html',1);
+   pageDiv(7,'Banks - JeruxShop','',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');

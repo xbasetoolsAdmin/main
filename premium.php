@@ -134,7 +134,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  
         }
         document.title = obj.Title;
-        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+        $("#mainDiv").html('<div id="divPage7.html">').show();
         $.ajax({
             type: 'GET',
             url: 'divPage' + n + '.html',

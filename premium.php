@@ -17,15 +17,16 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION[‘sname’]);
 ?>
 
 <ul class=“nav nav-tabs”>
-  <li class=“active”><a href=“#filter” data-toggle=“tab”>Filter</a></li>
+  <li class=“active”><a href=“#search” data-toggle=“tab”>search</a></li>
 </ul>
 <div id=“myTabContent” class=“tab-content” >
   <div class=“tab-pane active in” id=“filter”><table class=“table”><thead><tr><th>Country</th>
 <th>Site Name</th>
 <th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class=‘filterselect form-control input-sm’ name=“account_country”><option value=“”>ALL</option>
+<th></th></tr></thead><tbody><tr><td><select class=‘select form-control input-sm’ name=“account_country”><option value=“”>ALL</option>
 <?php
 $query = mysqli_query($dbcon, “SELECT DISTINCT(`country`) FROM `accounts` WHERE `sold` = ‘0’ ORDER BY country ASC”);
+
 	while($row = mysqli_fetch_assoc($query)){
 	echo ‘<option value=“’.$row[‘country’].’”>’.$row[‘country’].’</option>’;
 	}
@@ -44,7 +45,7 @@ $query = mysqli_query($dbcon, “SELECT DISTINCT(`resseller`) FROM `accounts` WH
 </div>
 </td>
 
-<td><button id=‘filterbutton’class=“btn btn-primary btn-sm” disabled>search <span class=“fa fa-filter”></span></button></td></tr>
+<td><button id=‘searchbutton’class=“btn btn-primary btn-sm” disabled>search <span class=“fa fa-filter”></span></button></td></tr>
 </tbody>
 </table>
 </div>
@@ -94,7 +95,7 @@ $q = mysqli_query($dbcon, “SELECT * FROM accounts WHERE sold=‘0’ ORDER BY 
 
  ?>
 <script type=“text/javascript”>
-$(‘#filterbutton’).click(function () {$(“#table tbody tr”).each(function() {var ck1 = $.trim( $(this).find(“#account_country”).text().toLowerCase() );var ck2 = $.trim( $(this).find(“#account_sitename”).text().toLowerCase() );var ck3 = $.trim( $(this).find(“#account_seller”).text().toLowerCase() ); var val1 = $.trim( $(‘select[name=“account_country”]’).val().toLowerCase() );var val2 = $.trim( $(‘input[name=“account_sitename”]’).val().toLowerCase() );var val3 = $.trim( $(‘select[name=“account_seller”]’).val().toLowerCase() ); if((ck1 != val1 && val1 != ‘’ ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != ‘’ )){ $(this).hide();  }else{ $(this).show(); } });$(‘#filterbutton’).prop(‘disabled’, true);});$(‘.filterselect’).change(function () {$(‘#filterbutton’).prop(‘disabled’, false);});$(‘.search’).keyup(function () {$(‘#filterbutton’).prop(‘disabled’, false);});
+$(‘#searchbutton’).click(function () {$(“#table tbody tr”).each(function() {var ck1 = $.trim( $(this).find(“#account_country”).text().toLowerCase() );var ck2 = $.trim( $(this).find(“#account_sitename”).text().toLowerCase() );var ck3 = $.trim( $(this).find(“#account_seller”).text().toLowerCase() ); var val1 = $.trim( $(‘select[name=“account_country”]’).val().toLowerCase() );var val2 = $.trim( $(‘input[name=“account_sitename”]’).val().toLowerCase() );var val3 = $.trim( $(‘select[name=“account_seller”]’).val().toLowerCase() ); if((ck1 != val1 && val1 != ‘’ ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != ‘’ )){ $(this).hide();  }else{ $(this).show(); } });$(‘#searchbutton’).prop(‘disabled’, true);});$(‘.filterselect’).change(function () {$(‘#searchbutton’).prop(‘disabled’, false);});$(‘.search’).keyup(function () {$(‘#searchbutton’).prop(‘disabled’, false);});
 
 
 function buythistool(id){

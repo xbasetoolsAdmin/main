@@ -1,3 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="//datatables.net/download/build/nightly/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+  
+		<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+		<script src="//datatables.net/download/build/nightly/jquery.dataTables.js"></script>
+
+		<meta charset=utf-8 />
+		<title>DataTables - JS Bin</title>
+	</head>
+	<body>
+
 <?php
 ob_start();
 session_start();
@@ -41,20 +55,36 @@ include("cr.php");?>
 </select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
 </div>
 
+<div class="container">
+			<table id="example" class="display" width="100%">
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
-<thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Site Name</th>
-      <th scope="col">Available Information</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-  <tbody>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>Salary</th>
+            <th>buy</th>
+					</tr>
+				</thead>
+
+				<tfoot>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>price</th>
+          <th>buy</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</body>
+
 
 <?php
 $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());

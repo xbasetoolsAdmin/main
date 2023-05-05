@@ -10,6 +10,16 @@
 		<meta charset=utf-8 />
 		<title>DataTables - JS Bin</title>
 	</head>
+	<style>
+	body {
+	font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #fff;
+}
+	
+	</style>
 	<body>
 
 <?php

@@ -28,20 +28,86 @@ while ($row = mysqli_fetch_assoc($q)) {
 $qe = mysqli_query($dbcon, "SELECT * FROM accounts WHERE id='$itemid'") or die(mysql_error());
 ?>
 
- 
- <thCountry</th>
-  <th>Detect Hosting</th> 
-   <th>Domain</th>
-  <td>.non-https Url</th>
-      <th>Url</th>
 
-<table class="table"> 
-<td><span class="flag-icon flag-icon-<?php echo htmlspecialchars($countrycode); ?>"> </span> <?php echo htmlspecialchars($country);?> <td>     
-<?php echo htmlspecialchars($hosting);?></td>           
-  <td> <?php echo $domain;?> </td>	
-  <td> <?php echo $maindom;?><td>
-  <td><?php echo $maindom; ?></td>
-  <td><?php echo $maindom;?></td>
- <td><?php echo $maindom;?></td>
-</tr>	
+
+
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive">
+<div id="account_data_wrapper" class="dataTables_wrapper no-footer">
+	
+<div class="dataTables_length" id="account_data_length">	
+<label>Show <select name="account_data_length" aria-controls="account_data" class="">
+	
+<option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="500">500</option><option value="10000">All</option></select> entries</label></div><div id="account_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="account_data"></label></div><div id="account_data_processing" class="dataTables_processing" style="display: none;">Processing...</div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 100%;"><table class="display responsive table-hover dataTable no-footer" style="width: 100%; color: var(--font-color); background-color: var(--color-card); margin-left: 0px;" role="grid">
+	
+<thead>
+<tr role="row"><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 14px;">ID</th><th data-priority="3" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 54px;">Website Name</th><th data-priority="4" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 54px; display: none;">Country</th><th data-priority="7" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 46px; display: none;">Details</th><th data-priority="8" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 35px; display: none;">Price</th><th data-priority="9" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 39px; display: none;">Seller</th><th data-priority="10" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 48px; display: none;">Source</th><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 37px;">Proof</th><th data-priority="11" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 53px; display: none;">Date Created</th><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 27px;">Buy</th>
+	
+</tr>
+</thead>
+
 </table>
+</div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table id="account_data" class="display responsive table-hover dataTable no-footer dtr-inline collapsed" style="width: 100%; color: var(--font-color); background-color: var(--color-card);" role="grid" aria-describedby="account_data_info">
+<tbody></tbody></table></div></div><div class="dataTables_info" id="account_data_info" role="status" aria-live="polite"></div><div class="dataTables_paginate paging_simple_numbers" id="account_data_paginate"></div></div>
+</div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-notify modal-success" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<p class="heading" id="myModalHeader"></p>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" class="white-text">×</span>
+</button>
+</div>
+<div class="modal-body" id="modelbody">
+</div>
+<div class="modal-footer justify-content-center">
+<a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Close</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalConfirmBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-sm modal-notify modal-info" role="document">
+
+<div class="modal-content text-center">
+
+<div class="modal-header d-flex justify-content-center">
+<p class="heading">Are you sure?</p>
+</div>
+
+<div class="modal-body">
+<i class="fas fa-shopping-cart fa-4x animated rotateIn"></i>
+</div>
+
+<div class="modal-footer flex-center">
+<a onclick="confirmbye()" class="btn btn-outline-info waves-effect" data-dismiss="modal">Yes</a>
+<a type="button" class="btn btn-info waves-effect waves-light" data-dismiss="modal">No</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="modal fade top" id="modalCoupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+<div class="modal-dialog modal-frame modal-top modal-notify modal-danger" role="document">
+
+<div class="modal-content">
+
+<div class="modal-body">
+<div class="row d-flex justify-content-center align-items-center">
+<img src="https://odinshop.io/layout/images/balance.png">
+<span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
+<a type="button" href="addBalance.html" onclick="window.open(this.href);return false;" class="btn btn-danger waves-effect waves-light">Add Balance
+<i class="fas fa-book ml-1 white-text"></i>
+</a>
+<a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>

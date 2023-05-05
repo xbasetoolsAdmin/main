@@ -7,11 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIMK</title>
    <!-- jQuery library -->
-<script src="js/jquery.min.js"></script>
+<script src="files/js/jquery.js"></script>
 
 <!-- DataTables CSS and JS library -->
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/addon/datatables.select.css"/>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
 </head>
 <body>
 <div class="post-search-panel">

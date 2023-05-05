@@ -134,7 +134,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  
         }
         document.title = obj.Title;
-        $("#mainDiv").load('divPage7.html').show();
+        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
         $.ajax({
             type: 'GET',
             url: 'divPage' + n + '.html',
@@ -166,7 +166,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         $('.dropdown').hover(function() {
             $('.dropdown-toggle', this).trigger('click');
         });
-        pageDiv(7, 'Scampage - JeruxShop', '', 1);
+        pageDiv(6, 'Leads - JeruxShop', 'leads.html', 1);
         var clipboard = new Clipboard('.copyit');
         clipboard.on('success', function(e) {
             setTooltip(e.trigger, 'Copied!');

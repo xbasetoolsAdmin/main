@@ -3,8 +3,7 @@
 include "header.php";
 ?>
 <div class="alert alert-danger fade in radius-bordered alert-shadowed"><b>Search for user</b></div>
-<?php
-echo '
+
 <center>
 <form action="" method="POST">
 username : <input type="text" class="form-control" name="user" style="width : 280px;" /><br> 
@@ -12,7 +11,7 @@ username : <input type="text" class="form-control" name="user" style="width : 28
 <input type="hidden" name="start" value="s" />
 </form>
 </center>
-';
+<?php 
 if(isset($_POST['start']) and $_POST['start'] == "s"){
   $user = mysqli_real_escape_string($dbcon, $_POST['user']);
   $q = mysqli_query($dbcon, "SELECT * FROM users WHERE username='$user'");

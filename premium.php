@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+   <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head>
-
 <body>
 <div class="post-search-panel">
     <input type="text" id="searchInput" placeholder="Type keywords..." />

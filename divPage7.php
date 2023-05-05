@@ -7,6 +7,8 @@ table.inputs td {
     padding: 5px;
 }
 <style>
+<body>
+
 <table class="inputs">
         <tbody><tr>
             <td>Minimum age:</td>

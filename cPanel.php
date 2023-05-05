@@ -19,15 +19,33 @@
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
 </head>
 <body>
-<div class="post-search-panel">
-    <input type="text" id="searchInput" placeholder="Type keywords..." />
-    <select id="sortBy">
-        <option value="">Sort by</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-    </select>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
+</ul>
+<div id="myTabContent" class="tab-content" >
+  <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
+<th>Domain TLD</th>
+<th>Detected Hosting</th>
+<th>Seller</th>
+<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="cpanel_country"><option value="">ALL</option>
+<?php
+$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `cpanels` WHERE `sold` = '0' ORDER BY country ASC");
+	while($row = mysqli_fetch_assoc($query)){
+	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
+	}
+?>
+</select></td><td><input class='filterinput form-control input-sm' name="cpanel_tld" size='3'></td><td><input class='filterinput form-control input-sm' name="cpanel_hosting" size='3'></td><td><select class='filterselect form-control input-sm' name="cpanel_seller"><option value="">ALL</option>
+<?php
+$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE `sold` = '0' ORDER BY resseller ASC");
+	while($row = mysqli_fetch_assoc($query)){
+		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
+	}
+</select>
 </div>
-<table id="memListTable" class="display" style="width:100%">
+<table id="account_data" class="display" style="width:100%">
     <thead>
         <tr>
             <th>First name</th>
@@ -54,32 +72,3 @@
 </table>
 <script>
 
-// Initialize DataTables API object and configure table
-var table = $('#memListTable').DataTable({
-"searching": false,
-"processing": true,
-"serverSide": true,
-"ajax": {
-"url": "divPage7.php",
-"data": 
-	function ( d ) {
-         return $.extend( {}, d, {
-           "search_keywords": $("#searchInput").val().toLowerCase(),
-           "filter_option": $("#sortBy").val().toLowerCase()
-         } );
-       }
-     }
-});
-
-$(document).ready(function(){
-    // Redraw the table
-    table.draw();
-    
-    // Redraw the table based on the custom input
-    $('#searchInput,#sortBy').bind("keyup change", function(){
-        table.draw();
-    });
-});
-</script>
-</body>
-</html>

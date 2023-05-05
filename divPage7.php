@@ -11,49 +11,36 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
-</ul>
-<div id="myTabContent" class="tab-content" >
-  <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
-<th>Site Name</th>
-<th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="bank_country"><option value="">ALL</option>
-<?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `banks` WHERE `sold` = '0' ORDER BY country ASC");
-	while($row = mysqli_fetch_assoc($query)){
-	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
-	}
-?>
-</select></td><td><input class='filterinput form-control input-sm' name="bank_sitename" size='3'></td><td><select class='filterselect form-control input-sm' name="bank_seller"><option value="">ALL</option>
-<?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `sold` = '0' ORDER BY resseller ASC");
-	while($row = mysqli_fetch_assoc($query)){
-		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
-			 $SellerNick = "seller".$rpw["id"]."";
-	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
-	}
-?>
-</select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
-</div>
 
-
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
-<thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Bank Name</th>
-      <th scope="col">Balance</th>
-      <th scope="col">Available Information</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-  <tbody>
-
+   <div id="example_wrapper" class="dataTables_wrapper">
+   <div class="dataTables_length" id="example_length">
+   <label>Show <select name="example_length" aria-controls="example" class="">
+   <option value="10">10</option>
+   <option value="25">25</option>
+   <option value="50">50</option>
+   <option value="100">100</option>
+   </select> entries</label>
+   </div>
+   <div id="example_filter" class="dataTables_filter">
+   <label>Search:<input type="search" class="" placeholder="" aria-controls="example">
+   </label>
+   </div>
+   <table id="example" class="display dataTable" style="width:100%" aria-describedby="example_info">
+        <thead>
+  <tr>
+			<th class="sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 39.140625px;">Name</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;">Position</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
+ </tr>
+        </thead>
+		            <tbody>
+					          <tr class="odd">
+							  <td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+						   
+                  
  <?php
 include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
@@ -79,15 +66,52 @@ $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")o
 	<span id="bank'.$row['id'].'" title="buy" type="bank"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
     </td>
             </tr>
-     ';
+             </tbody>
+                  <tfoot>
+                      <tr>
+			<th rowspan="1" colspan="1">Name</th>
+			<th rowspan="1" colspan="1">Position</th>
+			<th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Extn.</th>
+			<th rowspan="1" colspan="1">Start date</th><th rowspan="1" colspan="1">Salary</th>
+			                      
+   </tfoot>
+    </table>
+	 <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+	 <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+	 <a class="paginate_button previous disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="previous" tabindex="-1" id="example_previous">Previous</a><span>
+	 </span>
+	 <a class="paginate_button next disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="next" tabindex="-1" id="example_next">Next</a>
+	 </div>
+
+
+   </div>';
  }
 
  ?>
-<script type="text/javascript">
-$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#bank_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#bank_sitename").text().toLowerCase() );var ck3 = $.trim( $(this).find("#bank_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="bank_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="bank_sitename"]').val().toLowerCase() );var val3 = $.trim( $('select[name="bank_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);}
-    );
-$('.filterinput').keyup(function () 
-{$('#filterbutton').prop('disabled', false);});
+ 
+
+
+           
+</body>
+<script>
+document.addEventListener('DOMContentLoaded',
+ function () {
+    let table = new DataTable('#example', {
+        ajax: function (d, cb) {
+            fetch('../ajax/data/objects.php')
+                .then(response => response.json())
+                .then(data => cb(data));
+        },
+        columns: [
+            { data: 'name' },
+            { data: 'position' },
+            { data: 'office' },
+            { data: 'extn' },
+            { data: 'start_date' },
+            { data: 'salary' }
+        ]
+    } );
+} );
 
 function buythistool(id){
   bootbox.confirm("Are you sure?", function(result) {

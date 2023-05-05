@@ -6,6 +6,7 @@
   
 		<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 		<script src="//datatables.net/download/build/nightly/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<meta charset=utf-8 />
 		<title>DataTables - JS Bin</title>

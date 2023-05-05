@@ -27,10 +27,10 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </thead>
 		 <tbody id='tbody2'>
  <?php
-$uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-$qu = mysqli_query($dbcon, "SELECT * FROM accounts WHERE acctype='account' AND resseller='$uid' ORDER BY id DESC")or die(mysqli_error());
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE acctype='account' AND resseller='$uid' ORDER BY id DESC")or die(mysqli_error());
 
- while($row = mysqli_fetch_assoc($qu)){
+ while($row = mysqli_fetch_assoc($q)){
 	 
     echo "<tr class='accounts-tabel'>
     <td> ".htmlspecialchars($row['id'])." </td>

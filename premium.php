@@ -91,16 +91,15 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
- <tr>     
-    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
-	<td> ".htmlspecialchars($row['infos'])." </td>
-    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
-    <td> ".htmlspecialchars($row['price'])."</td>
-	    <td> ".$row['date']."</td>";
-    echo '
-    <td>
+ echo "<tr>     
+ <td class='flag-icon flag-icon-$countrycode'> </td>
+	<td>&nbsp;".$row['country']." </td>
+<td>".$row['sitename']."</td>
+<td>".$row['infos']." </td>
+<td>".('$SellerNick')."</td>
+<td> ".$row['price']."</td>
+<td> ".$row['date']."</td>
+ echo '<td>
 	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
     </td>
             </tr>

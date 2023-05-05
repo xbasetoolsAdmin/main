@@ -12,9 +12,12 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+<style>
+
 table.inputs td {
     padding: 5px;
 }
+<style>
 <table class="inputs">
         <tbody><tr>
             <td>Minimum age:</td>

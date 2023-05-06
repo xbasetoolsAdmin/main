@@ -1,5 +1,5 @@
 
-<!--?php
+<?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -15,7 +15,9 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?--><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1">
@@ -154,7 +156,7 @@ $(window).on("popstate", function(e) {
 
 $(window).on('load', function() {
 $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(13,'Add Balance - JeruxShop','addBalance.html',1);
+   pageDiv(7,'Add Balance - JeruxShop','',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');
@@ -297,7 +299,7 @@ function hideTooltip(btn) {
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						
-						<!--?php
+						<?php
 $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'") or die(mysqli_error());
 $r         = mysqli_fetch_assoc($q);
@@ -307,7 +309,7 @@ if ($reselerif == "1") {
     $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'") or die(mysqli_error());
     $r = mysqli_fetch_assoc($q);
 
-    echo '<li-->
+    echo '<li>
 						<a href="https://jerux.to/seller/index.html">
 							<span class="badge" title="Seller Panel">
 								<span class="glyphicon glyphicon-cloud"></span>

@@ -68,7 +68,7 @@
     color: var(--font-color);
 
 }
-#mytable_paginate .paginate_button {
+#account_data_paginate .paginate_button {
 color: var(--font-color);
 
 }

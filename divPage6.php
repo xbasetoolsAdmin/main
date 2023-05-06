@@ -19,8 +19,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <th>Description</th>
 <th>Seller</th>
 <th></th></tr></thead><tbody><tr><td><select class='select form-control input-sm' name="leads_country"><option value="">ALL</option>
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="account_data>
-">
+<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="myTable">
 <thead>
     <tr>
       <th scope="col" >Country</th>

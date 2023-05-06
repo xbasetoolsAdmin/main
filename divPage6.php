@@ -12,13 +12,13 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
+  <li class="active"><a href="#filter" data-toggle="tab">search</a></li>
 </ul>
 <div id="myTabContent" class="tab-content" >
-  <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
+  <div class="tab-pane active in" id="myCustomSearchBox"><table class="table"><thead><tr><th>Country</th>
 <th>Description</th>
 <th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="leads_country"><option value="">ALL</option>
+<th></th></tr></thead><tbody><tr><td><select class='select form-control input-sm' name="leads_country"><option value="">ALL</option>
 <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `leads` WHERE `sold` = '0' ORDER BY country ASC");
 	while($row = mysqli_fetch_assoc($query)){
@@ -39,7 +39,8 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 </div>
 
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="account_data>
+">
 <thead>
     <tr>
       <th scope="col" >Country</th>

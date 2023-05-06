@@ -35,7 +35,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </head>
-
+<style>
+.display td
 .label-as-badge {
     border-radius: 0.5em;
 }
@@ -67,9 +68,6 @@ table.floatThead-table {
   margin: auto; /* presto! */
 
 }
-
-   
-    
 
 </style>
 <script type="text/javascript">

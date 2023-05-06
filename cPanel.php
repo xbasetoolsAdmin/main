@@ -394,9 +394,7 @@ if ($r1 == "1") {
 			
 			<!-- /.container-fluid -->
 		</nav>
-		<div id="mainDiv">
-			<div id="demo_info" class="box">
-			</div>
+			<div id="mainDiv_info" class="box"></div>
 			<div id="cpanel_data_wrapper" class="dataTables_wrapper">
 				<div class="dataTables_length" id="cpanel_data_length">
 					<label>Show

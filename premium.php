@@ -1,39 +1,104 @@
-<!doctype html>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		
-		<title>DataTables Editor - accounts</title>
+<?php include"header";
+?>
 
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sb-1.4.2/sl-1.6.2/datatables.min.css">
-		<link rel="stylesheet" type="text/css" href="css/generator-base.css">
-		<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
 
-		<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sb-1.4.2/sl-1.6.2/datatables.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/table.accounts.js"></script>
-	</head>
-	<body class="dataTables">
-		<div class="container">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-			<h1>
-				DataTables Editor <span>accounts</span>
-			</h1>
-			
-			<table cellpadding="0" cellspacing="0" border="0" class="display" id="accounts" width="100%">
-				<thead>
-					<tr>
-						<th>country</th>
-						<th>sitename</th>
-						<th>price</th>
-						<th>resseller</th>
-						<th>info</th>
-						<th>price</th>
-						<th>date</th>
-					</tr>
-				</thead>
-			</table>
+    <!--DataTable CDN-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-		</div>
-	</body>
-</html>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+
+<body style="margin-top: 30px">
+
+    <div class="container">
+        <div class="col-lg-4">
+
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+
+        <div class="col-lg-2">
+            <span class="input-group-btn">
+			<button class="btn btn-primary">Button 1</button>
+			<button class="btn btn-info">Button 2</button>
+		    </span>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="input-group">
+
+                <select id="listsearch" class="form-control" style="width:40%">
+                    <option value="0">Select Filter</option>
+                    <option value="name">Name</option>
+                    <option value="id">ID</option>
+                    <option value="birthday">birthday</option>
+                </select>
+
+                <input type="text" name="value" id="value" class="form-control" style="width:60%" placeholder="Enter Filter Value">
+
+                <span class="input-group-btn">
+				    <button class="btn btn-secondary"><i class="glyphicon glyphicon-search"></i></button>
+				</span>
+            </div>
+        </div>
+    </div>
+    <!--Container Ends Here-->
+
+    <!--datatable div starts here-->
+    <div style="margin-top: 30px">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Account Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>10/11/2019</td>
+			<td>02/02/1990</td>
+		    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+   dTable=$('#myTable').DataTable({
+          "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+          "lengthMenu": [4], // 4 records will be shown in the table
+          "columnDefs": [
+          {"className": "dt-center", "targets": "_all"} //columnDefs for align text to center
+        ],
+          "dom":"lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+   });
+   
+      $('#myCustomSearchBox').keyup(function(){  
+        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
+   })
+   
+</script>

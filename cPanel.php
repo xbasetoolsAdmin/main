@@ -134,10 +134,10 @@ function pageDiv(n,t,u,x){
     url:        'divPage'+n+'.html',
     success:    function(data)
     {
-        $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
+$("#mainDiv").html(data).show();
+newTableObject = document.getElementById('table');
+        //sorttable.makeSortable(newTableObject);
+      //  $(".sticky-header").da({top:60});
         if(x==0){ajaxinfo();}
       }});
     if (typeof stopCheckBTC === 'function') { 
@@ -154,7 +154,7 @@ $(window).on("popstate", function(e) {
 
 $(window).on('load', function() {
 $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(13,'Add Balance - JeruxShop','addBalance.html',1);
+   pageDiv(7,' - JeruxShop','',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');

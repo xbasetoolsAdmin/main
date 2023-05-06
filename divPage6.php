@@ -18,28 +18,29 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             <li>There is <b> 76 </b> RDPs Available.</li>
         </ul>
     </div>
-   <div id="example_wrapper" class="dataTables_wrapper">
-   <div class="dataTables_length" id="example_length">
-   <label>Show <select name="example_length" aria-controls="example" class="">
+   <div id="dataTable_wrapper" class="dataTables_wrapper">
+   <div class="dataTables_length" id="dataTable_length">
+   <label>Show
+       <select name="dataTable_length" aria-controls="dataTable" class="">
    <option value="10">10</option>
    <option value="25">25</option>
    <option value="50">50</option>
    <option value="100">100</option>
    </select> entries</label>
    </div>
-   <div id="example_filter" class="dataTables_filter">
-   <label>Search:<input type="search" class="" placeholder="" aria-controls="example">
+   <div id="dataTable_filter" class="dataTables_filter">
+   <label>Search:<input type="search" class="" placeholder="" aria-controls="dataTable">
    </label>
    </div>
-   <table id="example" class="display dataTable" style="width:100%" aria-describedby="example_info">
+   <table id="dataTable" class="display dataTable" style="width:100%" aria-describedby="dataTable_info">
         <thead>
   <tr>
-			<th class="sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 39.140625px;">Name</th>
-			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;">Position</th>
-			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
-			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
-			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
-			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
+			<th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 39.140625px;">Name</th>
+			<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;">Position</th>
+			<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
+			<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
+			<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
+			<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
  </tr>
         </thead>
 		            <tbody>
@@ -56,8 +57,8 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
-     echo "<tr class="odd">
-							  <td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+     echo "<tr class='odd'>
+							  <td valig'top' colspan='6' class='dataTables_empty'>Loading...</td>
     <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td id='leads_about'> ".htmlspecialchars($row['infos'])." </td> 
 	<td> ".htmlspecialchars($row['number'])." </td>
@@ -86,18 +87,18 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 			                          </tr>
                             </tfoot>
     </table>
-	 <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
-	 <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
-	 <a class="paginate_button previous disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="previous" tabindex="-1" id="example_previous">Previous</a><span>
+	 <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+	 <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+	 <a class="paginate_button previous disabled" aria-controls="dataTable" aria-disabled="true" aria-role="link" data-dt-idx="previous" tabindex="-1" id="dataTable_previous">Previous</a><span>
 	 </span>
-	 <a class="paginate_button next disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="next" tabindex="-1" id="example_next">Next</a>
+	 <a class="paginate_button next disabled" aria-controls="dataTable" aria-disabled="true" aria-role="link" data-dt-idx="next" tabindex="-1" id="dataTable_next">Next</a>
 	 </div>
    </div>
 </body>
 <script>
 document.addEventListener('DOMContentLoaded',
  function () {
-    let table = new DataTable('#example', {
+    let table = new DataTable('#dataTable', {
         ajax: function (d, cb) {
             fetch('../ajax/data/objects.php')
                 .then(response => response.json())

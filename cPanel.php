@@ -138,7 +138,7 @@ function pageDiv(n,t,u,x){
     success:    function(data)
     {
 $("#mainDiv_info").html(data).show();
-newTableObject = document.getElementById('cpanel_data_wrapper');
+newTableObject = document.getElementById('table');
         //sorttable.makeSortable(newTableObject);
       //  $(".sticky-header").da({top:60});
         if(x==0){ajaxinfo();}

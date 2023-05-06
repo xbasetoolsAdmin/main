@@ -284,6 +284,8 @@ if ($r1 == "1") {
 
 
 </div>
+</body>
+
 <scropt>
 
   dTable=$('#mainDiv').DataTable({
@@ -302,6 +304,5 @@ if ($r1 == "1") {
         dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
 
 </script>
-</body>
 </html>
 

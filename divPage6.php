@@ -65,7 +65,20 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 
  ?>
 <script type="text/javascript">
-$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#leads_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#leads_about").text().toLowerCase() );var ck3 = $.trim( $(this).find("#leads_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="leads_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="leads_about"]').val().toLowerCase() );var val3 = $.trim( $('select[name="leads_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
+dTable = $('#myTable').DataTable({
+        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+        "lengthMenu": [4], // 4 records will be shown in the table
+        "columnDefs": [{
+                "className": "dt-center",
+                "targets": "_all"
+            } //columnDefs for align text to center
+        ],
+        "dom": "lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+    });
+ 
+    $('#myCustomSearchBox').keyup(function() {
+        dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
+    })
 function buythistool(id){
   bootbox.confirm("Are you sure?", function(result) {
         if(result ==true){

@@ -1,16 +1,45 @@
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<title>DataTables Editor - accounts</title>
 
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
- <script type="text/javascript" src="http:// ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
-</head>
-<body>
-<a id="detailed">LINK</a>
-<div id="main">Hello - This is my main Div that will be reloaded using Jquery.</div>
-1
-<div id="main">Hello - This is the div that will be loading
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.css">
+		<link rel="stylesheet" type="text/css" href="css/generator-base.css">
+		<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
 
+		<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/table.accounts.js"></script>
+	</head>
+	<body class="dataTables">
+		<div class="container">
 
+			<h1>
+				DataTables Editor <span>accounts</span>
+			</h1>
+			
+			<table cellpadding="0" cellspacing="0" border="0" class="display" id="accounts" width="100%">
+				<thead>
+					<tr>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+						<th>Website Name</th>
+					</tr>
+				</thead>
+			</table>
+
+		</div>
+	</body>
+</html>
 
 <script type="text/javascript" language="javascript">
 $(document).ready(function() { /// Wait till page is loaded

@@ -16,54 +16,9 @@
 <body style="margin-top: 30px">
    <div class="container">
  <div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+<input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
         </div>
 <</div>
-<div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div><div class="col-lg-4">
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
-<</div>
-
-        <div class="col-lg-2">
-            <span class="input-group-btn">
-			<button class="btn btn-primary">Button 1</button>
-			<button class="btn btn-info">Button 2</button>
-		    </span>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="input-group">
-
-                <select id="listsearch" class="form-control" style="width:40%">
-                    <option value="0">Select Filter</option>
-                    <option value="name">Name</option>
-                    <option value="id">ID</option>
-                    <option value="birthday">birthday</option>
-                </select>
-
-                <input type="text" name="value" id="value" class="form-control" style="width:60%" placeholder="Enter Filter Value">
-
-                <span class="input-group-btn">
-				    <button class="btn btn-secondary"><i class="glyphicon glyphicon-search"></i></button>
-				</span>
             </div>
         </div>
     </div>
@@ -119,6 +74,9 @@
    });
    
       $('#myCustomSearchBox').keyup(function(){  
+        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
+   })
+         $('#myCustomSearchBox').keyup(function(){  
         dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
    })
    

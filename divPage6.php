@@ -65,7 +65,7 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
  ?>
 <script type="text/javascript">
 dTable = $('#myTable').DataTable({
-        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+        "bLengthChange": true, // this gives option for changing the number of records shown in the UI table
         "lengthMenu": [4], // 4 records will be shown in the table
         "columnDefs": [{
                 "className": "dt-center",

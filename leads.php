@@ -299,8 +299,21 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div id="mainDiv">
- 
+
+           <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Balance</th>
+                  <th>items purch</th>
+                  <th>Last login</th>
+                  <th>Edit</th>
+                  <th>Resseller</th>
+                </tr>
+              </thead>
+            <tbody><div id="mainDiv">
+                
  
     </div>
 

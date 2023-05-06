@@ -1,5 +1,3 @@
-<?php include"header";
-?>
 
 <!DOCTYPE html>
 <html>

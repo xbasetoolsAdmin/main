@@ -29,10 +29,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 		<meta charset="utf-8">
 		<title>JeruxShop</title>
 		<style>
-#table {
+		
+		
+#cpanel_data_info {
   .sortable
 }
-table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+table 
     content: " \25BE" 
 }
 

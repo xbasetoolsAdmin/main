@@ -130,7 +130,7 @@ function pageDiv(n,t,u,x){
     success:    function(data)
     {
 $("#mainDiv").html(data).show();
-newTableObject = document.getElementById('table');
+newTableObject = document.getElementById('mainDiv_info');
         //sorttable.makeSortable(newTableObject);
       //  $(".sticky-header").da({top:60});
         if(x==0){ajaxinfo();}

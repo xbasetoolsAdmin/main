@@ -35,10 +35,13 @@ function srl($item)
     $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
- <tr>
-			</div>
-			"; 	 echo ''; echo "          ";      echo '           ';  }   ?&gt;
+     echo " <tr>
+			</div>	"; 	 echo '
+			
+			
+			'; echo "          ";      echo '           
+			
+			';  }   ?&gt;
 			<table id="cpanel_data" class="display dataTable" style="width:100%" aria-describedby="cpanel_data_info">
 				<thead>
 					<tr>

@@ -1,43 +1,4 @@
-<?php
-ob_start();
-session_start();
-date_default_timezone_set('UTC');
-include "includes/config.php";
 
-if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
-    exit();
-}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
-
-<!doctype html>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		
-		<title>DataTables Editor - accounts</title>
-
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.css">
-		<link rel="stylesheet" type="text/css" href="css/generator-base.css">
-		<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
-
-		<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/table.accounts.js"></script>
-	</head>
-	<?php
-ob_start();
-session_start();
-date_default_timezone_set('UTC');
-include "includes/config.php";
-
-if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
-    exit();
-}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
 <?php
 ob_start();
 session_start();
@@ -60,7 +21,17 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  <meta name="referrer" content="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<title>DataTables Editor - accounts</title>
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.css">
+		<link rel="stylesheet" type="text/css" href="css/generator-base.css">
+		<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
+
+		<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.18.1/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/date-1.4.1/r-2.4.1/sl-1.6.2/datatables.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/table.accounts.js"></script>
 
 <script type="text/javascript" src="files/js/bootbox.min.js"></script>
 
@@ -74,7 +45,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script type="text/javascript" src="files/js/jquery.js">
 </script>
 <script type="text/javascript" src="files/js/jquery.dataTables.min.js">
-    
+
 </script>
 <!----cdn dataTatables--------->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
@@ -91,10 +62,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <!----cdn dataTatables--------->
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
 <!----cdn mdb--------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js">
 </script>    
 <script src="js/jquery.dataTables.min.js"></script>
 

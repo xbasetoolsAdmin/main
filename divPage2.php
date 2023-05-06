@@ -38,8 +38,6 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE
 ?>
 </select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
 </div>
-
-
 <table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
 <thead>
     <tr>
@@ -57,7 +55,7 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE
   <tbody>
 <?php
 		include("cr.php");
-	    $q = mysqli_query($dbcon, "SELECT * FROM cpanels WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+	    $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
 	   	function srl($item)
 		{
 		$item0 = $item;

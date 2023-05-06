@@ -256,7 +256,7 @@ if ($r1 == "1") {
 $s1 = mysqli_query($dbcon, "SELECT * FROM reports WHERE uid='$uid' and seen='1'");
 $r1 = mysqli_num_rows($s1);
 if ($r1 == "1") {
-    echo '<span class="label label-success"> 1 New</span>';
+    echo '<span class buy ="label label-success"> 1 New</span>';
 }
 ?></span> </a></li>
 
@@ -284,6 +284,24 @@ if ($r1 == "1") {
 
 
 </div>
+<scropt>
+
+  dTable=$('#mainDiv').DataTable({
+          "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+          "lengthMenu": [4], // 4 records will be shown in the table
+          "columnDefs": [
+          {"className": "dt-center", "targets": "_all"} //columnDefs for align text to center
+        ],
+          "dom":"lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+   });
+   
+      $('#myCustomSearchBox').keyup(function(){  
+        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
+   })
+         $('#myCustomSearchBox').keyup(function(){  
+        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
+
+</script>
 </body>
 </html>
 

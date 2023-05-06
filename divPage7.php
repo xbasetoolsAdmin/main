@@ -1,98 +1,79 @@
 
-4l
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <title>Simple DataTable Customization with Bootstarp</title>
- 
-    <!--Jquery CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 
-    <!--DataTable CDN-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
- 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- 
-</head>
- 
-<body style="margin-top: 30px">
- 
-    <div class="container">
-        <div class="col-lg-4">
- 
-            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
-        </div>
- 
-        <div class="col-lg-2">
-            <span class="input-group-btn">
-			<button class="btn btn-primary">Button 1</button>
-			<button class="btn btn-info">Button 2</button>
-		    </span>
-        </div>
- 
-        <div class="col-lg-6">
-            <div class="input-group">
- 
-                <select id="listsearch" class="form-control" style="width:40%">
-                    <option value="0">Select Filter</option>
-                    <option value="name">Name</option>
-                    <option value="id">ID</option>
-                    <option value="birthday">birthday</option>
-                </select>
- 
-                <input type="text" name="value" id="value" class="form-control" style="width:60%" placeholder="Enter Filter Value">
- 
-                <span class="input-group-btn">
-				    <button class="btn btn-secondary"><i class="glyphicon glyphicon-search"></i></button>
-				</span>
-            </div>
-        </div>
-    </div>
-    <!--Container Ends Here-->
- 
-    <!--datatable div starts here-->
-    <div style="margin-top: 30px">
-        <table id="myTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Birthday</th>
-                    <th>Account Date</th>
-                </tr>
-            </thead>
- 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Sam</td>
-                    <td>10/11/2019</td>
-                    <td>02/02/1990</td>
- 
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
- 
-<script type="text/javascript">
-    dTable = $('#myTable').DataTable({
-        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
-        "lengthMenu": [4], // 4 records will be shown in the table
-        "columnDefs": [{
-                "className": "dt-center",
-                "targets": "_all"
-            } //columnDefs for align text to center
-        ],
-        "dom": "lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
-    });
- 
-    $('#myCustomSearchBox').keyup(function() {
-        dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
-    })
-</script>
- 
-</html>
+<?php include("cr.php");
+	    
+        
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+
+function srl($item)
+		{
+		$item0 = $item;
+		$item1 = rtrim($item0);
+		$item2 = ltrim($item1);
+		return $item2;
+		} 
+
+ while($row = mysqli_fetch_assoc($q)){
+	 	 $countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
+
+	 $url = $row['url'];
+	 	$d = explode("|", $url);
+		$urled = srl($d[0]);
+
+	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
+    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+     echo "
+ <tr>
+			</div>
+			"; 	 echo ''; echo "          ";      echo '           ';  }   ?&gt;
+			<table id="cpanel_data" class="display dataTable" style="width:100%" aria-describedby="cpanel_data_info">
+				<thead>
+					<tr>
+						<th class="sorting sorting_asc" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 51.6875px;">Name</th>
+						<th class="sorting" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 68.015625px;">Position</th>
+						<th class="sorting" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 47.9375px;">Office</th>
+						<th class="sorting" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 26.1875px;">Age</th>
+						<th class="sorting" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 32.4375px;">Start date</th>
+						<th class="sorting" tabindex="0" aria-controls="cpanel_data" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 54.0625px;">Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="cpanel_country">
+							<i class="flag-icon flag-icon-$countrycode"></i>&nbsp;".htmlspecialchars($row['country'])."
+						</td>
+						<td id="cpanel_tld">
+							.".$tld."
+						</td>
+						<td id="cpanel_hosting">
+							".htmlspecialchars($row['infos'])."
+						</td>
+						<td id="cpanel_seller">
+							".htmlspecialchars($SellerNick)."</td>
+						<td>
+							<span id="shop'.$row[" id"].'"="" type="cpanel">
+								<a onclick="javascript:check('.$row[" id"].');"="" class="btn btn-info btn-xs">
+									<font color="white">Check</font>
+								</a>
+							</span>
+							<center></center>
+						</td>
+						<td>
+							".htmlspecialchars($row['price'])."</td>
+						<td>
+							".htmlspecialchars($row['date'])."</td>
+						<td>
+							<span id="cpanel'.$row['id'].'" title="buy" type="cpanel">
+								<a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs">
+									<font color="white">Buy</font>
+								</a>
+							</span>
+							<center>
+							</center>
+						</td>
+					</tr>
+				</tbody>
+			</table>

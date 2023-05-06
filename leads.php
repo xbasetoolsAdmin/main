@@ -10,34 +10,31 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+ 
 <head>
-<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-<script type="text/javascript" src="files/js/jquery.js?1"></script>
-<script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
-<script type="text/javascript" src="files/js/sorttable.js"></script>
-<script type="text/javascript" src="files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="files/js/bootbox.min.js"></script>
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkNetShop</title>
+    <link rel="shortcut icon" href="layout/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/util.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css">
+    <script src="asserts/js/bootstrap.min.js"></script>
+    <!-- Datatables js Script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootbox.min.js"></script>
 
-<link rel="shortcut icon" href="files/img/favicon.ico" />
-<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
- <meta name="referrer" content="no-referrer" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<title>JeruxShop</title>
+ <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </head>
-<style>
-#table {
-  .sortable
-}
-table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25BE" 
-}
 
 .label-as-badge {
     border-radius: 0.5em;
@@ -284,25 +281,27 @@ if ($r1 == "1") {
 
 
 </div>
+
+<script type="text/javascript">
+    dTable = $('#myTable').DataTable({
+        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+        "lengthMenu": [4], // 4 records will be shown in the table
+        "columnDefs": [{
+                "className": "dt-center",
+                "targets": "_all"
+            } //columnDefs for align text to center
+        ],
+        "dom": "lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+    });
+ 
+    $('#myCustomSearchBox').keyup(function() {
+        dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
+    })
+</script>
+ 
+</html>
 </body>
 
-<scropt>
 
-  dTable=$('#mainDiv').DataTable({
-          "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
-          "lengthMenu": [4], // 4 records will be shown in the table
-          "columnDefs": [
-          {"className": "dt-center", "targets": "_all"} //columnDefs for align text to center
-        ],
-          "dom":"lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
-   });
-   
-      $('#myCustomSearchBox').keyup(function(){  
-        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
-   })
-         $('#myCustomSearchBox').keyup(function(){  
-        dTable.search($(this).val()).draw();   // this  is for customized searchbox with datatable search feature.
-
-</script>
 </html>
 

@@ -1,113 +1,190 @@
-<?php
-ob_start();
-session_start();
-date_default_timezone_set('UTC');
-include "includes/config.php";
-include("cr.php");
 
-if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
-   header("location: ../");
-   exit();
-}
-	function srl($item)
-		{
-		$item0 = $item;
-		$item1 = rtrim($item0);
-		$item2 = ltrim($item1);
-		
-return $item2;
-		} 
-$usrid     = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-$orderid     = mysqli_real_escape_string($dbcon, $_GET['id']);
-$q = mysqli_query($dbcon, "SELECT * FROM purchases WHERE buyer='$usrid' and id='$orderid'") or die(mysql_error());
-
-while ($row = mysqli_fetch_assoc($q)) {
-	///////////////// Cpanel
- if ($row['type'] == "cpanel") {
-	 $itemid = $row['s_id'];
-$qe = mysqli_query($dbcon, "SELECT * FROM accounts WHERE id='$itemid'") or die(mysql_error());
-?>
-
-
-
-
-<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-<div class="col-sm-12 table-responsive">
-<div id="account_data_wrapper" class="dataTables_wrapper no-footer">
-	
-<div class="dataTables_length" id="account_data_length">	
-<label>Show <select name="account_data_length" aria-controls="account_data" class="">
-	
-<option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="500">500</option><option value="10000">All</option></select> entries</label></div><div id="account_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="account_data"></label></div><div id="account_data_processing" class="dataTables_processing" style="display: none;">Processing...</div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 100%;"><table class="display responsive table-hover dataTable no-footer" style="width: 100%; color: var(--font-color); background-color: var(--color-card); margin-left: 0px;" role="grid">
-	
-<thead>
-<tr role="row"><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 14px;">ID</th><th data-priority="3" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 54px;">Website Name</th><th data-priority="4" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 54px; display: none;">Country</th><th data-priority="7" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 46px; display: none;">Details</th><th data-priority="8" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 35px; display: none;">Price</th><th data-priority="9" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 39px; display: none;">Seller</th><th data-priority="10" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 48px; display: none;">Source</th><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 37px;">Proof</th><th data-priority="11" class="sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 53px; display: none;">Date Created</th><th class="all sorting" tabindex="0" aria-controls="account_data" rowspan="1" colspan="1" style="width: 27px;">Buy</th>
-	
-</tr>
-</thead>
-
-</table>
-</div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table id="account_data" class="display responsive table-hover dataTable no-footer dtr-inline collapsed" style="width: 100%; color: var(--font-color); background-color: var(--color-card);" role="grid" aria-describedby="account_data_info">
-<tbody></tbody></table></div></div><div class="dataTables_info" id="account_data_info" role="status" aria-live="polite"></div><div class="dataTables_paginate paging_simple_numbers" id="account_data_paginate"></div></div>
-</div>
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
-<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-notify modal-success" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<p class="heading" id="myModalHeader"></p>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true" class="white-text">×</span>
-</button>
-</div>
-<div class="modal-body" id="modelbody">
-</div>
-<div class="modal-footer justify-content-center">
-<a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Close</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="modalConfirmBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-sm modal-notify modal-info" role="document">
-
-<div class="modal-content text-center">
-
-<div class="modal-header d-flex justify-content-center">
-<p class="heading">Are you sure?</p>
-</div>
-
-<div class="modal-body">
-<i class="fas fa-shopping-cart fa-4x animated rotateIn"></i>
-</div>
-
-<div class="modal-footer flex-center">
-<a onclick="confirmbye()" class="btn btn-outline-info waves-effect" data-dismiss="modal">Yes</a>
-<a type="button" class="btn btn-info waves-effect waves-light" data-dismiss="modal">No</a>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<div class="modal fade top" id="modalCoupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
-<div class="modal-dialog modal-frame modal-top modal-notify modal-danger" role="document">
-
-<div class="modal-content">
-
-<div class="modal-body">
-<div class="row d-flex justify-content-center align-items-center">
-<img src="https://odinshop.io/layout/images/balance.png">
-<span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
-<a type="button" href="addBalance.html" onclick="window.open(this.href);return false;" class="btn btn-danger waves-effect waves-light">Add Balance
-<i class="fas fa-book ml-1 white-text"></i>
-</a>
-<a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
-</div>
-</div>
-</div>
-
-</div>
-</div>
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Simple DataTable Customization with Bootstarp</title>
+ 
+    <!--Jquery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+    <!--DataTable CDN-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+ 
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 
+</head>
+ 
+<body style="margin-top: 30px">
+ 
+    <div class="container">
+        <div class="col-lg-4">
+ 
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+ 
+        <div class="col-lg-2">
+            <span class="input-group-btn">
+			<button class="btn btn-primary">Button 1</button>
+			<button class="btn btn-info">Button 2</button>
+		    </span>
+        </div>
+ 
+        <div class="col-lg-6">
+            <div class="input-group">
+ 
+                <select id="listsearch" class="form-control" style="width:40%">
+                    <option value="0">Select Filter</option>
+                    <option value="name">Name</option>
+                    <option value="id">ID</option>
+                    <option value="birthday">birthday</option>
+                </select>
+ 
+                <input type="text" name="value" id="value" class="form-control" style="width:60%" placeholder="Enter Filter Value">
+ 
+                <span class="input-group-btn">
+				    <button class="btn btn-secondary"><i class="glyphicon glyphicon-search"></i></button>
+				</span>
+            </div>
+        </div>
+    </div>
+    <!--Container Ends Here-->
+ 
+    <!--datatable div starts here-->
+    <div style="margin-top: 30px">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Account Date</th>
+                </tr>
+            </thead>
+ 
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>10/11/2019</td>
+                    <td>02/02/1990</td>
+ 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+<script type="text/javascript">
+    dTable = $('#myTable').DataTable({
+        "bLengthChange": false, // this gives option for changing the number of records shown in the UI table
+        "lengthMenu": [4], // 4 records will be shown in the table
+        "columnDefs": [{
+                "className": "dt-center",
+                "targets": "_all"
+            } //columnDefs for align text to center
+        ],
+        "dom": "lrtip" //to hide default searchbox but search feature is not disabled hence customised searchbox can be made.
+    });
+ 
+    $('#myCustomSearchBox').keyup(function() {
+        dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
+    })
+</script>
+ 
+</html>

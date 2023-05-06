@@ -14,12 +14,33 @@
 </head>
 
 <body style="margin-top: 30px">
-
-    <div class="container">
-        <div class="col-lg-4">
-
+   <div class="container">
+ <div class="col-lg-4">
             <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
         </div>
+<</div>
+<div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div><div class="col-lg-4">
+            <input type="text" id="myCustomSearchBox" class="form-control" placeholder="Search Anything here">
+        </div>
+<</div>
 
         <div class="col-lg-2">
             <span class="input-group-btn">

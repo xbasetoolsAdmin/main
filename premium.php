@@ -280,7 +280,20 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div id="mainDiv">
+<div id="mainDiv"></div>
+<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+<thead>
+    <tr>
+      <th scope="col" >Country</th>
+      <th scope="col">Site Name</th>
+      <th scope="col">Available Information</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+      <th scope="col">Buy</th>
+    </tr>
+</thead>
+  <tbody>
 
 
 </div>

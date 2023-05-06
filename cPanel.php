@@ -1,4 +1,4 @@
-<?php
+=<?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -58,7 +58,7 @@ table.floatThead-table {
   height: 400px;
   position: relative;
 }
-.ajax-loader {
+.box {
   position: absolute;
   left: 0;
   top: 0;
@@ -123,14 +123,14 @@ function pageDiv(n,t,u,x){
 
     	}
       document.title = obj.Title;
-    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+    $("#mainDiv_info").html('<div id="mydiv"><img src="files/img/load2.gif" class="box"></div>').show();
     $.ajax({
     type:       'GET',
     url:        'divPage'+n+'.html',
     success:    function(data)
     {
-$("#mainDiv").html(data).show();
-newTableObject = document.getElementById('mainDiv_info');
+$("#mainDiv_info").html(data).show();
+newTableObject = document.getElementById('cpanel_data_wrapper');
         //sorttable.makeSortable(newTableObject);
       //  $(".sticky-header").da({top:60});
         if(x==0){ajaxinfo();}

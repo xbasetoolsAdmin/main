@@ -225,7 +225,7 @@ $('.dropdown').hover(
   function(){ 
   $('.dropdown-toggle', this).trigger('click'); 
   });
-   pageDiv(0,'-','',);
+   pageDiv(0,'-',''2,);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');
@@ -478,7 +478,7 @@ $('.dropdown').hover(
   function(){ 
   $('.dropdown-toggle', this).trigger('click'); 
   });
-   pageDiv(1,'rdp','',);
+  pageDiv(1,'-',''2,);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');

@@ -78,7 +78,8 @@ table.floatThead-table {
 <script type="text/javascript">
              function ajaxinfo() {
                 $.ajax({
-                    type: 'GET',
+					dataType: 'json'
+                    type: 'POST',
                     url: 'ajaxinfo.html',
                     timeout: 10000,
 
@@ -133,10 +134,8 @@ function pageDiv(n,t,u,x){
     {
         $("#mainDiv").html(data).show();
         newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
-        if(x==0){ajaxinfo();}
-      }});
+		if(x==0){ajaxinfo();}
+ }});
     if (typeof stopCheckBTC === 'function') { 
     var a = stopCheckBTC();
      }
@@ -149,23 +148,31 @@ $(window).on("popstate", function(e) {
 });
 
 
-$(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(4,'PHP Mailer - JeruxShop','mailer.html',1);
-   var clipboard = new Clipboard('.copyit');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      e.clearSelection();
-   });
-
+$(window).on('load', function() {$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+      pageDiv(1,'XbaseTools','',1);
+      pageDiv(2,'XbaseTools','',1);
+	  pageDiv(3,'XbaseTools','',1);
+      pageDiv(4,'XbaseTools','',1);
+	  pageDiv(5,'XbaseTools','',1);
+      pageDiv(6,'XbaseTools','',1);
+	  pageDiv(7,'XbaseTools','',1);
+      pageDiv(8,' XbaseTools','',1);
+	  pageDiv(9,'XbaseTools','',1);
+      pageDiv(10,'XbaseTools','',1);
+	  pageDiv(11,'XbaseTools','',1);
+      pageDiv(12,'XbaseTools','',1); 
+	  pageDiv(13,'XbaseTools','',1);
+	  pageDiv(14,'XbaseTools','',1);
+      pageDiv(15,'XbaseTools','',1);
+ var clipboard = new Clipboard('.copyit');
+    clipboard.on('success', function(e) { setTooltip(e.trigger, 'Copied!');
+    hideTooltip(e.trigger);
+    e.clearSelection(); });
 });
 
 
-function setTooltip(btn, message) {
-  console.log("hide-1");
-  $(btn).tooltip('hide')
-    .attr('data-original-title', message)
+function setTooltip(btn, message) { console.log("hide-1"); $(btn).tooltip('hide')
+  .attr('data-original-title', message)
     .tooltip('show');
      console.log("show");
 }

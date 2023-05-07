@@ -176,7 +176,7 @@ document.title = obj.Title;
  // This accentuates the need for the creation of a real `window`.
 // e.g. var jQuery = require("jquery")(window);
  // See ticket #14549 for more info.
- newTableObject = document.getElementById('table');
+ //newTableObject = document.getElementById('');
 
   // sorttable.makeSortable(newTableObject);
   // $(".sticky-header").floatThead({top:60});

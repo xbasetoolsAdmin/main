@@ -12,31 +12,73 @@
  * Date: 2020-05-04T22:49Z
  */
             function ajaxinfo() {
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
+                        
                 $.ajax({
                     type: 'GET',
                     url: 'ajaxinfo.html',
                     timeout: 10000,
-
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
+            
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info
+success: function(data) { if (data != '01') { var data = JSON.parse(data);
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
+for (var prop in data) 
+{$("#" + prop).html(data[prop]).show();
                             }
                         } else {
-                            window.location = "logout.html";
+window.location = "logout.html";
                         }
                     }
                 });
 
             }
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
             setInterval(function() {
                 ajaxinfo()
             }, 3000);
 
             ajaxinfo();
+  // For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
 
-$(document).keydown(function(event){if(event.which=="17") cntrlIsPressed = true;});
+$(document).keydown(
+            function(event){if(event.which=="17") cntrlIsPressed = true;});
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
 $(document).keyup(function(){ cntrlIsPressed = false; });var cntrlIsPressed = false;
 // For CommonJS and CommonJS-like environments where a proper `window`
 // is present, execute the factory and get jQuery.
@@ -49,10 +91,9 @@ function pageDiv(n,t,u,x){
   // e.g. var jQuery = require("jquery")(window);
  // See ticket #14549 for more info.    
   if(cntrlIsPressed)
-{
   // e.g. var jQuery = require("jquery")(window);
  // See ticket #14549 for more info.    
-  window.open(u, '_blank');                                   
+  {window.open(u, '_blank');                                   
 // For CommonJS and CommonJS-like environments where a proper `window`
 // is present, execute the factory and get jQuery.
  // For environments that do not have a `window` with a `document`
@@ -113,19 +154,32 @@ function pageDiv(n,t,u,x){
 // e.g. var jQuery = require("jquery")(window);
  // See ticket #14549 for more info.  
 document.title = obj.Title;
-    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+ $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
   // e.g. var jQuery = require("jquery")(window);
  // See ticket #14549 for more info.    
-    $.ajax({
+ $.ajax({
     type:  'GET',
     url:  'divPage'+n+'.html',
-    success:  
-      
-      function(data){
-        $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
+
+ success:function(data){$("#mainDiv").html(data).show();
+// For CommonJS and CommonJS-like environments where a proper `window`
+// is present, execute the factory and get jQuery.
+ // For environments that do not have a `window` with a `document`
+ // (such as Node.js), expose a factory as module.exports.
+ // This accentuates the need for the creation of a real `window`.
+// e.g. var jQuery = require("jquery")(window);
+ // See ticket #14549 for more info.
+ newTableObject = document.getElementById('table');
+
+  // sorttable.makeSortable(newTableObject);
+  // $(".sticky-header").floatThead({top:60});
         if(x==0)
           // is present, execute the factory and get jQuery.
  // For environments that do not have a `window` with a `document`
@@ -183,15 +237,15 @@ $('.dropdown').hover(
 
 
 function setTooltip(btn, message) {
-  console.log("hide-1");
+  //console.log("hide-1");
   $(btn).tooltip('hide')
     .attr('data-original-title', message)
     .tooltip('show');
      console.log("show");
 }
 
-function hideTooltip(btn) {
-  setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
+function hideTooltip(btn) {setTimeout(function() {$(btn).tooltip('hide');
+             //console.log("hide-2");}, 1000);
 }
  // For CommonJS and CommonJS-like environments where a proper `window`
       

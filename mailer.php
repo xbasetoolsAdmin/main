@@ -78,7 +78,7 @@ table.floatThead-table {
 <script type="text/javascript">
              function ajaxinfo() {
                 $.ajax({
-					dataType: 'json'
+		 dataType: 'json',
                     type: 'POST',
                     url: 'ajaxinfo.html',
                     timeout: 10000,
@@ -151,7 +151,7 @@ $(window).on("popstate", function(e) {
 $(window).on('load', function() {$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
       pageDiv(1,'XbaseTools','',1);
       pageDiv(2,'XbaseTools','',1);
-	  pageDiv(3,'XbaseTools','',1);
+      pageDiv(3,'XbaseTools','',1);
       pageDiv(4,'XbaseTools','',1);
 	  pageDiv(5,'XbaseTools','',1);
       pageDiv(6,'XbaseTools','',1);

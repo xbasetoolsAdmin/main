@@ -26,8 +26,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <link rel="shortcut icon" href="files/img/favicon.ico" />
 
-<script type="text/javascript" src="code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 <title>JeruxShop</title>

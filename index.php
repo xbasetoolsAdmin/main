@@ -10,78 +10,240 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	   	<link rel='shortcut icon' type='image/x-icon' href='../img/favicon.ico' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jerux Seller</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../buyer/assets/flags.css">
+  <link rel="stylesheet" type="text/css" href="css/tickets.css">
+	<script type="text/javascript" src="./assets/jquery.js"></script>
+	<script type="text/javascript" src="./assets/bootstrap.js"></script>
+	<script type="text/javascript" src="./assets/bootbox.min.js"></script>
+	<script type="text/javascript" src="./assets/sorttable.js"></script>
+    <link href="./assets/style.css" rel="stylesheet">
 
-<!doctype html>
-<html>
-<head><meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> <meta name="referrer" content="no-referrer" />
-<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-
-<script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
-<script type="text/javascript" src="files/js/sorttable.js"></script>
-<script type="text/javascript" src="files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="files/js/bootbox.min.js"></script>
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
-
-<link rel="shortcut icon" href="files/img/favicon.ico" />
-
-<script type="text/javascript" src="code.jquery.com/jquery-3.6.4.min.js"></script>
- 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<title>JeruxShop</title>
-</head>
-	 
+    <style>
+.sort {
+  .sortable
+}
+.sort th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25BE" 
+}
+</style>
 <style>
+.content {
+	display:none;
+}
 
- .navbar {
-   background-color: #001f3f;
- }
-        </style>
-<body style="padding-top: 70px; padding-bottom: 70px;">
+</style>
+<script type="text/javascript">
+    function ajaxinfo(){
+      $.ajax({
+      type:       'GET',
+      url:        'ajaxinfo.html',
+      timeout: 10000 ,
 
-<nav class="navbar navbar-default navbar-fixed-top ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-    <div class="navbar-brand" onClick="location.href='index.html'" onMouseOver="this.style.cursor='pointer'"><b><span class="glyphicon glyphicon-fire"></span> Jerux SHOP <small><span class="glyphicon glyphicon-refresh"></span></small></b></div></div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="topFixedNavbar1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hosts <span class="glyphicon glyphicon-chevron-down" id="alhosts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="rdp.html" onclick="pageDiv(1,'RDP - JeruxShop','rdp.html',0); return false;">RDPs <span class="label label-primary label-as-badge" id="rdp"></span></a></li>
-            <li><a href="cPanel.html" onclick="pageDiv(2,'cPanel - JeruxShop','cPanel.html',0); return false;">cPanels <span class="label label-primary label-as-badge" id="cpanel"></span></a></li>
-            <li><a href="shell.html" onclick="pageDiv(3,'Shell - JeruxShop','shell.html',0); return false;">Shells <span class="label label-primary label-as-badge" id="shell"></span></a></li>  
-          </ul>
-        </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Send <span class="glyphicon glyphicon-chevron-down" id="mail"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="mailer.html" onclick="pageDiv(4,'PHP Mailer - JeruxShop','mailer.html',0); return false;">Mailers <span class="label label-primary label-as-badge" id="mailer"></span></a></li>
-            <li><a href="smtp.html" onclick="pageDiv(5,'SMTP - JeruxShop','smtp.html',0); return false;">SMTPs <span class="label label-primary label-as-badge" id="smtp"></span></a></li>  
-          </ul>
-        </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Leads <span class="glyphicon glyphicon-chevron-down" id="all_leads"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="leads.html" onclick="pageDiv(6,'Leads - JeruxShop','leads.html',0); return false;">Leads <span class="label label-primary label-as-badge" id="leads"></span></a></li>
-          </ul>
-        </li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="glyphicon glyphicon-chevron-down" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="premium.html" onclick="pageDiv(7,'Premium/Dating/Shop - JeruxShop','premium.html',0); return false;">Premium/Dating/Shop <span class="label label-primary label-as-badge" id="premium"></span></a></li>
-            <li><a href="banks.html" onclick="pageDiv(8,'Banks - JeruxShop','banks.html',0); return false;">Banks <span class="label label-primary label-as-badge" id="banks"></span></a></li>  
-          </ul>
-        </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Others <span class="glyphicon glyphicon-chevron-down" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="scampage.html" onclick="pageDiv(9,'Scampages - JeruxShop','scampage.html',0); return false;">Scampage <span class="label label-primary label-as-badge" id="scams"></span></a></li>
-            <li><a href="tutorial.html" onclick="pageDiv(10,'Tutorials - JeruxShop','tutorial.html',0); return false;">Tutorial <span class="label label-primary label-as-badge" id="tutorials"></span></a></li>  
-          </ul>
-        </li>
-                      
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+           success: function(data){
+              if (data != '01'){
+                var data = JSON.parse(data);
+                  for (var prop in data) {
+                  $("#"+prop).html(data[prop] ).show();
+                }
+              }
+              else {
+                window.location = "logout.html";
+              }
+           }
+         });
+
+  }
+    setInterval(function(){ajaxinfo()}, 3000);
+
+ ajaxinfo();
+	</script>
+</head>
+
+
+<body>
+
+    <div id="wrapper">
+    <div id="sidebar-wrapper">
+                     <ul class="sidebar-nav">
+
+                <li class="sidebar-brand"><a href="./index"><div class="navbar-brand" onclick="location.href=&#39;index.html&#39;"><font color="white"><b><span class="glyphicon glyphicon-fire"></span> Seller Panel</b></font></div></a></li>
+                <li><a href="https://jerux.to/buyer/index.html" onclick="window.open(this.href);return false;"><font color="white">Back to Jerux SHOP <span class="glyphicon glyphicon-share-alt"></span></font></a></li>
+
+                <li><font color="white"><b>Seller Dashboard</b></font></li>
+                    <li><a href="./index.html" style="cursor: pointer;">Main</a></li>
+		                      <li><a href="./sales.html" style="cursor: pointer;">Sales <div id="sales" class="label label-info"></div></a></li>
+                    <li><a href="./withdraw.html" style="cursor: pointer;">Withdraw</a></li>
+                    <li><a href="./reports.html" style="cursor: pointer;">My Reports </a></li>			
+
+                <li><font color="white"><b>Tools Management</b></font></li>
+                    <li><a href="./rdp.html" style="cursor: pointer;">RDP <span id="rdp" class="label label-info"></span></a></li>
+                    <li><a href="./shell.html" style="cursor: pointer;">Shell <span id="shell" class="label label-info"></span></a></li>
+                    <li><a href="./cpanel.html" style="cursor: pointer;">cPanel <span id="cpanel" class="label label-info"></span></a></li>
+				<li><a href="./mailer.html">PHP Mailer <span id="mailer" class="label label-info"></span></a></li>
+	<li><a href="./smtp.html">SMTP <span id="smtp" class="label label-info"></span></a></li>
+                    <li><a href="./leads.html">Leads <span id="leads" class="label label-info"></span></a></li>
+                    <li><a href="./scampage.html">Scampage <span id="scams" class="label label-info"></span></a></li>
+                    <li><a href="./tutorial.html">Tutorial/Method <span id="tutorials" class="label label-info"></span></a></li>
+           <li><a href="./banks.html">Bank Accounts <span id="banks" class="label label-info"></span></a></li>
+	      <li><a href="./premium.html">Premium/Shop/Dating <span id="premium" class="label label-info"></span></a></li>		
+            </ul>
+
+
+
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <b><span id="menu-toggle" onmouseover="this.style.cursor='pointer'"><span class="glyphicon glyphicon-indent-right"></span></span></b>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+            <div id="divPage">
+ <script>
+    var v_aa =0;
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        if (v_aa == 1) {
+          $("#menu-toggle").html('<span class="glyphicon glyphicon-indent-right"></span>').show();
+          v_aa =0;
+        }
+        else {
+          $("#menu-toggle").html('<span class="glyphicon glyphicon-indent-left"></span>').show();
+          v_aa =1;     
+        }
+        
+    });
+
+    </script>
+<div class="row">
+<script>
+	$(function() {
+		$(".preload").fadeOut(900, function() {
+			$(".content").fadeIn(0);
+		});
+	});
+	function TabDiv(n,u){
+    $("#all").html('').show();
+    $("#add").html('').show();
+    $("#massadd").html('').show();
+    $("#unsold").html('').show();
+
+    $("#"+n).html('<div id="mydiv"><img  src="../img/loadTab.gif" class="ajax-loader"></div>').show();
+    $.ajax({
+    type:       'GET',
+    url:        u,
+    success:    function(data)
+    {
+    $("#"+n).html(data).show();
+    newTableObject = document.getElementById('table');sorttable.makeSortable(newTableObject);
+    }
+});  
+}
+</script>  
+     <div class="preload">
+<div id="mydiv"><img src="img/wait.gif" class="ajax-loader"></div>  
+
+  </div>
+     <div class="content">
+
+
+
+ <div>
+  <!-- Nav tabs -->
+
+
+
+
+      <div class="well well-sm">
+Hello <span class="label label-primary"> XBASELEET</span><br>
+If you have any <b> Question</b> , <b>Suggestion</b> or <b>Request Please</b> feel free to <a class="label label-default" href="../buyer/tickets.html"><span class="glyphicon glyphicon-pencil"></span> Open Ticket</a>
+<br>
+
+<h4>Your information <small>XBASELEET</small> </h4>
+&nbsp;	&nbsp;	&bull;	Your selling nickname in this shop is <b>seller4</b> <br>
+&nbsp;	&nbsp;	&bull;	You get paid any time you like using Withdraw section<br>
+&nbsp;	&nbsp;	&bull;	You get <b>65%</b> of your sales<br>
+&nbsp;	&nbsp;	&bull;	You can change your bitcoin address from withdrawal section<br>
+&nbsp;	&nbsp;	&bull;	Your bitcoin address is <b>N/A</b><br><br>
+</font>
+</td>
+
+</tr>
+</table>
+				 </div>
+				 </div>
+
+<h4>Top Sellers <small>From Sunday (05/07) to Monday (05/13)</small></h4>
+	<table class="table table-striped table-bordered table-condensed">
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Sales</th>
+    </tr>
+</thead>
+<tbody>
+
+              <tr>
+  <td>1.</td>
+  <td>seller1</td>
+  <td> 0$</td>
+</tr>
+	
+              <tr>
+  <td>2.</td>
+  <td>seller2</td>
+  <td> 0$</td>
+</tr>
+	
+              <tr>
+  <td>3.</td>
+  <td>seller3</td>
+  <td> 0$</td>
+</tr>
+	
+		<tr>
+  <td><b>4.</b></td>
+  <td><b><span class="glyphicon glyphicon-user"></span> seller4</b></td>
+  <td><b>0$</b></td>
+</tr>
+		
+              <tr>
+  <td>5.</td>
+  <td>seller5</td>
+  <td> 0$</td>
+</tr>
+	
+	</tr>    
+</tbody>
+	</table>
+	    <div class="list-group" id="div2">
+      	<h3><i class="glyphicon glyphicon-info-sign"></i> News</h3>
+		
+                <a class="list-group-item"><h5 class="list-group-item-heading"><b>Bugs Fixed!</b></h5><h6 class="list-group-item-text">2020-03-23 22:29:26</h6></a><a class="list-group-item"><h5 class="list-group-item-heading"><b>New Accounts Addeded</b></h5><h6 class="list-group-item-text">2020-03-23 22:29:14</h6></a><a class="list-group-item"><h5 class="list-group-item-heading"><b>Bugs Updated</b></h5><h6 class="list-group-item-text">2020-03-23 22:28:56</h6></a>
+				 </div>
+
+
+
+
+</body></html>
+
+        </article>
+						
+						</ul>            
+		
+ 
   <?php
 $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'") or die(mysqli_error());

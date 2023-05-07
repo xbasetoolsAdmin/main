@@ -27,3 +27,21 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
   <td><span id='buy_1339048'><button type="button" class="btn btn-primary btn" onclick='buyit(1339048,"d003182b4fa6c83c6180d53f5ec25f2f",7);'>Buy</button></span></td>      
 </tr>
+
+
+</div>
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Olux Shop</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" id="modelbody"></div>
+      <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

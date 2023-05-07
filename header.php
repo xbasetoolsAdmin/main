@@ -10,470 +10,268 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+<!doctype html>
+<html>
+<head>
+	<script src="{SERVER_BASE_URL}/static/js/jquery-3.4.1.min.js" ></script>
+  	<script src="{SERVER_BASE_URL}/static/js/popper.min.js"></script>
+  		<link rel="stylesheet" href="{SERVER_BASE_URL}/static/css/bootstrap.min.css">
+	<script src="{SERVER_BASE_URL}/static/js/bootstrap.min.js"></script>
 
-<!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Main - Admin Panel</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/all.min.css">
-	<link href="assets/css/style.min.css" rel="stylesheet">	
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="files/css/flags.css">
-	<link rel="stylesheet" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
-	<style>body{padding-top:80px}</style>
-	<font face="Arial">
-<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/bootbox.min.js"></script>
-<script type="text/javascript" src="assets/js/bootbox.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script src="assets/main.js"></script>
-<script type="text/javascript">
-            // Notice how this gets configured before we load Font Awesome
-            window.FontAwesomeConfig = { autoReplaceSvg: false }
-</script>
-<style>
-            @import url(//fonts.googleapis.com/css?family=Roboto:400);
-            .navbar-nav .dropdown-menu
-            {
-            margin:0 !important
-            }
-			</style>		
-            </head>
-<style>
 
-</style>
+	<link href="{SERVER_BASE_URL}/static/css/bootstrap-glyphicons.min.css?5" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{SERVER_BASE_URL}/static/css/flags.css" />
 
-<body class="them">
- <style>
-        .navbar-nav .dropdown-menu {
-            margin: 0 !important
-        }
- 
-        .theme-light {
-            --color-primary: #0060df;
-            --color-secondary: #ffffff;
-            --color-secondary2: #ecf0f1;
-            --color-accent: #fd6f53;
-            --font-color: #000000;
-            --color-nav: #ffffff;
-            --color-dropdown: #ffffff;
-            --color-card: #ffffff;
-            --color-card2: #d1ecf1;
-            --color-info: #0c5460;
-            --color-backinfo: #d1ecf1;
-            --color-borderinfo: #bee5eb;
- 
-        }
- 
-        .theme-dark {
-            --color-primary: #17ed90;
-            --color-secondary: #353B50;
-            --color-secondary2: #353B50;
-            --color-accent: #12cdea;
-            --font-color: #ffffff;
-            --color-nav: #363947;
-            --color-dropdown: rgba(171, 205, 239, 0.3);
-            --color-card: #262A37;
-            --color-card2: #262A37;
-            --color-info: #4DD0E1;
-            --color-backinfo: #262A37;
-            --color-borderinfo: #262A37;
-        }
- 
-        .them {
- 
-            background: var(--color-secondary);
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
- 
-        .them h1 {
-            color: var(--font-color);
-            font-family: sans-serif;
-        }
- 
-        .card-body {
-            color: var(--font-color);
-        }
- 
-        .them button {
-            color: var(--font-color);
-            background-color: #ffffff;
-            padding: 10px 20px;
-            border: 0;
-            border-radius: 5px;
-        }
- 
-        .navbar.navbar-light .navbar-toggler {
-            color: var(--font-color);
-        }
- 
-        /* The switch - the box around the slider */
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
- 
-        /* Hide default HTML checkbox */
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        } 
- 
-        /* The slider */
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: 0.4s;
-            transition: 0.4s;
-        }
- 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 40px;
-            width: 40px;
-            left: 0px;
-            bottom: 4px;
-            top: 0;
-            bottom: 0;
-            margin: auto 0;
-            -webkit-transition: 0.4s;
-            transition: 0.4s;
-            box-shadow: 0 0px 15px #2020203d;
-            background: white url('https://i.ibb.co/FxzBYR9/night.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
- 
-        input:checked+.slider {
-            background-color: #2196f3;
-        }
- 
-        input:focus+.slider {
-            box-shadow: 0 0 1px #2196f3;
-        }
- 
-        input:checked+.slider:before {
-            -webkit-transform: translateX(24px);
-            -ms-transform: translateX(24px);
-            transform: translateX(24px);
-            background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
- 
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 34px;
-        }
- 
-        .slider.round:before {
-            border-radius: 50%;
-        }
+
+	<script type="text/javascript" src="{SERVER_BASE_URL}/static/js/sorttable.js?2"></script>
+	<script type="text/javascript" src="{SERVER_BASE_URL}/static/js/table-head.js?2"></script>
+	<script type="text/javascript" src="{SERVER_BASE_URL}/static/js/bootbox.min.js?2"></script>
+	<script type="text/javascript" src="{SERVER_BASE_URL}/static/js/clipboard.min.js?4"></script>
+
+	<link rel="shortcut icon" href="files/img/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="files/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="files/img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="files/img/favicon-16x16.png">
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
+	<meta name="referrer" content="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+
+	<title>OluxShop</title>
+	<script type="text/javascript">
+		function ajaxinfo() {
+			$.ajax({
+				type: 'GET',
+				url: 'ajaxinfo.html?x=1364d4v2t2-' + Math.random(),
+				timeout: 10000,
+
+				success: function (data) {
+					if (data != '01') {
+						var data = JSON.parse(data);
+						for (var prop in data) {
+							$("#" + prop).html(data[prop]).show();
+						}
+					} else {
+						window.location = "logout.html";
+					}
+				}
+			});
+
+		}
+		setInterval(function () {ajaxinfo()}, 60000);
+		var cntrlIsPressed = false;	
+		$(document).keydown(function(event){
+		    if(event.which=="17")
+		        cntrlIsPressed = true;
+		    else 
+		    	cntrlIsPressed = false;
+		});
+
+		$(document).keyup(function(){
+		    cntrlIsPressed = false;
+		});
+
+	/*
+		function pageDiv(n, t, u, x) {
+
+
+			if (cntrlIsPressed) {
+				var win = window.open(u, '_blank');
+  				win.focus();
+				return false;
+			}
+			if (x == 1) {
+				ajaxinfo();
+			}
+			var obj = {
+				Title: t,
+				Url: u
+			};
+			 if (("/" + obj.Url) != location.pathname) {
+				if (x != 1) {
+					history.pushState(obj, obj.Title, obj.Url);
+				} else {
+					history.replaceState(obj, obj.Title, obj.Url);
+				}
+				}
+			
+
+			
+			document.title = obj.Title;
+			$("#mainDiv").html('<div id="mydiv"><img src="{SERVER_BASE_URL}/static/img/load2.gif" class="ajax-loader"></div>').show();
+			$.ajax({
+				type: 'GET',
+				url: 'divPage' + n + '.html?x=' + Math.random(),
+				success: function (data) {
+					$("#mainDiv").html(data).show();
+					var newTableObject = document.getElementById('table');
+					if (newTableObject){
+						sorttable.makeSortable(newTableObject);
+						$(".sticky-header").floatThead({
+							top: 60
+						});
+					}
+					if (x == 0) {
+						ajaxinfo();
+					}
+				}
+			});
+			if (typeof stopCheckBTC === 'function') {
+				var a = stopCheckBTC();
+			}
+
+		}
+*/
+		$(window).on("popstate", function (e) {
+			//location.replace(document.location);
+
+		});
+
+		$(window).on('load', function () {
 	
-</style>
+			//pageDiv(1,'RDP - OluxShop','rdp.html', 1);
+			//new ClipboardJS('.copyit');
+			var clipboard = new ClipboardJS('.copyit');
+			clipboard.on('success', function (e) {
+				setTooltip(e.trigger, 'Copied!');
+				hideTooltip(e.trigger);
+				e.clearSelection();
+			});
 
-<style>
-    .display td {
-        background: var(--color-card);
-        color: var(--font-color);
- 
-    }
- 
-    .dataTables_wrapper .dataTables_paginate .paginate_button {
- 
-        color: var(--font-color);
- 
-    }
- 
-    .dataTable_paginate .paginate_button {
-        color: var(--font-color);
- 
-    }
- 
-    .alert-info {
-        color: var(--color-info);
-        background-color: var(--color-backinfo);
-        border-color: var(--color-borderinfo);
- 
-    }
- 
-    .dataTable_filter {
-        color: var(--font-color);
-		
-    }
- 
-    .dataTable_length {
-        color: var(--font-color);
-    }
- 
-    .dataTable_paginate {
-        color: var(--font-color);
-    }
- 
-    .dataTable_info {
-        color: var(--font-color);
-    }
-</style>
+		});
 
- <style>
- 
- 
-</style>
+		function setTooltip(btn, message) {
+			$(btn).tooltip('hide')
+				.attr('data-original-title', message)
+				.tooltip('show');
+		}
 
-<header>
+		function hideTooltip(btn) {
+			setTimeout(function () {
+				$(btn).tooltip('hide');
+			}, 1000);
+		}
+		function openitem(order,code){
+		  $("#myModalLabel").text('Order #'+order);
+		  $("#modelbody").html('');
+		  $('#myModal').modal('show');
+		  $.ajax({
+		    type:       'GET',
+		    url:        'showOrder'+order+'-'+code+'.html',
+		    success:    function(data)
+		    {
+		        $("#modelbody").html(data);
+		    }});
 
-<script>
-
-        function setTheme(themeName) {
-            localStorage.setItem('theme', themeName);
-            document.documentElement.className = themeName;
-        }
-
-        // function to toggle between light and dark theme
-        function toggleTheme() {
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-light');
-            } else {
-                setTheme('theme-dark');
-            }
-        }
-
-        // Immediately invoked function to set the theme on initial load
-        (function () {
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-dark');
-                document.getElementById('slider').checked = false;
-            } else {
-                setTheme('theme-light');
-              document.getElementById('slider').checked = true;
-            }
-        })();
-
-  </script>
-    <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
-    <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
-                                                          position:fixed;
-                                                          background-color: var(--color-nav);
-                                                          z-index:1;
-                                                          top:0;
-                                                          left:0;
-                                                          right:0;
-                                                          line-height: 1.5;
-                                                          font-family: 'Lato', sans-serif;
-                                                          font-size: 15px;
-                                                          padding-top: 0.5rem;
-                                                          padding-right: 1rem;
-                                                          padding-bottom: 0.5rem;
-                                                          padding-left: 1rem;">
-        <!-----------------------------------------------------------end custom navbar meunu----------------------------------------------------------->
- 
-        <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="../assets/images/logo.png"> XBASELEET</a>
-        
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
-        </button>
-        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
- 
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
- 
-                <!-----------------------------------------------------------START ACCOUNTS NAVBAR MENU----------------------------------------------------------->
-                
-                
-                
-                <li class="nav-item dropdown mr-auto"><a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-friends fa-sm"></i> Accounts</a>
-                    
-                    
-                    
-                    
-                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="accounts-1" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-comments-dollar"></i> Leads <span class="badge badge-primary"><span id="leads"></span></span></a>
-                    </div>
-                </li>
-                <!-----------------------------------------------------------END ACCOUNTS NAVBAR MENU----------------------------------------------------------->
- 
-                <!-----------------------------------------------------------START OFFERS NAVBAR MENU----------------------------------------------------------->
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" role="button" style="color: var(--font-color);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-drupal text-primary fa-sm"></i> sellers</a>
-                    
-                    
-                    
-                    
-                    
-                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i> Buyers Requests <span class="badge badge-primary"></span></span></a></div>
-                </li>
-                <!-----------------------------------------------------------END OFFERS NAVBAR MENU----------------------------------------------------------->
- 
- 
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="offers" style="color: var(--font-color);"><i class="fas fa-user-secret text-primary fa-sm"></i> Bulk Offers</a>
-                </li>
-            </ul>
-            
-
-            <ul class="navbar-nav profile">
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
- 
- 
-                <li class="nav-item">
-                    <a class="nav-link" href="addBalance" style="color: var(--font-color);" role="button" aria-haspopup="true" aria-expanded="false"><span class="badge badge-danger">
-                            <span class="px-2">
-                                <spam id="balance">
-                                    <i class="fa fa-plus">
- 
-                                    </i>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
- 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Ticket <span class="badge badge-success">0</span></a>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
-                        <a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">Report Items</span></a>
-                        <a class="dropdown-item" href="tickets" style="color: var(--font-color);"><span class="px-2">My Tickets <span class="badge badge-success"><span id="tickets"></span></span></span></a>
- 
- 
- 
- 
- 
- 
-                        <a class="dropdown-item" href="reports" style="color: var(--font-color);"><span class="px-2">My Reports <span class="badge badge-success"><span id="reports"></span></span></a>
-                        <a class="dropdown-item" href="OpenTicket" style="color: var(--font-color);"><span class="px-2">New Ticket</span></a>
-                    </div>
-                </li>
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
- 
- 
- 
-                <!-----------------------------------------------------------start custom navbar meunu----------------------------------------------------------->
-
-
-
-                <li class="nav-item dropdown">
-            
-
-    <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> XBASELEET <i class="fa fa-user-secret" style="color: var(--font-color);"></i></a>
-                    </a>
-                    
-
-<li class="nav-item dropdown">
-    
-    
-    
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
-            
-            
-    <a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog"></i></span></a>
-                   
-
-
-     <!--<a class="dropdown-item" href="seller-profile" style="color: var(--font-color);"><span class="px-2">Profile <i class="fa fa-user"></i></span></a>--->
-    
-    
-     <a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">My Orders <i class="fa fa-shopping-cart"></i></span></a>
-    
-        <a class="dropdown-item" href="addBalance" style="color: var(--font-color);"><span class="px-2">Add Balance <i class="fa fa-money-bill-alt"></i></span></a>
-    
-         <a class="dropdown-item" href="logout" style="color: var(--font-color);"><span class="px-2">Logout <i class="fa fa-door-open"></i></span></a>
-                    </div>
-            </ul>
-            </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    
-<style>.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger .modal-body,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger .modal-body{
-	    padding-top: 35px;
-}
-.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger {
-    max-width: 500px !important;
-    margin: 1.75rem auto !important;
-    position: relative;
-    width: auto !important;
-    pointer-events: none;
-}
-a.closearb {
-    position: absolute;
-    top: 2.5px;
-    right: 2.5px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    text-indent: -9999px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
-}
-</style> 
-
-</style>
-<script type=“text/javascript”>
-    function ajaxinfo(){
-      $.ajax({
-      type:       ‘GET’,
-      url:        ‘ajaxinfo.html’,
-      timeout: 10000 ,
-
-       success: function(data){
-           if (data != ‘01’){
-            
-            var data = JSON.parse(data);
-              for (var prop in data) {
-            $(“#”+prop).html(data[prop] ).show();
-                }
-              }
-              else {
-                window.location = “logout.html”;
-              }
-           }
-         });
-
-  }
-    setInterval(function(){ajaxinfo()}, 3000);
-
- ajaxinfo();
+		}
 	</script>
-<div class="d-flex flex-row-reverse mt-0">
-<div class="p-2">
-<label id="switch" class="switch">
-<input type="checkbox" onchange="toggleTheme()" id="slider">
-<span class="slider round">
-</span>
-</label>
-</div>
-</div>
-  
-				
+		<style type="text/css">
+			.dropdown:hover>.dropdown-menu {
+  				display: block;
+  				margin:0rem;
+			}
+			.dropdown > .dropdown-toggle:active {
+   				pointer-events: none;
+			}
+			#mydiv  {
+				height: 600px;
+				position: relative;
+			}
+			.ajax-loader {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto; /* presto! */
+			}
+			body {
+    			padding-top:75px;
+			}
+			table.floatThead-table {
+			    border-top: none;
+			    border-bottom: none;
+			    background-color: #fff;
+			    cursor: pointer;
+			}
+			table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+			    content: " \25BE" 
+			}
+		</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand navbar-dark bg-primary  fixed-top">
+		<a class="navbar-brand d-none d-lg-block" href="/index" ><span class="glyphicon glyphicon-fire"></span> <span> Olux Shop</span></a>
+		<a class="navbar-brand d-block d-lg-none" href="/index" ><span class="glyphicon glyphicon-fire"></span> <span></span></a>
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+			 	<ul class="navbar-nav">
+			 		<li class="nav-item dropdown">
+			 			<a class="nav-link dropdown-toggle d-none d-md-block" data-toggle="dropdown" href="#" id="hosts" role="button"><i class="fas fa-server"></i> Hosts  <span class="caret"></span></a>
+			 			<a class="nav-link dropdown-toggle d-block d-md-none" data-toggle="dropdown" href="#" id="hosts" role="button"><i class="fas fa-server"></i><span class="caret"></span></a>
+			 				<div class="dropdown-menu" aria-labelledby="hosts">
+			 					<a class="dropdown-item" href="/rdp" onclick="pageDiv(1,'RDP - OluxShop','rdp.html',0); return false;"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-light" id="rdp"></span></a>
+			 					<a class="dropdown-item" href="/ssh" onclick="pageDiv(2,'Root SSH/WHM - OluxShop','ssh.html',0); return false;"><i class="fas fa-terminal fa-fw"></i> SSH(VPS) <span class="badge badge-light" id="ssh"></span></a>
+			 					<a class="dropdown-item" href="/cPanel" onclick="pageDiv(3,'cPanel - OluxShop','cPanel.html',0); return false;"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-light" id="cpanel"></span></a>
+			 					<a class="dropdown-item" href="/shell" onclick="pageDiv(4,'Shell - OluxShop','shell.html',0); return false;"><i class="fas fa-file-code fa-fw"></i> Shells <span class="badge badge-light" id="shell"></span></a>
+			 				</div>
+			 		</li>
+			 		<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle d-none d-md-block" data-toggle="dropdown" href="#" id="mail"><i class="fas fa-mail-bulk"></i> Send <span class="caret"></span></a>
+						<a class="nav-link dropdown-toggle d-block d-md-none" data-toggle="dropdown" href="#" id="mail"><i class="fas fa-mail-bulk"></i><span class="caret"></span></a>
+
+			 				<div class="dropdown-menu" aria-labelledby="send">
+			 					<a class="dropdown-item" href="/mailer" onclick="pageDiv(5,'PHP Mailer - OluxShop','mailer.html',0); return false;"><i class="fas fa-leaf fa-fw"></i> PHP Mailers <span class="badge badge-light" id="mailer"></span></a>
+			 					<a class="dropdown-item" href="/smtp" onclick="pageDiv(6,'SMTP - OluxShop','smtp.html',0); return false;"><i class="fas fa-envelope fa-fw"></i> SMTPs <span class="badge badge-light" id="smtp"></span></a>
+			 				</div>						
+					</li>
+			 		<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle d-none d-md-block" data-toggle="dropdown" href="#" id="maillist"><i class="fas fa-address-book"></i></i> Leads <span class="caret"></span></a>
+						<a class="nav-link dropdown-toggle d-block d-md-none" data-toggle="dropdown" href="#" id="maillist"><i class="fas fa-address-book"></i></i><span class="caret"></span></a>
+
+			 				<div class="dropdown-menu" aria-labelledby="maillist">
+			 					<a class="dropdown-item" href="/leads" onclick="pageDiv(7,'Leads - OluxShop','leads.html',0); return false;"><i class="fas fa-at fa-fw"></i> Leads <span class="badge badge-light" id="leads"></span></a>
+			 				</div>						
+					</li>
+			 	</ul>
+			 	<ul  class="navbar-nav ml-auto">
+					<li class="nav-item" >
+						<a href="seller" id="seller"></a>
+					</li>
+			 		<li class="nav-item dropdown">
+			 			<a class="nav-link dropdown-toggle d-none d-md-block" data-toggle="dropdown" href="#" id="mytickets" role="button"><i class="fas fa-inbox"></i> Tickets <span id="alltickets"></span> <span class="caret"></span></a>
+			 			<a class="nav-link dropdown-toggle d-block d-md-none" data-toggle="dropdown" href="#" id="mytickets" role="button"><i class="fas fa-inbox"></i><span id="alltickets"></span> <span class="caret"></span></a>
+			 				<div class="dropdown-menu" aria-labelledby="mytickets">
+			 					<a class="dropdown-item" href="/oluxclone/support/tickets" onclick="pageDiv(9,'Tickets - OluxShop','tickets.html',0); return false;"><i class="fas fa-comments fa-fw"></i> Tickets <span id="tickets"></span></a>
+			 					<a class="dropdown-item" href="/oluxclone/support/reports" onclick="pageDiv(10,'Reports - OluxShop','reports.html',0); return false;"><i class="fas fa-flag fa-fw"></i> Reports <span  id="reports"></span></a>
+			 				</div>
+
+			 		</li>
+					<li class="nav-item" >
+													<a  class="btn btn-outline-info" href="addBalance.html" onclick="pageDiv(11,'Add Balance - OluxShop','addBalance.html',0); return false;"><span id="balance"></span> <i class="fas fa-plus-circle"></i></a>
+											</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle d-none d-md-block" data-toggle="dropdown" href="#" id="account" role="button"><i class="fas fa-user"></i> My Account<span class="caret"></span></a>
+						<a class="nav-link dropdown-toggle d-block d-md-none" data-toggle="dropdown" href="#" id="account" role="button"><i class="fas fa-user"></i><span class="caret"></span></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="account">
+								<a class="dropdown-item" href="setting.html" onclick="pageDiv(12,'Setting - OluxShop','setting.html',0); return false;"><i class="fas fa-user-cog fa-fw"></i> Setting</a>
+								<a class="dropdown-item" href="/oluxclone/account/orders" onclick="pageDiv(13,'Orders - OluxShop','orders.html',0); return false;"><i class="fas fa-shopping-cart fa-fw"></i> My Orders</a>
+								<a class="dropdown-item"  href="addBalance.html" onclick="pageDiv(11,'Add Balance - OluxShop','addBalance.html',0); return false;"><i class="fas fa-dollar-sign fa-fw"></i> Add Balance</a>
+								<a class="dropdown-item" href="logout.html" ><i class="fas fa-sign-out-alt fa-fw"></i> Logout</a>
+							</div>
+					</li>			 		
+			 		
+			 	</ul>
+					
+
+			 </div>
+
+	</nav>
+	<div class="container">

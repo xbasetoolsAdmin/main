@@ -225,7 +225,7 @@ $('.dropdown').hover(
   function(){ 
   $('.dropdown-toggle', this).trigger('click'); 
   });
-   pageDiv(0,'Main - XbaseTools','',1);
+   pageDiv(0,'-','',);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');
@@ -478,7 +478,7 @@ $('.dropdown').hover(
   function(){ 
   $('.dropdown-toggle', this).trigger('click'); 
   });
-   pageDiv(1,'rdp','',1);
+   pageDiv(1,'rdp','',);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');

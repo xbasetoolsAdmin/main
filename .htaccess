@@ -1,6 +1,8 @@
 ErrorDocument 404 /index.html
 RewriteEngine on
 Options -Indexes
+ 
+ 
 RewriteRule ^main$  index.php
 RewriteRule ^signup.html$  signup.php
 RewriteRule ^forget.html$  forget.php
@@ -15,15 +17,15 @@ RewriteRule ^passform.html$  passform.php
 RewriteRule ^index.php$  index.php
 RewriteRule ^ajaxinfo.html$  ajax.php
 RewriteRule ^mailer$  mailer.php
-RewriteRule ^shell$  shell.php
+RewriteRule ^shells$  shell.php
 RewriteRule ^leads$  leads.php
 RewriteRule ^premium$  premium.php
-RewriteRule ^addBalance$  addBalance.php
+RewriteRule ^addBalance$  addBalance.php 
 RewriteRule ^divPage1.html$  divPage1.php
 RewriteRule ^divPage2.html$  divPage2.php
 RewriteRule ^divPage3.html$  divPage3.php
 RewriteRule ^divPage4.html$  divPage4.php
-RewriteRule ^divPage5.html$  divPage5.php
+RewriteRule ^divPage5.html$  divPage5.photos p
 RewriteRule ^divPage6.html$  divPage6.php
 RewriteRule ^divPage7.html$  divPage7.php
 RewriteRule ^divPage8.html$  divPage8.php
@@ -38,31 +40,31 @@ RewriteRule ^divPage0.html$  divPage0.php
 RewriteRule ^settingEdit.html$  settingEdit.php
 RewriteRule ^CreateTicket$  tticket.php
 RewriteRule ^CreateReport$  treport.php
-RewriteRule ^addBalance$  funds.php
-RewriteRule ^addBalanceAction.html$  addBalanceAction.php
+RewriteRule ^addBalance.html$  funds.php
+RewriteRule ^addBalanceAction$  addBalanceAction.php
 RewriteRule ^rdp$  rdp.php
 RewriteRule ^tutorial$  tutorial.php
-RewriteRule ^MakePayment$  pay.php
-RewriteRule ^BitcoinPayment$  btc3.php
+RewriteRule ^pay$  pay.php
+RewriteRule ^btc3$  btc3.php
 RewriteRule ^banks$  banks.php
-RewriteRule ^PerfectMoneyPayment$  pm3.php
+RewriteRule ^pm3$  pm3.php
 RewriteRule ^tickets$  tickets.php
 RewriteRule ^becomeseller$  becomeseller.php
-RewriteRule ^scampage.html$  scampage.php
-RewriteRule ^logout.html$  logout.php
-RewriteRule ^active.html$  active.php
-RewriteRule ^orders.html$  orders.php
-RewriteRule ^setting.html$  setting.php
-RewriteRule ^static.html$  static.php
+RewriteRule ^scampage$  scampage.php
+RewriteRule ^logout$  logout.php
+RewriteRule ^active$  active.php
+RewriteRule ^orders$  orders.php
+RewriteRule ^setting$  setting.php
+RewriteRule ^static$  static.php
 RewriteRule ^seller.html$  rindex.php
-RewriteRule ^smtp.html$  smtp.php
-RewriteRule ^AddSingleTool.html$  addt.php
-RewriteRule ^cpanels$  cPanel.php
+RewriteRule ^smtp$  smtp.php
+RewriteRule ^addt$  addt.php
+RewriteRule ^cpanels$  cpanels.php
 RewriteRule ^checkEmailChange$  checkEmailChange.php
 RewriteRule ^reports$  reports.php
 RewriteRule ^shoprules$  shoprules.php
-RewriteRule ^profile.html$  profile.php
-RewriteRule ^AddCards.html$  addc.php
+RewriteRule ^profile$  profile.php
+RewriteRule ^addc$  addc.php
 RewriteRule ^vt-(.*).html$ vt.php?id=$1
 RewriteRule ^vr-(.*).html$ vr.php?id=$1
 RewriteRule ^divPageticket(.*).html$ divPageticket.php?id=$1
@@ -76,9 +78,9 @@ RewriteRule ^showOrder(.*).html$ openorder.php?id=$1
 RewriteRule ^addReply(.*).html$ addReply.php?id=$1
 RewriteRule ^addReportReply(.*).html$ addReportReply.php?id=$1
 RewriteRule ^divPagepayment(.*).html$ divPagepayment.php?p_data=$1
-RewriteRule ^Check$ check.php
-RewriteRule ^PMCheck$ PMcheck.php
-RewriteRule ^Payment$ payment.php
+RewriteRule ^check$ check.php
+RewriteRule ^PMcheck$ PMcheck.php
+RewriteRule ^payment$ payment.php
 
 Order Deny,Allow
 Deny from 172.68.62.30

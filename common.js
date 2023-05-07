@@ -225,7 +225,7 @@ $('.dropdown').hover(
   function(){ 
   $('.dropdown-toggle', this).trigger('click'); 
   });
-   pageDiv(0,'Main - XbaseTools','index.html',1);
+   pageDiv(0,'Main - XbaseTools','',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');

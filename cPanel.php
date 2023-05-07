@@ -11,181 +11,84 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 <!doctype html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
- <script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
-<script type="text/javascript" src="files/js/sorttable.js"></script>
-<script type="text/javascript" src="files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="files/js/bootbox.min.js"></script>
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
 
-<link rel="shortcut icon" href="files/img/favicon.ico" />
-	
-	
-<script type="text/javascript" src="code,jquery.com/jquery-3.5.1.min.js?1"></script>
-<script type="text/javascript" src="common.js"></script>
-<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
- <meta name="referrer" content="no-referrer" />
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" data-toggle="tab" href="#filter"><i class="fas fa-filter"></i> Filter</a>
+	</li>
+</ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade show active" id="filter">
+		<table class="table table-borderless "><thead><tr><th class='sorttable_nosort'>Country</th>
+<th class='sorttable_nosort'>Domain TLD</th>
+<th class='sorttable_nosort'>SSL</th>
+<th class='sorttable_nosort'>Detected Hosting</th>
+<th class='sorttable_nosort'>Seller</th>
+<th class='sorttable_nosort'></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="cpanel_country"><option value="">ALL</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Bahrain">Bahrain</option><option value="Belarus">Belarus</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Brazil">Brazil</option><option value="Bulgaria">Bulgaria</option><option value="Cambodia">Cambodia</option><option value="Canada">Canada</option><option value="Chile">Chile</option><option value="Colombia">Colombia</option><option value="Croatia">Croatia</option><option value="Egypt">Egypt</option><option value="Finland">Finland</option><option value="France">France</option><option value="Germany">Germany</option><option value="Hong Kong">Hong Kong</option><option value="Hungary">Hungary</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Ireland">Ireland</option><option value="Italy">Italy</option><option value="Japan">Japan</option><option value="Lithuania">Lithuania</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="New Zealand">New Zealand</option><option value="Norway">Norway</option><option value="Philippines">Philippines</option><option value="Poland">Poland</option><option value="Republic of Moldova">Republic of Moldova</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Serbia">Serbia</option><option value="Singapore">Singapore</option><option value="South Africa">South Africa</option><option value="South Korea">South Korea</option><option value="Spain">Spain</option><option value="Sweden">Sweden</option><option value="Turkey">Turkey</option><option value="United Kingdom">United Kingdom</option><option value="United States">United States</option><option value="Vietnam">Vietnam</option><option value="Zimbabwe">Zimbabwe</option></select></td><td><input class='filterinput form-control input-sm' name="cpanel_tld" size='3'></td><td><select class='filterselect form-control input-sm' name="cpanel_https"><option value="">ALL</option><option value="HTTPS">HTTPS</option><option value="HTTP">HTTP</option></select></td><td><input class='filterinput form-control input-sm' name="cpanel_hosting" size='3'></td><td><select class='filterselect form-control input-sm' name="cpanel_seller"><option value="">ALL</option><option value="seller18">seller18</option><option value="seller25">seller25</option><option value="seller26">seller26</option><option value="seller27">seller27</option><option value="seller34">seller34</option><option value="seller42">seller42</option><option value="seller44">seller44</option><option value="seller50">seller50</option><option value="seller51">seller51</option><option value="seller57">seller57</option><option value="seller61">seller61</option><option value="seller73">seller73</option><option value="seller74">seller74</option><option value="seller75">seller75</option><option value="seller82">seller82</option><option value="seller90">seller90</option><option value="seller94">seller94</option><option value="seller97">seller97</option><option value="seller98">seller98</option><option value="seller102">seller102</option><option value="seller114">seller114</option><option value="seller115">seller115</option><option value="seller118">seller118</option><option value="seller120">seller120</option><option value="seller125">seller125</option><option value="seller126">seller126</option><option value="seller127">seller127</option><option value="seller130">seller130</option><option value="seller131">seller131</option><option value="seller132">seller132</option><option value="seller139">seller139</option><option value="seller141">seller141</option><option value="seller145">seller145</option><option value="seller148">seller148</option><option value="seller150">seller150</option><option value="seller151">seller151</option><option value="seller156">seller156</option><option value="seller158">seller158</option><option value="seller159">seller159</option><option value="seller163">seller163</option><option value="seller165">seller165</option><option value="seller166">seller166</option><option value="seller172">seller172</option><option value="seller173">seller173</option><option value="seller180">seller180</option><option value="seller184">seller184</option><option value="seller185">seller185</option><option value="seller189">seller189</option><option value="seller190">seller190</option><option value="seller191">seller191</option><option value="seller194">seller194</option><option value="seller195">seller195</option><option value="seller201">seller201</option><option value="seller202">seller202</option></select></td><td><button id='filterbutton'class="btn btn-primary btn" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table>	</div>
+</div>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<title>JeruxShop</title>
-</head>
-<style>
-#table {
-  .sortable
-}
-table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25BE" 
-}
+<table width="100%"  class="table table-striped table-bordered sticky-header table-sm" id="table">
+<thead>
+    <tr>
+      <th scope="col" >Country</th>
+      <th scope="col">TLD</th>
+      <th style="width: 7%" scope="col">SSL</th>
+      <th scope="col">Detected Hosting</th>
+      <th scope="col">Seller</th>
+      <th style="width: 7%" scope="col">Check</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+      <th style="width: 10%" scope="col" class="sorttable_nosort">Buy</th>
+    </tr>
+</thead>
+  <tbody>
+    {items}
+  </tbody>
+</table>
+<script type="text/javascript">
+$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#cpanel_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#cpanel_tld").text().toLowerCase() );var ck3 = $.trim( $(this).find("#cpanel_https").text().toLowerCase() );var ck4 = $.trim( $(this).find("#cpanel_hosting").text().toLowerCase() );var ck5 = $.trim( $(this).find("#cpanel_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="cpanel_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="cpanel_tld"]').val().toLowerCase() );var val3 = $.trim( $('select[name="cpanel_https"]').val().toLowerCase() );var val4 = $.trim( $('input[name="cpanel_hosting"]').val().toLowerCase() );var val5 = $.trim( $('select[name="cpanel_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' ) || ck4.indexOf(val4)==-1 || (ck5 != val5 && val5 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
+function buyit(id,code,price){
+  bootbox.confirm("Are you sure?", function(result) {
+        if(result ==true){
 
-.label-as-badge {
-    border-radius: 0.5em;
+          balance = $('#balance').text();
+          if (price <= balance){
+              $("#buy_"+id).html('Purchasing...').show();
+              $.ajax({
+                type:       'GET',
+                url:        'cpanelbuy'+id+'-'+code+'.html',
+                success:    function(data)
+                {
+                  $("#buy_"+id).html(data).show();
+                  ajaxinfo();
+                }});
+          }
+          else {
+            bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>', function() {});}}
+  });
 }
+g:xcheck=0;
 
-body {
-    padding-top:50px;
-}
-table.floatThead-table {
-    border-top: none;
-    border-bottom: none;
-    background-color: #fff;
-}
-@media (min-width: 768px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
+function check(id,code){
+  //xcheck=0;
+  if(xcheck > 4){
+    bootbox.alert("<b>Wait</b> - Other checking operation is being executed!");
+  }
+  else {
+    xcheck++;
+    $("#check_"+id).html('Checking...').show();
+    $.ajax({
+      type:       'GET',
+      url:        '/cpanelcheck'+id+'-'+code+'.html',
+      success:    function(data)
+      {
+        $("#check_"+id).html(data).show();
+         xcheck--;
+      }
+    ,error: function (request, status, error) {$("#check_"+id).html('<span class="label label-default">Unknown</span>').show();xcheck=0;}
+  });
+   
   }
 }
 
-#mydiv {
-  height: 400px;
-  position: relative;
-}
-.ajax-loader {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; /* presto! */
-
-}
-
-   
-    
-
-</style>
-
-		<style>
-            .navbar {
-                background-color: #001f3f;
-            }
-        </style>
-<body style="padding-top: 70px; padding-bottom: 70px;">
-
-<nav class="navbar navbar-default navbar-fixed-top ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-    <div class="navbar-brand" onClick="location.href='index.html'" onMouseOver="this.style.cursor='pointer'"><b><span class="glyphicon glyphicon-fire"></span> Jerux SHOP <small><span class="glyphicon glyphicon-refresh"></span></small></b></div></div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="topFixedNavbar1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hosts <span class="glyphicon glyphicon-chevron-down" id="alhosts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="rdp.html" onclick="pageDiv(1,'RDP - JeruxShop','rdp.html',0); return false;">RDPs <span class="label label-primary label-as-badge" id="rdp"></span></a></li>
-            <li><a href="cPanel.html" onclick="pageDiv(2,'cPanel - JeruxShop','cPanel.html',0); return false;">cPanels <span class="label label-primary label-as-badge" id="cpanel"></span></a></li>
-            <li><a href="shell.html" onclick="pageDiv(3,'Shell - JeruxShop','shell.html',0); return false;">Shells <span class="label label-primary label-as-badge" id="shell"></span></a></li>  
-          </ul>
-        </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Send <span class="glyphicon glyphicon-chevron-down" id="mail"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="mailer.html" onclick="pageDiv(4,'PHP Mailer - JeruxShop','mailer.html',0); return false;">Mailers <span class="label label-primary label-as-badge" id="mailer"></span></a></li>
-            <li><a href="smtp.html" onclick="pageDiv(5,'SMTP - JeruxShop','smtp.html',0); return false;">SMTPs <span class="label label-primary label-as-badge" id="smtp"></span></a></li>  
-          </ul>
-        </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Leads <span class="glyphicon glyphicon-chevron-down" id="all_leads"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="leads.html" onclick="pageDiv(6,'Leads - JeruxShop','leads.html',0); return false;">Leads <span class="label label-primary label-as-badge" id="leads"></span></a></li>
-          </ul>
-        </li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="glyphicon glyphicon-chevron-down" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="premium.html" onclick="pageDiv(7,'Premium/Dating/Shop - JeruxShop','premium.html',0); return false;">Premium/Dating/Shop <span class="label label-primary label-as-badge" id="premium"></span></a></li>
-            <li><a href="banks.html" onclick="pageDiv(8,'Banks - JeruxShop','banks.html',0); return false;">Banks <span class="label label-primary label-as-badge" id="banks"></span></a></li>  
-          </ul>
-        </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Others <span class="glyphicon glyphicon-chevron-down" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="scampage.html" onclick="pageDiv(9,'Scampages - JeruxShop','scampage.html',0); return false;">Scampage <span class="label label-primary label-as-badge" id="scams"></span></a></li>
-            <li><a href="tutorial.html" onclick="pageDiv(10,'Tutorials - JeruxShop','tutorial.html',0); return false;">Tutorial <span class="label label-primary label-as-badge" id="tutorials"></span></a></li>  
-          </ul>
-        </li>
-                      
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-                        <?php
-$uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-$q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$uid'") or die(mysqli_error());
-$r         = mysqli_fetch_assoc($q);
-$reselerif = $r['resseller'];
-if ($reselerif == "1") {
-    $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-    $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$uid'") or die(mysqli_error());
-    $r = mysqli_fetch_assoc($q);
-
-    echo '<li><a href="https://jerux.to/seller/index.html"><span class="badge" title="Seller Panel"><span class="glyphicon glyphicon-cloud"></span><span id="seller"></span></span></a></li>';
-} else {
-} ?>      
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tickets <span id="alltickets">
-<?php
-$sze112  = mysqli_query($dbcon, "SELECT * FROM ticket WHERE uid='$uid' and seen='1'");
-$r844941 = mysqli_num_rows($sze112);
-if ($r844941 == "1") {
-    echo '<span class="label label-danger">1</span>';
-}
-?>
-</span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="tickets.html" onclick="pageDiv(11,'Tickets - JeruxShop','tickets.html',0); return false;">Tickets <span class="label label-info"><span id="tickets"></span></span>	<?php
-$s1 = mysqli_query($dbcon, "SELECT * FROM ticket WHERE uid='$uid' and seen='1'");
-$r1 = mysqli_num_rows($s1);
-if ($r1 == "1") {
-    echo '<span class="label label-success"> 1 New</span>';
-}
-?></span></a></li>
-            <li><a href="reports.html" onclick="pageDiv(12,'Reports - JeruxShop','reports.html',0); return false;">Reports <span class="label label-info"><span id="reports"></span></span> <?php
-$s1 = mysqli_query($dbcon, "SELECT * FROM reports WHERE uid='$uid' and seen='1'");
-$r1 = mysqli_num_rows($s1);
-if ($r1 == "1") {
-    echo '<span class="label label-success"> 1 New</span>';
-}
-?></span> </a></li>
-
-           </ul>
-        </li>
-
-        <li><a href="addBalance.html" onclick="pageDiv(13,'Add Balance - JeruxShop','addBalance.html',0); return false;"><span class="badge"><b><span id="balance"></span></b> <span class="glyphicon glyphicon-plus"></span><span> </a></li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account  <span class="glyphicon glyphicon-user"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="setting.html" onclick="pageDiv(14,'Setting - JeruxShop','setting.html',0); return false;">Setting <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-            <li><a href="orders.html" onclick="pageDiv(15,'Orders - JeruxShop','orders.html',0); return false;">My Orders <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
-            <li><a href="addBalance.html" onclick="pageDiv(13,'Add Balance - JeruxShop','addBalance.html',0); return false;">Add Balance <span class="glyphicon glyphicon-usd pull-right"></span></a></li>
-            
-            <li class="divider"></li>
-            <li><a href="logout.html" >Logout <span class="glyphicon glyphicon-off pull-right"></span></a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
-<div id="mainDiv"></div>
-
-</body>
-</html>
+</script>

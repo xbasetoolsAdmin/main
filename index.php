@@ -22,10 +22,10 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 	<link rel="stylesheet" type="text/css" href="./assets/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../buyer/assets/flags.css">
   <link rel="stylesheet" type="text/css" href="css/tickets.css">
-	<script type="text/javascript" src="./assets/jquery.js"></script>
-	<script type="text/javascript" src="./assets/bootstrap.js"></script>
-	<script type="text/javascript" src="./assets/bootbox.min.js"></script>
-	<script type="text/javascript" src="./assets/sorttable.js"></script>
+	<script type="text/javascript" src="./assets/css/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="./assets/css/bootstrap.js"></script>
+	<script type="text/javascript" src="./assets/css/bootbox.min.js"></script>
+	<script type="text/javascript" src="./assets/css/sorttable.js"></script>
     <link href="./assets/style.css" rel="stylesheet">
 
     <style>

@@ -16,7 +16,7 @@ RewriteRule ^index.php$  index.php
 RewriteRule ^ajaxinfo.html$  ajax.php
 RewriteRule ^mailer$  mailer.php
 RewriteRule ^shell$  shell.php
-RewriteRule ^leads$  divPage7.php
+RewriteRule ^leads$  leads.php
 RewriteRule ^premium$  premium.php
 RewriteRule ^addBalance$  addBalance.php
 RewriteRule ^divPage1.html$  divPage1.php

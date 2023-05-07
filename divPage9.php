@@ -37,7 +37,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                             <select class='filterselect form-control input-sm' name="scam_seller">
                                 <option value="">ALL</option>
                                 <?php
-$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `scampages` WHERE `sold` = '0' or `sold` = '1' ORDER BY resseller ASC");
+$query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `accounts` WHERE `sold` = '0' or `sold` = '1' ORDER BY resseller ASC");
 	while($row = mysqli_fetch_assoc($query)){
 		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))

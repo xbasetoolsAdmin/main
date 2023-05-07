@@ -185,8 +185,7 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div id="mainDiv">
+<div id="mainDiv"></div>
 
-<?php
-include "ajax/divPage2.php";
-?>
+</body>
+</html>

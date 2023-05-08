@@ -19,7 +19,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <meta name="author" content="">
     <title>Jerux Seller</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="./assets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../buyer/assets/flags.css">
   <link rel="stylesheet" type="text/css" href="css/tickets.css">
 	<script type="text/javascript" src="./assets/css/jquery-3.6.4.min.js"></script>

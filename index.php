@@ -294,9 +294,11 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div id="mainDiv">
+
 
 
 </div>
+
 </body>
+<div id="mainDiv">
 </html>

@@ -15,7 +15,7 @@ RewriteRule ^loginform.html$  loginform.php
 RewriteRule ^signupform.html$  signupform.php
 RewriteRule ^passform.html$  passform.php
 RewriteRule ^index.php$  index.php
-RewriteRule ^load_data$  ajax.php
+RewriteRule ^load_item$  ajax.php
 RewriteRule ^mailer$  mailer.php
 RewriteRule ^shells$  shell.php
 RewriteRule ^leads$  leads.php

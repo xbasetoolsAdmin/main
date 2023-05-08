@@ -70,27 +70,36 @@ $ro = mysqli_fetch_assoc($query);
  <?php
 						   include("cr.php");
 
-     $q = mysqli_query($dbcon, "SELECT * FROM mailers WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+     $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
 
 
  while($row = mysqli_fetch_assoc($q)){
 	 	 	 $countryfullname = $row['country'];
 	  $code = array_search("$countryfullname", $countrycodes);
 	 $countrycode = strtolower($code);
-	     $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
+	    
+     $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   
+      
+      
+      while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr> 
      <td id='mailer_id'> ".htmlspecialchars($row['id'])." </td>
-    <td id='mailer_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+   
+     <td id='mailer_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+    
+    
     <td id='mailer_hosting'> ".htmlspecialchars($row['infos'])." </td>
     <td id='mailer_seller'> ".htmlspecialchars($SellerNick)."</td>
-	";
+	";?>
+  <?php
 			 echo '<td><span id="shop'.$row["id"].'" type="mailer"><a onclick="javascript:check('.$row["id"].');" class="btn btn-info btn-xs"><font color=white>Send</font></a></span></td>';
 	echo "
     <td> ".htmlspecialchars($row['price'])."</td>
-	    <td> ".htmlspecialchars($row['date'])."</td>";
+	    <td> ".htmlspecialchars($row['date'])."</td>";?>
+      <?php
     echo '
     <td>
 <span id="mailer'.$row['id'].'" title="buy" type="mailer"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>

@@ -1,0 +1,1 @@
+$((function(){$(".navbar-nav li.dropdown").hover((function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(100).fadeIn(300)}),(function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(100).fadeOut(300)}))}));

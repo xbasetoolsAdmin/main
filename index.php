@@ -5,7 +5,7 @@ date_default_timezone_set('UTC');
 include "includes/config.php";
 
 if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: login");
+    header("location: login.html");
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     
 
 </style>
+<script type="text/javascript">
 
 </script>
 		<style>
@@ -196,11 +197,5 @@ if ($r1 == "1") {
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
-
-
 </nav>
-<div id="contentDiv">
-
-</body>
-    <script src="buyer/index.js"></script>
-</html>
+<div id="mainDiv">

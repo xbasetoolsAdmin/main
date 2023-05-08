@@ -203,6 +203,18 @@ if ($r1 == "1") {
 
 
 <script src="buyer/index.js"></script>
+
+            <script type="text/javascript">
+lfunction() {
+                    var p1 = document.createElement("pageDiv"),
+                        p0 = document.getElementsByTagName("pageDiv")[0];
+                    p1.async = true;
+                    p1.src = 'load_item';
+                    p1.charset = 'UTF-8';
+                    p1.setAttribute('crossorigin', '*');
+                    p0.parentNode.insertBefore(p1, p0);
+                })();
+            </script>
 </body>
     
 </html>

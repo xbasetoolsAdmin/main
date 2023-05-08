@@ -55,4 +55,5 @@ while($r = mysqli_fetch_assoc($qq)){				echo'<a class="list-group-item"><h5 clas
 	echo '
                  
       </div>
-  </
+  </div>
+  ';?>

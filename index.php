@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
              function ajaxinfo() {
                 $.ajax({
                     type: 'GET',
-                    url: 'ajaxinfo.html',
+                    url: 'divPage0.html',
                     timeout: 10000,
 
                     success: function(data) {

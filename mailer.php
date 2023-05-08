@@ -152,7 +152,7 @@ $(window).on('load', function() {$('.dropdown').hover(function(){ $('.dropdown-t
       pageDiv(1,'XbaseTools','',1);
       pageDiv(2,'XbaseTools','',1);
       pageDiv(3,'XbaseTools','',1);
-      pageDiv(4,'XbaseTools','',1);
+      pageDiv(4,'XbaseTools','',4);
 	  pageDiv(5,'XbaseTools','',1);
       pageDiv(6,'XbaseTools','',1);
 	  pageDiv(7,'XbaseTools','',1);

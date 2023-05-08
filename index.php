@@ -89,7 +89,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     
 
 </style>
-<script type="text/javascript">
+
+<script src="buyer/index.js"></script>
 
 </script>
 		<style>
@@ -199,3 +200,5 @@ if ($r1 == "1") {
   <!-- /.container-fluid -->
 </nav>
 <div id="mainDiv">
+
+

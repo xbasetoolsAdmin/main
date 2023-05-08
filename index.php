@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     
 
 </style>
-<script src="buyer/index.js"></script>
+
 </script>
 		<style>
             .navbar {
@@ -196,12 +196,13 @@ if ($r1 == "1") {
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
+
+
 </nav>
+<style id="mainDiv">
 
 
-
-</div>
-
+<script src="buyer/index.js"></script>
 </body>
-<div id="mainDiv">
+    
 </html>

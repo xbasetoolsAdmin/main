@@ -949,7 +949,7 @@ a.closearb {
 											<div class="dataTables_sizing" style="height:0;overflow:hidden;">Price</div>
 										</th>
 										<th data-priority="9" class="sorting" aria-controls="account_data" rowspan="1" colspan="1" style="width: 43.7167px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Seller: activate to sort column ascending">
-											<div class="dataTables_sizing" style="height:0;overflow:hidden;">Seller</div>
+											<div class="dataTables_sizing" style="height:0;overflow:hidden;"> <th scope="col">Send Test <span class="label label-default" id='checkertitle'><?php echo $ro['testemail']; ?></span></div>
 										</th>
 										<th data-priority="10" class="sorting" aria-controls="account_data" rowspan="1" colspan="1" style="width: 0px; display: none; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Source: activate to sort column ascending">
 											<div class="dataTables_sizing" style="height:0;overflow:hidden;">Source</div>
@@ -966,8 +966,8 @@ a.closearb {
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="odd">
-										<td colspan="9" class="dataTables_empty" valign="top">No data available in table</td> <?php include("cr.php");
+
+									 <?php include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
 	 
@@ -977,17 +977,18 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
- <tr>     
-    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
-	<td> ".htmlspecialchars($row['infos'])." </td>
-    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
-    <td> ".htmlspecialchars($row['price'])."</td>
+     echo "   				
+    
+    <tr class='class'>
+	    <td> ".$row['id']."</td>
+    <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+	    <td> ".$row['infos']."</td>
+	    <td> ".$row['number']."</td>
+	    <td> ".$row['price']."</td>
+     <td> ".$row['date']."</td>
+    <td id='leads_seller'> ".($SellerNick).".       </td>
 	    <td> ".$row['date']."</td>";
-    echo '
-    <td>
-	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
+    echo ' <td>	<span id="leads'.$row['id'].'" title="buy" type="leads"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
     </td>
             </tr>
      ';

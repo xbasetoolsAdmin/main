@@ -843,16 +843,46 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 				<thead>
 					<tr>
 						<th class="sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 39.140625px;">Name</th>
-						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;">Position</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;"></th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
+												<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th> Ojoma
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
 					</tr>
 				</thead>
 				<tbody>
+ <?php
+include("cr.php");
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
+ while($row = mysqli_fetch_assoc($q)){
+	 
+	 	 $countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
+	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+     echo "
 					<tr class="odd">
-						<td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+							<td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
+	<td> ".htmlspecialchars($row['infos'])." </td>
+    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
+    <td> ".htmlspecialchars($row['price'])."</td>
+	    <td> ".$row['date']."</td>";
+    echo '
+    <td>
+	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
+    </td>
+            </tr>
+     ';
+ }
+
+ ?>
+
 					</tr>
 				</tbody>
 				<tfoot>
@@ -861,6 +891,11 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 						<th rowspan="1" colspan="1">Position</th>
 						<th rowspan="1" colspan="1">Office</th>
 						<th rowspan="1" colspan="1">Extn.</th>
+							<th rowspan="1" colspan="1">Position</th>
+						<th rowspan="1" colspan="1">Office</th>
+						<th rowspan="1" colspan="1">Extn.</th>
+						<th rowspan="1" colspan="1">Start date</th>
+						<th rowspan="1" colspan="1">Salary</th>
 						<th rowspan="1" colspan="1">Start date</th>
 						<th rowspan="1" colspan="1">Salary</th>
 					</tr>

@@ -3,33 +3,9 @@ include "header.php";
 
 
 ?>
-
 <script type="text/javascript">
              function ajaxinfo() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'ajaxinfo.html',
-                    timeout: 10000,
-
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
-                            }
-                        } else {
-                            window.location = "logout.html";
-                        }
-                    }
-                });
-
-            }
-            setInterval(function() {
-                ajaxinfo()
-            }, 3000);
-
-            ajaxinfo();
-
+               
 $(document).keydown(function(event){
     if(event.which=="17")
         cntrlIsPressed = true;

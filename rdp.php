@@ -20,7 +20,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
     <meta name="referrer" content="no-referrer" />
     <script type="text/javascript" src="files/js/jquery.js?1"></script>
-    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="ajax/divpage1.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
  <meta name="referrer" content="no-referrer" />
 

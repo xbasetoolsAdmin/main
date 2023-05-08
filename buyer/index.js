@@ -1,7 +1,7 @@
 function o(){$.ajax({type:"post",url:"load_item",timeout:1e4,success:function(o){if("01"!=o){o=JSON.parse(o);for(var t in o)$("#"+t).html(o[t]).show()}else window.location="logout.html"}})}setInterval((function(){o()}),3e3),o(),$(document).keydown((function(o){"17"==o.which&&(t=!0)})),$(document).keyup((functionfunction o(){$.ajax({type:"Post",url:"load_item",timeout:1e4,success:function(o){if("01"!=o){o=JSON.parse(o);for(var t in o)$("#"+t).html(o[t]).show()}else window.location="logout.html"}})}setInterval((function(){o()}),3e3),o(),$(document).keydown((function(o){"17"==o.which&&(t=!0)})),$(document).keyup((function(){t=!1}));var t=!1;$(window).on("popstate",(function(o){location.replace(document.location)})),$(window).on("load",(function(){$(".dropdown").hover((functi             function ajaxinfo() {
                 $.ajax({
-                    type: 'GET',
-                    url: 'ajaxinfo.html',
+                    type: 'POST',
+                    url: 'load_item',
                     timeout: 10000,
 
                     success: function(data) {

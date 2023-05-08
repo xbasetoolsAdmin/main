@@ -1,7 +1,6 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<?php
+	<!--?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -11,9 +10,7 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
-<!DOCTYPE html>
-<html>
+?-->
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +52,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('config', 'UA-177092549-1');
     
 		
+		
 		</script>
 		<link rel="stylesheet" href="http://xbaseleets.xyz/layouts/css/all.min.css">
 		<link rel="stylesheet" href="http://xbaseleets.xyz/layouts/css/main.css?v=12.9">
@@ -64,6 +62,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             padding-top: 80px
         }
     
+		
 		
 		</style>
 		<link rel="stylesheet" href="http://xbaseleets.xyz/layouts/fonts/iconic/css/material-design-iconic-font.min.css">
@@ -75,6 +74,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     
 		
+		
 		</script>
 		<style>
         @import url(//fonts.googleapis.com/css?family=Roboto:400);
@@ -83,6 +83,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             margin: 0 !important
         }<link rel="stylesheet" href="" />
     
+		
 		
 		</style>
 		<style>
@@ -126,6 +127,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         box-sizing: border-box;
     }
 
+		
 		
 		</style>
 	</head>
@@ -268,6 +270,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     
 		
+		
 		</style>
 		<script>
         function setTheme(themeName) {
@@ -295,6 +298,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             }
         })();
     
+		
 		
 		</script>
 		<meta charset="UTF-8">
@@ -333,6 +337,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('config', 'UA-177092549-1');
     
 		
+		
 		</script>
 		<link rel="stylesheet" href="layouts/css/all.min.css">
 		<link rel="stylesheet" href="layouts/css/custom.css">
@@ -342,6 +347,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             padding-top: 80px
         }
     
+		
 		
 		</style>
 		<link rel="stylesheet" href="layouts/fonts/iconic/css/material-design-iconic-font.min.css">
@@ -353,6 +359,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     
 		
+		
 		</script>
 		<style>
         @import url(//fonts.googleapis.com/css?family=Roboto:400);
@@ -361,6 +368,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             margin: 0 !important
         }
     
+		
 		
 		</style>
 		<style>
@@ -504,6 +512,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     
 		
+		
 		</style>
 		<script>
         function setTheme(themeName) {
@@ -529,6 +538,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             }
         })();
     
+		
 		
 		</script>
 		<header>
@@ -796,6 +806,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     
 			
+			
 			</style>
 			<div class="d-flex flex-row-reverse mt-0">
 				<div class="p-2">
@@ -839,6 +850,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 				<label>Search:<input type="search" class="" placeholder="" aria-controls="example">
 				</label>
 			</div>
+			Ojoma 						";     echo '           ';  }   ?&gt;
 			<table id="example" class="display dataTable" style="width:100%" aria-describedby="example_info">
 				<thead>
 					<tr>
@@ -846,14 +858,15 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;"></th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
-												<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
-						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th> Ojoma
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
 						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
 					</tr>
 				</thead>
 				<tbody>
- <?php
+					
+					<?php
 include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
@@ -864,25 +877,33 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
-					<tr class='odd'>
-							<td valign='top' colspan='6' class='dataTables_empty'>".Loading..."</td>
-    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
-	<td> ".htmlspecialchars($row['infos'])." </td>
-    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
-    <td> ".htmlspecialchars($row['price'])."</td>
-	    <td> ".$row['date']."</td>";
-    echo '
-    <td>
-	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
-    </td>
-            </tr>
-     ';
- }
-
- ?>
-
+     echo "			
+					<tr>
+						<td valign="top" colspan="6" class="dataTables_empty">".Loading..."</td>
+						<td id="account_country">
+							<i class="flag-icon flag-icon-$countrycode"></i>&nbsp;".htmlspecialchars($row['country'])."
+						</td>
+						<td id="account_sitename">
+							".htmlspecialchars($row['sitename'])."
+						</td>
+						<td>
+							".htmlspecialchars($row['infos'])."
+						</td>
+						<td id="account_seller">
+							".htmlspecialchars($SellerNick)."</td>
+						<td>
+							".htmlspecialchars($row['price'])."</td>
+						<td>
+							".$row['date']."</td>
+						<td>
+							<span id="premium'.$row['id'].'" title="buy" type="premium">
+								<a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs">
+									<font color="white">Buy</font>
+								</a>
+							</span>
+							<center>
+							</center>
+						</td>
 					</tr>
 				</tbody>
 				<tfoot>
@@ -891,7 +912,7 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 						<th rowspan="1" colspan="1">Position</th>
 						<th rowspan="1" colspan="1">Office</th>
 						<th rowspan="1" colspan="1">Extn.</th>
-							<th rowspan="1" colspan="1">Position</th>
+						<th rowspan="1" colspan="1">Position</th>
 						<th rowspan="1" colspan="1">Office</th>
 						<th rowspan="1" colspan="1">Extn.</th>
 						<th rowspan="1" colspan="1">Start date</th>
@@ -928,6 +949,7 @@ document.addEventListener('DOMContentLoaded',
     } );
 } );
 
+			
 			
 			</script>
 		</header>

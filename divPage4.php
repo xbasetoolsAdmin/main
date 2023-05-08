@@ -53,20 +53,38 @@ $ro = mysqli_fetch_assoc($query);
 </div>
 
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
-<thead>
-    <tr>
-      <th scope="col" >ID</th>
-      <th scope="col" >Country</th>
-      <th scope="col">Detect Hosting</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Send Test <span class="label label-default" id='checkertitle'>to <?php echo $ro['testemail']; ?></span></th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-  <tbody>
+ <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
+        <ul>
+            <li> Click on check button before buy any RDP to know if it's work or not.</li>
+            <li>There is <b> 76 </b> RDPs Available.</li>
+        </ul>
+    </div>
+   <div id="example_wrapper" class="dataTables_wrapper">
+   <div class="dataTables_length" id="example_length">
+   <label>Show <select name="example_length" aria-controls="example" class="">
+   <option value="10">10</option>
+   <option value="25">25</option>
+   <option value="50">50</option>
+   <option value="100">100</option>
+   </select> entries</label>
+   </div>
+   <div id="example_filter" class="dataTables_filter">
+   <label>Search:<input type="search" class="" placeholder="" aria-controls="example">
+   </label>
+   </div>
+   <table id="table" class="display dataTable" style="width:100%" aria-describedby="example_info">
+        <thead>
+  <tr>
+			<th class="sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 39.140625px;">Name</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 54.421875px;">Position</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 39.484375px;">Office</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 33.71875px;">Extn.</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 52.578125px;">Start date</th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 41.484375px;">Salary</th>
+ </tr>
+        </thead>
+		            <tbody>
+		
  <?php
 						   include("cr.php");
 
@@ -85,7 +103,10 @@ $ro = mysqli_fetch_assoc($query);
       while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
- <tr> 
+
+					          <tr class="odd">
+							  <td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+						
      <td id='mailer_id'> ".htmlspecialchars($row['id'])." </td>
    
      <td id='mailer_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
@@ -114,6 +135,45 @@ $ro = mysqli_fetch_assoc($query);
  </table>
 
 <script type="text/javascript">
+
+				  </tbody>
+                          <tfoot>
+            <tr>
+			<th rowspan="1" colspan="1">Name</th>
+			<th rowspan="1" colspan="1">Position</th>
+			<th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Extn.</th>
+			<th rowspan="1" colspan="1">Start date</th><th rowspan="1" colspan="1">Salary</th>
+			                          </tr>
+                            </tfoot>
+    </table>
+	 <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+	 <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+	 <a class="paginate_button previous disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="previous" tabindex="-1" id="example_previous">Previous</a><span>
+	 </span>
+	 <a class="paginate_button next disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="next" tabindex="-1" id="example_next">Next</a>
+	 </div>
+   </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded',
+ function () {
+    let table = new DataTable('#example', {
+        ajax: function (d, cb) {
+            fetch('mailer.php')
+                .then(response => response.json())
+                .then(data => cb(data));
+        },
+        columns: [
+            { data: 'name' },
+            { data: 'position' },
+            { data: 'office' },
+            { data: 'extn' },
+            { data: 'start_date' },
+            { data: 'salary' }
+        ]
+    } );
+} );
+</script>      
 $('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#mailer_id").text().toLowerCase() );var ck2 = $.trim( $(this).find("#mailer_country").text().toLowerCase() );var ck3 = $.trim( $(this).find("#mailer_hosting").text().toLowerCase() );var ck4 = $.trim( $(this).find("#mailer_seller").text().toLowerCase() ); var val1 = $.trim( $('input[name="mailer_id"]').val().toLowerCase() );var val2 = $.trim( $('select[name="mailer_country"]').val().toLowerCase() );var val3 = $.trim( $('input[name="mailer_hosting"]').val().toLowerCase() );var val4 = $.trim( $('select[name="mailer_seller"]').val().toLowerCase() ); if(ck1.indexOf(val1)==-1 || (ck2 != val2 && val2 != '' ) || ck3.indexOf(val3)==-1 || (ck4 != val4 && val4 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 
 $("#edit").submit(function() {

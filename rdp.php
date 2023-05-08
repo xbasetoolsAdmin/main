@@ -179,6 +179,8 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
+<?php include"divpage/divpage1.php";?>
+
 <div id="mainDiv"></div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

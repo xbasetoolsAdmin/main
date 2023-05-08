@@ -199,7 +199,7 @@ if ($r1 == "1") {
 
 
 </nav>
-<div id="content">
+<div id="contentDiv">
 <script src="buyer/index.js"></script>
 </body>
     

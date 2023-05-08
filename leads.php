@@ -10,39 +10,7 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="alfacoins-site-verification" content="5ef8c2279aa605ef8c2279aa965ef8c2279aacb_ALFAcoins">
-		<meta name="revisit-after" content="2 days">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<script src="/cdn-cgi/apps/head/AGN3NmUziwZfMV-TNTe1kdyeR2Y.js"></script>
-		<link rel="shortcut icon" href="../../favicon.ico">
-		<title>RDP</title>
-		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-		<script src="http://xbaseleets.xyz/layouts/js/jquery-3.4.1.min.js"></script>
-		<script src="http://xbaseleets.xyz/layouts/js/clipboard.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-		<script src="http://xbaseleets.xyz/layouts/js/bootstrap.min.js"></script>
-		<script src="http://xbaseleets.xyz/layouts/js/bootbox.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://xbaseleets.xyz/layouts/css/flags.css">
-		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-		<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-		<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
-		<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-		<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-		<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-		<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-		<script src="js/jquery.dataTables.min.js"></script>
-		<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-		<script async="" src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
-		 
-
-
-<html>
+?> <html>
 	<head>
 		<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
 		<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-B0E636W1BE&amp;l=dataLayer&amp;cx=c"></script>

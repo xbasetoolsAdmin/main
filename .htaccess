@@ -3,11 +3,11 @@ RewriteEngine on
 Options -Indexes
  
  
-RewriteRule ^main$  index.php
+RewriteRule ^index.html$  index.php
 RewriteRule ^signup.html$  signup.php
 RewriteRule ^forget.html$  forget.php
 RewriteRule ^reset.html$  resetpass.php
-RewriteRule ^login.html$  login.php
+RewriteRule ^login$  login.php
 RewriteRule ^loginpage1.html$  loginpage1.php
 RewriteRule ^loginpage2.html$  loginpage2.php
 RewriteRule ^loginpage3.html$  loginpage3.php
@@ -15,7 +15,7 @@ RewriteRule ^loginform.html$  loginform.php
 RewriteRule ^signupform.html$  signupform.php
 RewriteRule ^passform.html$  passform.php
 RewriteRule ^index.php$  index.php
-RewriteRule ^ajaxinfo.html$  ajax.php
+RewriteRule ^load_data$  ajax.php
 RewriteRule ^mailer$  mailer.php
 RewriteRule ^shells$  shell.php
 RewriteRule ^leads$  leads.php

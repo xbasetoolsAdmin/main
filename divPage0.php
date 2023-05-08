@@ -279,10 +279,6 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div id="mainDiv">
-</div>
-</body>
-</html>
 <?php
 ob_start();
 session_start();

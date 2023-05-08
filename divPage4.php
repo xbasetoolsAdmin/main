@@ -153,7 +153,6 @@ $ro = mysqli_fetch_assoc($query);
 	 <a class="paginate_button next disabled" aria-controls="example" aria-disabled="true" aria-role="link" data-dt-idx="next" tabindex="-1" id="example_next">Next</a>
 	 </div>
    </div>
-</body>
 <script>
 document.addEventListener('DOMContentLoaded',
  function () {

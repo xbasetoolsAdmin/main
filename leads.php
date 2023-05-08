@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<!--?php
+	<?php
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
@@ -10,7 +10,7 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?-->
+?>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">

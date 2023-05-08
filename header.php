@@ -18,9 +18,11 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </style>
 <body style="padding-top: 70px; padding-bottom: 70px;">
 
-nav class="style-0" position:fixed;="" background-color:="" var(--color-nav);="" z-index:1;="" top:0;="" left:0;="" right:0;="" line-height:="" 1.5;="" font-family:="" sans-serif;="" font-size:="" 15px;="" padding-top:="" 0.5rem;="" padding-right:="" 1rem;="" padding-bottom:="" padding-left:="">
-    <a class="style-1" href="main"><img width="40px" src="layout/images/logo.png" class="style-2" /> Odin</a> <button class="style-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="style-4"></i> </button>
+<nav class="style-0" position:fixed;="" background-color:="" var(--color-nav);="" z-index:1;="" top:0;="" left:0;="" right:0;="" line-height:="" 1.5;="" font-family:="" sans-serif;="" font-size:="" 15px;="" padding-top:="" 0.5rem;="" padding-right:="" 1rem;="" padding-bottom:="" padding-left:="">
+ 
+	<a class="style-1" href="main"><img width="40px" src="layout/images/logo.png" class="style-2" /> Odin</a> <button class="style-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="style-4"></i> 
+	</button>
     <div class="style-5">
         <ul class="style-6">
 

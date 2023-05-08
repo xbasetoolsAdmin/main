@@ -60,8 +60,6 @@
 
 </head>
 
-<!doctype html>
-<html>
 
 </head>
 
@@ -124,15 +122,5 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #910606;
 }
 
-   
-    
-
 </style>
-
-<script src="buyer/index.js">
-	</script><?php 
-	include"header.php"
-		;?>
-<div id="mainDiv">
-
 

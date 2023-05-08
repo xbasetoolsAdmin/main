@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
             }, 3000);
 
             ajaxinfo();
-
+<svril
 $(document).keydown(function(event){
     if(event.which=="17")
         cntrlIsPressed = true;
@@ -145,7 +145,7 @@ function pageDiv(n,t,u,x){
     url:        'divPage'+n+'.html',
     success:    function(data)
     {
-        $("#mainDiv").html(data).show();
+        $("#mainDiv").html().show(data);
         newTableObject = document.getElementById('table');
         sorttable.makeSortable(newTableObject);
         $(".sticky-header").floatThead({top:60});

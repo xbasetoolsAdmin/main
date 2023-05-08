@@ -7,15 +7,15 @@
     <meta name="author" content="">
     <title>Main - Admin Panel</title>
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="./assets/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../buyer/assets/flags.css">
+<link rel="stylesheet" type="text/css" href="./files/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="files/css/flags.css">
     <link rel="stylesheet" type="text/css" href="css/tickets.css">
-<script type="text/javascript" src="./assets/jquery.js"></script>
-<script type="text/javascript" src="./assets/bootstrap.js"></script>
-<script type="text/javascript" src="./assets/bootbox.min.js"></script>
-<script type="text/javascript" src="./assets/sorttable.js"></script>
+<script type="text/javascript" src="files/css/jquery.js"></script>
+<script type="text/javascript" src="files/css/bootstrap.js"></script>
+<script type="text/javascript" src="files/css/bootbox.min.js"></script>
+<script type="text/javascript" src="files/css/sorttable.js"></script>
 <font face="Arial">
-    <link href="./assets/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 		
 <style>
 
@@ -56,43 +56,20 @@
   padding: 0.7em 0em 0.7em 0em;
 }
 </style>
-<style>
-.content {
-	display:none;
-}
 
-</style>
-    <style>
-.sort {
-  .sortable
-}
-.sort th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25BE" 
-}
-</style>
+
 </head>
 
 <!doctype html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="files/bootstrap/3/css/bootstrap.css?1" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-<script type="text/javascript" src="files/js/jquery.js?1"></script>
-<script type="text/javascript" src="files/bootstrap/3/js/bootstrap.js?1"></script>
-<script type="text/javascript" src="files/js/sorttable.js"></script>
-<script type="text/javascript" src="files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="files/js/bootbox.min.js"></script>
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
 
-<link rel="shortcut icon" href="files/img/favicon.ico" />
-<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
- <meta name="referrer" content="no-referrer" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<title>FeluxShop</title>
 </head>
+
+<style>
+.display {inline:block;}
+
+</style>
+   
 <style>
 #table {
   .sortable
@@ -152,8 +129,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 </style>
 
-<script src="buyer/index.js"></script>
-
+<script src="buyer/index.js">
+	</script><?php 
+	include"header.php"
+		;?>
 <div id="mainDiv">
 
 

@@ -1,10 +1,3 @@
-
-PageRip
- Select page Select element
-HTML + Inline Styles
-HTML + CSS
-JSX
-Preview Full
 <html>
 
 <head>

@@ -35,10 +35,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
         <style type="text/css">
         /* Chart.js */
-        @-webkit-keyframes chartjs-render-animation {
-        from {
-        opacity: 0.99
-        }
+        @-webkit-keyframes chartjs-render-animation {  from { opacity: 0.99 }
         to {
         opacity: 1
         }
@@ -56,8 +53,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         animation: chartjs-render-animation 0.001s;
         }
         </style>
-        <script async="" src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
-        <script>
+        <script async="" src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script> <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
         dataLayer.push(arguments);
@@ -69,7 +65,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         gtag('config', 'UA-177092549-1');
         </script>
         <link rel="stylesheet" href="layout/css/all.min.css">
-        <link rel="stylesheet" href="layout/css/main.css?v=12.9">
+        <link rel="stylesheet" href="layout/css/darkmarket">
         <link rel="stylesheet" href="layout/css/util.css">
         <style>body{padding-top:80px}</style>
         <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
@@ -83,8 +79,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         <style>
         @import url(//fonts.googleapis.com/css?family=Roboto:400);
         .navbar-nav .dropdown-menu {
-        margin: 0 !important
-        }
+        margin: 0 !important }
         </style>
         <style>
         .navbar-nav .dropdown-menu {
@@ -591,9 +586,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             padding-bottom: 0.5rem;
             padding-left: 1rem;
             ">
-            <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
+            <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XbaseTools Market</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="navbar-toggler-icon"></i>
             </button>
             <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">

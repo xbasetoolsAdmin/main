@@ -865,8 +865,8 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
-					<tr class="odd">
-							<td valign="top" colspan="6" class="dataTables_empty">Loading...</td>
+					<tr class='odd'>
+							<td valign='top' colspan='6' class='dataTables_empty'>".Loading..."</td>
     <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
 	<td> ".htmlspecialchars($row['infos'])." </td>

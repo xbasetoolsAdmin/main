@@ -200,14 +200,7 @@ if ($r1 == "1") {
 
 </nav>
 <div id="content">
-
-
 <script src="buyer/index.js"></script>
-
-            <script type="text/javascript">
-lfunction() {
-
-            </script>
 </body>
     
 </html>

@@ -184,6 +184,7 @@ if ($r1 == "1") {
 <table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
   <thead>
     <tr>
+    <th scope="col" >id</th>
       <th scope="col" >Country</th>
       <th scope="col">TLD</th>
       <th scope="col">Detect Hosting</th>
@@ -194,7 +195,7 @@ if ($r1 == "1") {
       <th scope="col">Buy</th>
     </tr>
 </thead>
-<div id="mainDiv">
+<tbody id="mainDiv">
 </table>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

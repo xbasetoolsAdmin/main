@@ -39,7 +39,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>   
-    <th>".htmlspecialchars($row['id'])." </th>   
+    <td".htmlspecialchars($row['id'])." </td>   
    <td><i class='flag-icon flag-icon-$countrycode'></i></td>
    <td>&nbsp;".htmlspecialchars($row['country'])." </td>
       <td'> .".$tld." </td>

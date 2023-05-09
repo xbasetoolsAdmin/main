@@ -11,138 +11,60 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="table-responsive">
+  <table class="table table-hover table-sm border-success">
+    <thead>
+      <tr>
+        <th scope="col"> </th>
+    </thead>
+    <tbody>
 <?php
+		include("cr.php");
+	    $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+	   	function srl($item)
+		{
+		$item0 = $item;
+		$item1 = rtrim($item0);
+		$item2 = ltrim($item1);
+		return $item2;
+		} 
 
-echo '
+ while($row = mysqli_fetch_assoc($q)){
+	 	 $countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
 
-    <script>
+	 $url = $row['url'];
+	 	$d = explode("|", $url);
+		$urled = srl($d[0]);
 
-function sendt(id){
-    var sub = $("#subject").val();
-    var msg = $("#msg").val();
-    var pr = $("#proi"+id).val();
-     $.ajax({
-     method:"GET",
-     url:"CreateTicket.html?s="+btoa(sub)+"&m="+btoa(msg),
-     dataType:"text",
-     success:function(data){
-     $("#resulta").html(data).show();
-     },
-   });
-}
+	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
+    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+     echo "
+ <tr>   
+    <td".htmlspecialchars($row['id'])." </td>   
+   <td><i class='flag-icon flag-icon-$countrycode'></i></td>
+   <td>&nbsp;".htmlspecialchars($row['country'])." </td>
+      <td'> .".$tld." </td>
+        <td> ".htmlspecialchars($row['sitename'])." </td>
+    <td> ".htmlspecialchars($row['infos'])." </td>
+    <td> ".htmlspecialchars($SellerNick)."</td>";
+	 echo '<td><span id="shop'.$row["id"].'" type="cpanel"><a onclick="javascript:check('.$row["id"].');" class="btn btn-info btn-xs"><font color=white>Check</font></a></span><center></td>';
+	 echo " <td> ".htmlspecialchars($row['price'])."</td>
+      <td> ".htmlspecialchars($row['date'])."</td>
+    ";
 
-    </script>
-               <ul class="nav nav-tabs">
-    <li class="active"><a href="#mytickets" data-toggle="tab" aria-expanded="true">My Tickets</a></li>
-    <li class=""><a href="#open" data-toggle="tab" aria-expanded="false"> <span class="glyphicon glyphicon-pencil"></span> New Ticket</a></li>
-</ul>    		
-
-<div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade in" id="open"> 
-    <div class="form-group col-lg-5 ">
-          <h3>Support Tickets</h3>
-									 <b> Title</b><br>
-<input type="text" placeholder="Seller request.." class="form-control" id="subject" required></input><br><b>Message</b>
-<br>
-<textarea id="msg'.$row['id'].'" class="form-control" name="memo" style="width: 100%; height: 100px;" placeholder="Message Here" required></textarea>
-<br>
-<center><button type="submit" value="Open ticket"  class="btn btn-primary" onclick="javascript:sendt('.$row['id'].');">Submit <span class="glyphicon glyphicon-chevron-right"></span></button </center>
-<br><br> </center><div id="resulta"> </div>
-
- </div><br><br>
- <div class="col-lg-7">
-      <div class="bs-component">
-        <div class="well well">
-          <ul>
-            <li>In order to refund ticket go to <b>Account</b> -&gt; <b>My Orders</b> and choose the tool and click on <b>Report</b> button</li>
-            <li>Do not create double-tickets , create just one ticket and include all your problems then wait for your ticket to be replied</li>
-          </ul>
-        </div>
-      </div>
-    </div>
- </div>
-
-';
-
- $uid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-  $qq = @mysqli_query($dbcon, "SELECT * FROM ticket WHERE uid='$uid' ORDER by id desc") or die("error here");
-echo '	 		<br>
- 
-    <div class="tab-pane fade active in" id="mytickets"> 
-
-<table width="100%" class="table table-striped table-bordered table-condensed" id="table">
-      <thead>
-        <tr>
-              <th scope="col"></th>
-          <th scope="col">ID</th>
-          <th scope="col">Date Created</th>     
-          <th scope="col">Title</th>      
-          <th scope="col">Status</th>
-          <th scope="col">Last Reply</th>
-          <th scope="col">Last Updated</th>
-        </tr>
-      </thead>
- <tbody id="tbody2">';
- while($row = mysqli_fetch_assoc($qq)){
-     $st = $row['status'];
-    switch ($st){
-      case "0" :
-       $st = "closed";
-       break;
-      case "1" :
-       $st = "open";
-       break;
-      case "2":
-       $st = "open";
-       break;
-    }
-    $idticket = $row['id'];
-	if (empty($row['lastup'])) {
-		$lastup = "n/a"; 
-		} else { 
-		$lastup = $row['lastup']; 	
-		}
-?>
-<tr onmouseover="this.style.cursor='pointer'" onclick="pageDiv('ticket<?php echo $idticket; ?>','Ticket #<?php echo $idticket; ?> - JERUX SHOP','showTicket<?php echo $idticket; ?>.html',0);" style="cursor: pointer;">   
-<?php
-if ($row['seen'] == "1") {
-	echo "
-     <td>  </td>
- <td> <b>".htmlspecialchars($row['id'])." </b></td>
-    <td><b> ".htmlspecialchars($row['date'])." </b></td>
-    <td><b> ".htmlspecialchars($row['subject'])." </b></td>
-    <td> <b>".$st." </b></td>
-	    <td><b> ".htmlspecialchars($row['lastreply'])." </b></td>
-	    <td><b> ".htmlspecialchars($lastup)." </b></td>
+    echo '
+    <td>
+	<span id="acounts'.$row['id'].'" title="buy" type="accounts"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
+    </td>
             </tr>
-"; } else {
-echo "
-     <td>  </td>
- <td> ".htmlspecialchars($row['id'])." </td>
-    <td> ".htmlspecialchars($row['date'])." </td>
-    <td> ".htmlspecialchars($row['subject'])." </td>
-    <td> ".$st."</td>
-	    <td> ".htmlspecialchars($row['lastreply'])." </td>
-	    <td> ".htmlspecialchars($lastup)." </td>
-            </tr>
-     ";
- } }
+     ';
+ }
 
- echo '
+ ?>
 
  </tbody>
- </table>'; 
-				?>
+ </table>

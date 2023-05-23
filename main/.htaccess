@@ -1,6 +1,6 @@
 Document root / document
 RewriteEngine on
-Options -Indexes
+Options -Indexes 
 
 
 RewriteRule ^main$  index.php

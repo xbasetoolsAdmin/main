@@ -1,4 +1,6 @@
- <?php include('header.php');?>
+ <html>
+<head>
+       <?php include('header.php');?>
 
 
 

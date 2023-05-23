@@ -1,4 +1,4 @@
-Document root / document
+Document root / document ^index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^index.php$  index.php

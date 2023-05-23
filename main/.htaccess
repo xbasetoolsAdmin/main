@@ -1,16 +1,24 @@
 Document root / document
 RewriteEngine on
-Options -Indexes 
-
-
-RewriteRule ^main$  index.php
-RewriteRule ^accounts$  accounts.php
-
-
-RewriteRule ^load_table$  ajax.php
-
-
-
+Options -Indexes
+RewriteRule ^index.php$  index.php
+RewriteRule ^signup.html$  signup.php
+RewriteRule ^forget.html$  forget.php
+RewriteRule ^reset.html$  resetpass.php
+RewriteRule ^login.html$  login.php
+RewriteRule ^loginpage1.html$  loginpage1.php
+RewriteRule ^loginpage2.html$  loginpage2.php
+RewriteRule ^loginpage3.html$  loginpage3.php
+RewriteRule ^loginform.html$  loginform.php
+RewriteRule ^signupform.html$  signupform.php
+RewriteRule ^passform.html$  passform.php
+RewriteRule ^index.html$  index.php
+RewriteRule ^ajaxinfo.html$  ajax.php
+RewriteRule ^mailer.html$  mailer.php
+RewriteRule ^shell.html$  shell.php
+RewriteRule ^leads.html$  leads.php
+RewriteRule ^premium.html$  premium.php
+RewriteRule ^addBalance.html$  addBalance.php
 RewriteRule ^divPage1.html$  divPage1.php
 RewriteRule ^divPage2.html$  divPage2.php
 RewriteRule ^divPage3.html$  divPage3.php
@@ -27,56 +35,50 @@ RewriteRule ^divPage13.html$  divPage13.php
 RewriteRule ^divPage14.html$  divPage14.php
 RewriteRule ^divPage15.html$  divPage15.php
 RewriteRule ^divPage0.html$  divPage0.php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+RewriteRule ^settingEdit.html$  settingEdit.php
+RewriteRule ^CreateTicket.html$  tticket.php
+RewriteRule ^CreateReport.html$  treport.php
+RewriteRule ^addBalance.html$  funds.php
+RewriteRule ^addBalanceAction.html$  addBalanceAction.php
+RewriteRule ^rdp.html$  rdp.php
+RewriteRule ^tutorial.html$  tutorial.php
+RewriteRule ^MakePayment.html$  pay.php
+RewriteRule ^BitcoinPayment.html$  btc3.php
+RewriteRule ^banks.html$  banks.php
+RewriteRule ^PerfectMoneyPayment.html$  pm3.php
+RewriteRule ^tickets.html$  tickets.php
+RewriteRule ^seller.html$  becomeseller.php
+RewriteRule ^scampage.html$  scampage.php
+RewriteRule ^logout.html$  logout.php
+RewriteRule ^active.html$  active.php
+RewriteRule ^orders.html$  orders.php
+RewriteRule ^setting.html$  setting.php
+RewriteRule ^static.html$  static.php
+RewriteRule ^seller.html$  rindex.php
+RewriteRule ^smtp.html$  smtp.php
+RewriteRule ^AddSingleTool.html$  addt.php
+RewriteRule ^cPanel.html$  cPanel.php
+RewriteRule ^checkEmailChange.html$  checkEmailChange.php
+RewriteRule ^reports.html$  reports.php
+RewriteRule ^Rules.html$  shoprules.php
+RewriteRule ^account.html$  profile.php
+RewriteRule ^AddCards.html$  addc.php
+RewriteRule ^vt-(.*).html$ vt.php?id=$1
+RewriteRule ^vr-(.*).html$ vr.php?id=$1
+RewriteRule ^divPageticket(.*).html$ divPageticket.php?id=$1
+RewriteRule ^divPagereport(.*).html$ divPagereport.php?id=$1
+RewriteRule ^showTicket(.*).html$ showTicket.php?id=$1
+RewriteRule ^CheckShell(.*).html$ check2shell.php?id=$1
+RewriteRule ^CheckSMTP(.*).html$ check2smtp.php?id=$1
+RewriteRule ^CheckCpanel(.*).html$ check2cp.php?id=$1
+RewriteRule ^CheckMailer(.*).html$ check2mailer.php?id=$1
+RewriteRule ^showOrder(.*).html$ openorder.php?id=$1
+RewriteRule ^addReply(.*).html$ addReply.php?id=$1
+RewriteRule ^addReportReply(.*).html$ addReportReply.php?id=$1
+RewriteRule ^divPagepayment(.*).html$ divPagepayment.php?p_data=$1
+RewriteRule ^Check.html$ check.php
+RewriteRule ^PMCheck.html$ PMcheck.php
+RewriteRule ^Payment.html$ payment.php
 
 Order Deny,Allow
 Deny from 172.68.62.30

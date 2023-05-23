@@ -1,6 +1,6 @@
  <html>
 <head>
-       <?php include('header.php');?>
+<?php      include('p_header.php');            ?>
 
 
 
@@ -26,6 +26,6 @@
 
 
 
-         <?php require('footer.php');?>
+<?php      include('p_footer.php');            ?>
     </body>
     </html>

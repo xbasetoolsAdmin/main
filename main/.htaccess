@@ -7,7 +7,7 @@ RewriteRule ^main$  index.php
 RewriteRule ^accounts$  accounts.php
 
 
-
+RewriteRule ^load_table$  ajax.php
 
 
 

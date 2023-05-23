@@ -19,14 +19,14 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <th>Domain TLD</th>
 <th>Detected Hosting</th>
 <th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="cpanel_country"><option value="">ALL</option>
+<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="country"><option value="">ALL</option>
 <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `cpanels` WHERE `sold` = '0' ORDER BY country ASC");
 	while($row = mysqli_fetch_assoc($query)){
 	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
 	}
 ?>
-</select></td><td><input class='filterinput form-control input-sm' name="cpanel_tld" size='3'></td><td><input class='filterinput form-control input-sm' name="cpanel_hosting" size='3'></td><td><select class='filterselect form-control input-sm' name="cpanel_seller"><option value="">ALL</option>
+</select></td><td><input class='filterinput form-control input-sm' name="tld" size='3'></td><td><input class='filterinput form-control input-sm' name="hosting" size='3'></td><td><select class='filterselect form-control input-sm' name="seller"><option value="">ALL</option>
 <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE `sold` = '0' ORDER BY resseller ASC");
 	while($row = mysqli_fetch_assoc($query)){
@@ -81,10 +81,10 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>    
-    <td id='cpanel_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-		    <td id='cpanel_tld'> .".$tld." </td>
-    <td id='cpanel_hosting'> ".htmlspecialchars($row['infos'])." </td>
-    <td id='cpanel_seller'> ".htmlspecialchars($SellerNick)."</td>
+    <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+		    <td id='tld'> .".$tld." </td>
+    <td id='hosting'> ".htmlspecialchars($row['infos'])." </td>
+    <td id='seller'> ".htmlspecialchars($SellerNick)."</td>
 ";
 	 echo '<td><span id="shop'.$row["id"].'" type="cpanel"><a onclick="javascript:check('.$row["id"].');" class="btn btn-info btn-xs"><font color=white>Check</font></a></span><center></td>';
 echo "
@@ -106,7 +106,7 @@ echo "
  </table>
 
 <script type="text/javascript">
-$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#cpanel_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#cpanel_tld").text().toLowerCase() );var ck3 = $.trim( $(this).find("#cpanel_hosting").text().toLowerCase() );var ck4 = $.trim( $(this).find("#cpanel_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="cpanel_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="cpanel_tld"]').val().toLowerCase() );var val3 = $.trim( $('input[name="cpanel_hosting"]').val().toLowerCase() );var val4 = $.trim( $('select[name="cpanel_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || ck3.indexOf(val3)==-1 || (ck4 != val4 && val4 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
+$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#tld").text().toLowerCase() );var ck3 = $.trim( $(this).find("#hosting").text().toLowerCase() );var ck4 = $.trim( $(this).find("#seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="tld"]').val().toLowerCase() );var val3 = $.trim( $('input[name="hosting"]').val().toLowerCase() );var val4 = $.trim( $('select[name="seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || ck3.indexOf(val3)==-1 || (ck4 != val4 && val4 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 function buythistool(id){
   bootbox.confirm("Are you sure?", function(result) {
         if(result ==true){

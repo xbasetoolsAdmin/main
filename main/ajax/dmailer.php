@@ -5,7 +5,7 @@ date_default_timezone_set('UTC');
  include "../../includes/config.php";
 
 if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
-   header("location: ../");
+   header("location: login.php");
    exit();
 }
 
@@ -23,7 +23,7 @@ $resseller = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 //echo $id."&nbsp;&nbsp;".$resseller;
 
-$qu = mysqli_query($dbcon, "SELECT * FROM accounts WHERE id='$id' AND resseller='$resseller'")or die("error");
+$qu = mysqli_query($dbcon, "SELECT * FROM mailers WHERE id='$id' AND resseller='$resseller'")or die("error");
 if(mysqli_num_rows($qu) == 0 ){
  header("location: ../seller");
   exit();
@@ -37,9 +37,8 @@ global $price ;
 	  include "../../includes/config.php";
    $id = mysqli_real_escape_string($dbcon, $_GET['id']);
    $resseller = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-   $query = mysqli_query($dbcon, "DELETE FROM accounts WHERE id='$id' AND resseller='$resseller'")or die(mysqli_error($dbcon));
-   if($query){
-       //echo "problem";
+   $query = mysqli_query($dbcon, "DELETE FROM mailers WHERE id='$id' AND resseller='$resseller'")or die();
+   if($query){       //echo "problem";
 
      echo "removed";
 
@@ -48,9 +47,9 @@ global $price ;
    }
  }
 
-  $q0 = mysqli_query($dbcon, "SELECT * FROM accounts WHERE id='$id' AND resseller='$resseller'")or die();
+  $q0 = mysqli_query($dbcon, "SELECT * FROM mailers WHERE id='$id' AND resseller='$resseller'")or die();
   if(mysqli_num_rows($q0) != 0 ){
-    sqlquery('accounts',$price);
+    sqlquery('mailers',$price);
   }
 
 ?>

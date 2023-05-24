@@ -3,11 +3,14 @@ RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
 RewriteRule ^banks$  index.php
-RewriteRule ^login.php$  index.php
-RewriteRule ^login$  index.php
+RewriteRule ^main$  index.php
 
+RewriteRule ^login$  login.php
+RewriteRule ^login_check$  login_check.php
 
-RewriteRule ^signup.html$  signup.php
+RewriteRule ^signup$  signup.php
+RewriteRule ^signup_check$  signup_check.php
+
 RewriteRule ^cPanel$  cPanel.php
 
 RewriteRule ^forget.html$  forget.php

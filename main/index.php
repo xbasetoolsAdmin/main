@@ -26,3 +26,42 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <div id="mainDiv">              
 <span id="pageDiv(0, 'Main - FeluxShop', 'main', 1);"></span>
  </div>
+<script type=‘text/javascript’>
+(function($)
+{
+    $hidew(document).ready(function()
+    {
+        $hidew.ajaxSetup(
+        {
+            cache: false,
+            beforeSend: function() {
+                //$(‘#content’).hide();
+                //$(‘#loading’).show();
+            },
+            complete: function() {
+                //$(‘#loading’).hide();
+                $hidew(‘#content’).show();
+            },
+            success: function() {
+                //$(‘#loading’).hide();
+                $hidew(‘#content’).show();
+            }
+        });
+        var $container = $(“#content”);
+        $container.load(“divPage1.php”);
+
+        var refreshId = setInterval(function()
+        {
+            $container.load(‘divPage1.php’);
+			$hidew(“.tooltip”).hide();
+        }, 50000);
+    });
+})(jQuery);
+</script>
+<script language=“JavaScript”>
+  function selectText(textField)
+  {
+    textField.focus();
+    textField.select();
+  }
+</script>

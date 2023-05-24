@@ -324,9 +324,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                                         ">
                                                         <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
-        </button>
-                                                        	 <span class="midele navbar-toggler-icon"></span> </button>
+
 																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
 																																								
 																																								<ul class="navbar-nav">
@@ -394,7 +392,9 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                     <a class="nav-link" href="offers" style="color: var(--font-color);"><i class="fas fa-user-secret text-primary fa-sm"></i> Bulk Offers</a>
                 </li>
             </ul>
- 
+<i class="navbar-toggler-icon"></i>
+        </button>
+                                                        	 <span class="midele navbar-toggler-icon"></span> </button>
             <ul class="navbar-nav profile">
  
                 <li class="nav-item dropdown">

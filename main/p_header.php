@@ -12,7 +12,10 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>																						   <title>SMTP</title>
+?>
+<meta name="" content="" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+             <title>xbaseTools</title>
     <link rel="stylesheet" href="layout/css/bootstrap.min.css">
     <script src="layout/js/jquery-3.4.1.min.js"></script>
     <script src="layout/js/clipboard.min.js"></script>

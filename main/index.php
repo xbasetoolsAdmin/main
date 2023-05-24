@@ -16,9 +16,13 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <script type="text/javascript" src="category/data01.js"></script>
 </script>
+</script>
 <style>
     .navbar {
         background-color: #001f3f;
     }
 </style>
  
+    <div id="mainDiv">              
+pageDiv(0, 'Main - FeluxShop', 'main', 1);
+ </div>

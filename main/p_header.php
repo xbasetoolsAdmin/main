@@ -327,7 +327,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
 																																								
-																																								<ul class="navbar-nav">
+																																								<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+     <ul class="navbar-nav">
                             <!--------------Host--------------->
                         <li class="nav-item dropdown mr-auto">
                             <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text">

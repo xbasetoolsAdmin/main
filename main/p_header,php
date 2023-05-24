@@ -3,7 +3,7 @@ function gtag() {
     dataLayer.push(arguments);
 }
 gtag('js',
-new Date());
+new Date());V
 gtag('set', 
 {
     '$usrid': 'USER_ID'

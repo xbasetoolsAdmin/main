@@ -322,15 +322,21 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-                                                        <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
-																																								
-																																								<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
-     <ul class="navbar-nav">
-                            <!--------------Host--------------->
-                        <li class="nav-item dropdown mr-auto">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 home_nav">
+ 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="main_site_name nav-item nav-link active" href="https://xleet.pw/homepage">
+ 
+                        <i class="middle fab fa-2x fa-redhat pink-color"></i>
+ 
+                        <span class='middle site_name_span'>xLeet</span>
+ 
+                    </a>
+                </li>
+ 
+                <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text">
                                 
                             </i>Hosts </a>

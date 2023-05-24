@@ -11,6 +11,7 @@
    }
    $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
    ?>
+<?php include"category/cpanels_table.php"?>
 
 
 
@@ -19,8 +20,6 @@
 
 
 
-<div id="mainDiv" table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
- <!doctype html>
 <script type="application/json">
 pageDiv(0, ' - ', '', 1);
 </script>

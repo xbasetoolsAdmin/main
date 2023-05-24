@@ -2,8 +2,7 @@
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
-include "../includes/config.php";
-include"p_header.php";?>
+include "includes/config.php";
 
 if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     header("location: ../");
@@ -11,6 +10,16 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
              function ajaxinfo() {
                 $.ajax({

@@ -70,13 +70,14 @@ function ajaxinfo() {
  
         }
         document.title = obj.Title;
-        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+        $("#mainDiv").html('').show();
         $.ajax({
             type: 'GET',
             url: 'divPage' + n + '.html',
             success: function(data) {
                 $("#mainDiv").html(data).show();
                 newTableObject = document.getElementById('table');
+               let table = new("data
                // sorttable.makeSortable(newTableObject);
              //   $(".sticky-header").floatThead({
                     top: 60

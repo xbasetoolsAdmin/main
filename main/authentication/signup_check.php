@@ -7,13 +7,13 @@ date_default_timezone_set('UTC');
 
 
 if (isset($_SESSION['sname']) and isset($_SESSION['spass'])) {
-    header("location: index.php");
+    header("location: ../index.php");
     exit();
 }
 if (isset($_POST['user'], $_POST['pass'])) {
     # code...
 } else {
-    header('location:index.php');
+    header('location:../index.php');
     exit();
 }
 $username = mysqli_real_escape_string($dbcon, strip_tags($_POST['user']));
@@ -34,7 +34,7 @@ if (mysqli_num_rows($finder) != 0) {
         $_SESSION['spass'] = $userpass;
         //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>../login successful. Redirecting …</p></div>";
         //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"index"}';
-        header('location:index.php');
+        header('location:../index.php');
         exit();
         
         

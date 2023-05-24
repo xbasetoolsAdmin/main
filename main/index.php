@@ -11,7 +11,7 @@
    }
    $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
    ?>
-<?php include"category/cpanels_table.php"?>
+<script src="category/data02.js"></script>
 
 
 

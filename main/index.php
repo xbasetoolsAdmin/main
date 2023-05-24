@@ -522,7 +522,7 @@ $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); }
 
 
 
-   pageDiv(7,'Main - JeruxShop','premium.html',0);
+   pageDiv(0,'Main - JeruxShop','index.html',0);
 
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {

@@ -4,7 +4,7 @@ function gtag() {
 }
 gtag('js',
 new Date());
-gtag('set',
+gtag('set', 
 {
     '$usrid': 'USER_ID'
 }

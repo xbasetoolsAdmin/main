@@ -1,8 +1,8 @@
 <?php
 ob_start();
 session_start();
-include "database.php";
-include 'encrypt.php';
+include ('database.php');
+include ('encrypt.php');
 date_default_timezone_set('UTC');
 
 

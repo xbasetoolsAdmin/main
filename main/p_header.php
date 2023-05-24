@@ -401,7 +401,26 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             </ul>
 <i class="navbar-toggler-icon"></i>
         </button>
-                                                        	 <span class="midele navbar-toggler-icon"></span> </button>
+                    </div>
+                </li>
+ 
+ 
+ 
+ 
+ 
+            </ul>
+ 
+ 
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+ 
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 user_nav">
+  
             <ul class="navbar-nav profile">
  
                 <li class="nav-item dropdown">

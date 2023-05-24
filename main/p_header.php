@@ -12,15 +12,13 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-
-
   <meta charset="UTF-8">
   <title>XBaseTools</title>
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
  <meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="layout/css/bootstrap.min.css">
-		<script src="layout/js/jquery-3.4.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<script src="layout/js/clipboard.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="layout/js/bootstrap.min.js"></script>
@@ -536,3 +534,27 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
       }
    
 		</style>
+<script id="data" type="application/json">
+   function ajaxinfo() {
+          $.ajax({
+              type: 'GET',
+              url: 'ajaxinfo.html',
+              timeout: 10000,
+      
+              success: function(data) {
+                  if (data != '01') {
+                      var data = JSON.parse(data);
+                      for (var prop in data) {
+                          $("#" + prop).html(data[prop]).show();
+                      }
+                  } else {
+                      window.location = "logout.html";
+                  }
+              }
+          });
+      
+      }
+      setInterval(function() {
+          ajaxinfo()
+	  </script>
+	  

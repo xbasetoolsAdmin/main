@@ -24,5 +24,5 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </style>
  
     <div id="mainDiv">              
-pageDiv(0, 'Main - FeluxShop', 'main', 1);
+<span id="pageDiv(0, 'Main - FeluxShop', 'main', 1);"></span>
  </div>

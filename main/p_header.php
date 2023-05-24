@@ -3,9 +3,17 @@
 <html>
 <head>
 
-<?php  ob_start();  session_start();  include ('authentication/database.php');  date_default_timezone_set('UTC'); if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){   header('location: login.php');
- exit();
+<?php
+ob_start();
+session_start();
+date_default_timezone_set('UTC');
+include "authentication/database.php";
+
+if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
+    header("location: login.php");
+    exit();
 }
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
   <meta charset="UTF-8">
   <title>XBaseTools</title>

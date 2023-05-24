@@ -2,6 +2,10 @@ Document root / document ^index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
+RewriteRule ^banks$  index.php
+
+
+
 RewriteRule ^signup.html$  signup.php
 RewriteRule ^cPanel$  cPanel.php
 

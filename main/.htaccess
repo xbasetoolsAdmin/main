@@ -7,7 +7,7 @@ RewriteRule ^signup$  signup.php
 RewriteRule ^forget$  forget.php
 RewriteRule ^resetpass$  resetpass.php
 RewriteRule ^login$  login.php
-RewriteRule ^loginController$  loginController.php
+RewriteRule ^login_check$  login_check.php
 RewriteRule ^loginpage2.html$  loginpage2.php
 RewriteRule ^loginpage3.html$  loginpage3.php
 RewriteRule ^loginform.html$  loginform.php

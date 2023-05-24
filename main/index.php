@@ -14,18 +14,30 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <!doctype html>
 
 
-<script type="text/javascript" src="category/data01.js"></script>
-</script>
-</script>
-<style>
-    .navbar {
-        background-color: #001f3f;
-    }
-</style>
- 
-    <div id="mainDiv">              
+  function ajaxinfo() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'ajaxinfo.html',
+                    timeout: 10000,
 
-<script type=‘text/javascript’>
+                    success: function(data) {
+                        if (data != '01') {
+                            var data = JSON.parse(data);
+                            for (var prop in data) {
+                                $("#" + prop).html(data[prop]).show();
+                            }
+                        } else {
+                            window.location = "logout.html";
+                        }
+                    }
+                });
+
+            }
+            setInterval(function() {
+                ajaxinfo()
+            }, 3000);
+
+            ajaxinfo();
 
 $(document).keydown(function(event){
     if(event.which=="17")
@@ -77,7 +89,7 @@ $(window).on("popstate", function(e) {
 
 $(window).on('load', function() {
 $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(0,'Leads - JeruxShop','',1);
+   pageDiv(6,'Leads - JeruxShop','leads.html',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');
@@ -98,6 +110,4 @@ function setTooltip(btn, message) {
 
 function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
-}
-
 </script>

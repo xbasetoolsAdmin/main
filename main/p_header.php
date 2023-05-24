@@ -24,6 +24,104 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <script src="layout/js/bootbox.min.js"></script>
     <link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
  
+<script id="data" type="application/json">function ajaxinfo() {
+	$.ajax({
+		type: 'GET',
+		url: 'ajaxinfo.html',
+		timeout: 10000,
+
+		success: function (data) {
+			if (data != '01') {
+				var data = JSON.parse(data);
+				for (var prop in data) {
+					$("#" + prop).html(data[prop]).show();
+				}
+			}
+			else {
+				window.location = "logout.html";
+			}
+		}
+	});
+
+}
+setInterval(function () {
+	ajaxinfo()
+}, 3000);
+
+ajaxinfo();
+
+$(document).keydown(function (event) {
+	if (event.which == "17")
+		cntrlIsPressed = true;
+});
+
+$(document).keyup(function () {
+	cntrlIsPressed = false;
+});
+
+var cntrlIsPressed = false;
+
+
+function pageDiv(n, t, u, x) {
+	if (cntrlIsPressed) {
+		window.open(u, '_blank');
+		return false;
+	}
+	var obj = {
+		Title: t,
+		Url: u
+	};
+	if (("/" + obj.Url) != location.pathname) {
+		if (x != 1) {
+			history.pushState(obj, obj.Title, obj.Url);
+		}
+		else {
+			history.replaceState(obj, obj.Title, obj.Url);
+		}
+
+	}
+	document.title = obj.Title;
+	$("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+	$.ajax({
+		type: 'GET',
+		url: 'divPage' + n + '.html',
+		success: function (data) {
+			$("#mainDiv").html(data).show();
+			newTableObject = document.getElementById('table');
+           let table = new DataTable('#table', {
+             responsive: true});
+			if (x == 0) {
+				ajaxinfo();
+			}
+		}
+	});
+	if (typeof stopCheckBTC === 'function') {
+		var a = stopCheckBTC();
+	}
+
+}
+
+$(window).on("popstate", function (e) {
+	location.replace(document.location);
+
+});
+
+
+function setTooltip(btn, message) {
+	console.log("hide-1");
+	$(btn).tooltip('hide')
+		.attr('data-original-title', message)
+		.tooltip('show');
+	console.log("show");
+}
+
+function hideTooltip(btn) {
+	setTimeout(function () {
+		$(btn).tooltip('hide');
+		console.log("hide-2");
+	}, 1000);
+}
+	  </script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
@@ -71,30 +169,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             margin: 0 !important
         }
     </style>
-
-<script id="data" type="application/json">
-   function ajaxinfo() {
-          $.ajax({
-              type: 'GET',
-              url: 'ajaxinfo.html',
-              timeout: 10000,
-      
-              success: function(data) {
-                  if (data != '01') {
-                      var data = JSON.parse(data);
-                      for (var prop in data) {
-                          $("#" + prop).html(data[prop]).show();
-                      }
-                  } else {
-                      window.location = "logout.html";
-                  }
-              }
-          });
-      
-      }
-      setInterval(function() {
-          ajaxinfo()
-	  </script>
     
 </head>
 <style>

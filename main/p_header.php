@@ -1,8 +1,5 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-
 <?php
 ob_start();
 session_start();
@@ -15,6 +12,8 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+
+
   <meta charset="UTF-8">
   <title>XBaseTools</title>
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 

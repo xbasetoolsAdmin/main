@@ -239,7 +239,22 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
       padding-right: 1rem;
       padding-bottom: 0.5rem;
       padding-left: 1rem;
-      ">	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      ">	
+      
+      <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="navbar-toggler-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+
+	 <span class="midele navbar-toggler-icon"></span> </button>
+																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
+									
+      
+      
+     
+      
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="navbar-toggler-icon"></i>
 			</button>
       																																								<ul class="navbar-nav">

@@ -1,22 +1,13 @@
-Document root / document ^index.html
+ErrorDocument 404 /index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
-RewriteRule ^banks$  index.php
-RewriteRule ^main$  index.php
-
-RewriteRule ^login$  login.php
-RewriteRule ^login_check$  login_check.php
-
+RewriteRule ^main$  main.php
 RewriteRule ^signup$  signup.php
-RewriteRule ^signup_check$  signup_check.php
-
-RewriteRule ^cPanel$  cPanel.php
-
-RewriteRule ^forget.html$  forget.php
-RewriteRule ^reset.html$  resetpass.php
-RewriteRule ^login.html$  login.php
-RewriteRule ^loginpage1.html$  loginpage1.php
+RewriteRule ^forget$  forget.php
+RewriteRule ^resetpass$  resetpass.php
+RewriteRule ^login$  login.php
+RewriteRule ^loginController$  loginController.php
 RewriteRule ^loginpage2.html$  loginpage2.php
 RewriteRule ^loginpage3.html$  loginpage3.php
 RewriteRule ^loginform.html$  loginform.php
@@ -26,8 +17,8 @@ RewriteRule ^index.html$  index.php
 RewriteRule ^ajaxinfo.html$  ajax.php
 RewriteRule ^mailer.html$  mailer.php
 RewriteRule ^shell.html$  shell.php
-RewriteRule ^leads.html$  leads.php
-RewriteRule ^premium.html$  premium.php
+RewriteRule ^leads$  leads.php
+RewriteRule ^premium.html$  premium.phpt
 RewriteRule ^addBalance.html$  addBalance.php
 RewriteRule ^divPage1.html$  divPage1.php
 RewriteRule ^divPage2.html$  divPage2.php
@@ -51,15 +42,15 @@ RewriteRule ^CreateReport.html$  treport.php
 RewriteRule ^addBalance.html$  funds.php
 RewriteRule ^addBalanceAction.html$  addBalanceAction.php
 RewriteRule ^rdp.html$  rdp.php
-RewriteRule ^tutorial.html$  tutorial.php
+RewriteRule ^tutorials$  tutorial.php
 RewriteRule ^MakePayment.html$  pay.php
 RewriteRule ^BitcoinPayment.html$  btc3.php
-RewriteRule ^banks.html$  banks.php
+RewriteRule ^banks$  banks.php
 RewriteRule ^PerfectMoneyPayment.html$  pm3.php
 RewriteRule ^tickets.html$  tickets.php
 RewriteRule ^seller.html$  becomeseller.php
 RewriteRule ^scampage.html$  scampage.php
-RewriteRule ^logout.html$  logout.php
+RewriteRule ^logout$  logout.php
 RewriteRule ^active.html$  active.php
 RewriteRule ^orders.html$  orders.php
 RewriteRule ^setting.html$  setting.php
@@ -195,7 +186,7 @@ RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
 
 RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
 
-RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|post|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
 
 RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
 

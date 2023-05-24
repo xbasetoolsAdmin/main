@@ -12,8 +12,9 @@
    $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
    ?>
 <!doctype html>
-<html>
-
+<script type="application/json">
+pageDiv(0, ' - ', '', 1);
+</script>
 
 
 

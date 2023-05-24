@@ -249,11 +249,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
       
       
       
-			<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+
         
         </div>
         </li>
-        
+			<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+  </div>
         
         <ul>
 				<ul class="navbar-nav profile">

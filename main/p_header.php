@@ -239,22 +239,22 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
       padding-right: 1rem;
       padding-bottom: 0.5rem;
       padding-left: 1rem;
-      ">
-			<a class="navbar-brand" href="main" style="color: var(--font-color);">
-				<img width="40px" src="layout/images/logo.png">
-				Odin</a>
-		
-      
-    
-			<div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
-        
-        </div>
-        </li>
-
- 	<span class="middle button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      ">	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="navbar-toggler-icon"></i>
 			</button>
-        <ul>
+      																																								<ul class="navbar-nav">
+                            <!--------------Host--------------->
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i>Hosts </a>
+                            <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">75</span></span></a>
+                                <a class="dropdown-item" href="cPanel" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-primary">14119</span></span></a>
+                                <a class="dropdown-item" href="shell" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-file-code fa-fw"></i> Shells <span class="badge badge-primary">1041</span></span></a>
+                                <!---  <a class="dropdown-item" href="ssh" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-linux"></i> SSH/WHM <span class="badge badge-primary">143</span></span></a>--->
+                            </div>
+                        </li>
+                            <!--------------Host--------------->
+      
 				<ul class="navbar-nav profile">
           
         </div>

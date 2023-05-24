@@ -1,7 +1,39 @@
 
 
 
+<?php
+ob_start();
+session_start();
+date_default_timezone_set('UTC');
+include "includes/config.php";
 
+if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
+    header("location: ../");
+    exit();
+}
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+?><!doctype html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+<meta name="referrer" content="no-referrer" />
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>JeruxShop</title>
+    <link rel="shortcut icon" href="files/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="layout/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="layout/css/mdb.min.css" />
+    <link rel="stylesheet" type="text/css" href="files/css/flag.min.css" />
+    <style>
+        body {
+            padding-top: 80px
+        }
+    </style>
+    <link rel="stylesheet" href="layout/css/util.css" />
+    <link rel="stylesheet" href="layout/css/main.css" />
+    <!-- JQuery -->
+    <script src="layout/js/jquery-3.4.1.min.js"></script>
   <!-- Main Navigation -->
      <div id=mainDiv" class="-Header">
 	

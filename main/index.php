@@ -24,8 +24,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </style>
  
     <div id="mainDiv">              
-<span id="pageDiv(0, 'Main - FeluxShop', 'main', 1);"></span>
- </div>
+
 <script type=‘text/javascript’>
 (function($)
 {
@@ -33,35 +32,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     {
         $hidew.ajaxSetup(
         {
-            cache: false,
-            beforeSend: function() {
-                $(‘#mainDiv’).hide();
-                $(‘#table’).show();
-            },
-            complete: function() {
-                $(‘#table’).hide();
-                $hidew(‘#mainDiv’).show();
-            },
-            success: function() {
-                $(‘#table’).hide();
-                $hidew(‘#mainDiv’).show();
-            }
-        });
-        var $container = $(“#mainDiv”);
-        $container.load(“divPage1.php”);
-
-        var refreshId = setInterval(function()
-        {
-            $container.load(‘divPage1.php’);
-			$hidew(“.tooltip”).hide();
-        }, 50000);
-    });
-})(jQuery);
-</script>
+  
 <script language=“JavaScript”>
   function selectText(textField)
   {
     textField.focus();
     textField.select();
   }
+<span id="pageDiv(0, 'Main - FeluxShop', 'main', 1);
 </script>

@@ -307,7 +307,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             }
         })();
     </script>
-        <nav id="navbar_id" class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" style="
+    <nav class="navbar navbar-expand-xl navbar  navbar-light "style"
                                                           position:fixed;
                                                           background-color: var(--color-nav);
                                                           z-index:1;
@@ -336,8 +336,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  
                     </a>
                 </li>
- 
-                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHosts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-server orange-color"></i> Hosts
                     </a>

@@ -248,15 +248,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
 
 	 <span class="midele navbar-toggler-icon"></span> </button>
-																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
-									
-      
-      
-     
-      
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="navbar-toggler-icon"></i>
-			</button>
       																																								<ul class="navbar-nav">
                             <!--------------Host--------------->
                         <li class="nav-item dropdown mr-auto">
@@ -269,6 +260,15 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                             </div>
                         </li>
                             <!--------------Host--------------->
+																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
+									
+      
+      
+     
+      
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="navbar-toggler-icon"></i>
+			</button>
       
 				<ul class="navbar-nav profile">
           

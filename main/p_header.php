@@ -326,9 +326,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="navbar-toggler-icon"></i>
         </button>
-        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
-                                                        
-                                                        
                                                         	 <span class="midele navbar-toggler-icon"></span> </button>
 																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
 																																								

@@ -394,14 +394,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                         <a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i> Buyers Requests <span class="badge badge-primary"> 88</span></span></a>
                     </div>
                 </li>
- 
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="offers" style="color: var(--font-color);"><i class="fas fa-user-secret text-primary fa-sm"></i> Bulk Offers</a>
-                </li>
+                
+
             </ul>
 <i class="navbar-toggler-icon"></i>
         </button>
-                    </div>
+        
                 </li>
  
  

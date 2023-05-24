@@ -307,7 +307,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             }
         })();
     </script>
-    <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
+        <nav id="navbar_id" class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" style="
                                                           position:fixed;
                                                           background-color: var(--color-nav);
                                                           z-index:1;
@@ -323,6 +323,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                                           padding-left: 1rem;
                                                         ">
 
+
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 home_nav">
  
             <ul class="navbar-nav mr-auto">
@@ -337,6 +338,9 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                 </li>
  
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHosts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-server orange-color"></i> Hosts
+                    </a>
                             <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text">
                                 
                             </i>Hosts </a>
@@ -394,20 +398,13 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                         <a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i> Buyers Requests <span class="badge badge-primary"> 88</span></span></a>
                     </div>
                 </li>
-                
-
-            </ul>
-<i class="navbar-toggler-icon"></i>
-        </button>
-        
-                </li>
+          
  
  
  
  
  
             </ul>
- 
  
         </div>
         <div class="mx-auto order-0">
@@ -418,8 +415,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 user_nav">
-  
-            <ul class="navbar-nav profile">
+            <ul class="navbar-nav ml-auto">
  
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger"></i> <span class="badge badge-success">0</span></a>

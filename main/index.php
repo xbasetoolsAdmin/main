@@ -21,6 +21,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         background-color: #001f3f;
     }
 </style>
- 
-    <div id="mainDiv">
+ <?php echo'
+    <div id="mainDiv">';?>
  

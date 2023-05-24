@@ -32,7 +32,7 @@ if (mysqli_num_rows($finder) != 0) {
         //$sname = $_SESSION['sname'];
         $_SESSION['sname'] = $username;
         $_SESSION['spass'] = $userpass;
-        //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login successful. Redirecting …</p></div>";
+        //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>../login successful. Redirecting …</p></div>";
         //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"index"}';
         header('location:index.php');
         exit();
@@ -46,9 +46,9 @@ if (mysqli_num_rows($finder) != 0) {
     
     
     
-        //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 1</p></div>";
+        //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>../login failed! Please try again! 1</p></div>";
         //echo '{"state":"0","errorbox":"'.$errorbox.'","url":"0"}';
-        header('location:login?error=true');
+        header('location:../login?error=true');
         exit();
         
         
@@ -58,9 +58,9 @@ if (mysqli_num_rows($finder) != 0) {
 
 
 
-    //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 2</p></div>";
+    //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>../login failed! Please try again! 2</p></div>";
     //echo '{"state":"0","errorbox":"'.$errorbox.'","url":"0"}';
-    header('location:login?error=true');
+    header('location:../login?error=true');
     exit();
 }
 

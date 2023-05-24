@@ -16,6 +16,8 @@
    ?>
 
 
+<?php include"controllers/cpanel_table.php"?>
+
 
 
 

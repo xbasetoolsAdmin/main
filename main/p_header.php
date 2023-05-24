@@ -261,11 +261,11 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 									<span class="badge badge-primary">39</span>
 								</span>
 							</a>
-							<a class="dropdown-item" href="cPanel" style="color: var(--font-color);">
+							<a class="dropdown-item" href="cpanels" style="color: var(--font-color);">
 								<span class="px-2">
 									<i class="fas fa-tools fa-fw"></i>
-									cpanels
-									<span class="badge badge-primary"><span id="cpanel"></span>
+
+									<span class="badge badge-primary"><span id="cpanels"></span>
 								</span>
 							</a>
 							<a class="dropdown-item" href="shell" style="color: var(--font-color);">

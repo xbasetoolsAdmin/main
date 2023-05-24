@@ -21,15 +21,6 @@
 
 
 
-
-
-      <div id="mainDiv">
-      </div>
-
-   <script type="text/javascript">
-    
-<div style="padding-left:20px; display:inline-block; margin-bottom:10px">
- </div>
 <div id="mainDiv"></div>
 <script type="text/javascript">
 

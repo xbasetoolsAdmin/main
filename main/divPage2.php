@@ -14,15 +14,27 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 
-
-    </tr>
-</thead>
-
-  <tbody>
-<?php
+<div class="row m-2 pt-3" style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 Id="mainDiv" table-responsive">
+ <table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<thead>
+    <tr>
+      <th scope="col" >Country</th> 
+      <th scope="col">TLD</th>
+       <th scope="col">Hosting</th>  
+       <th scope="col">Seller</th>
+      <th scope="col">Check</th>
+      <th scope="col">Price</th>
+     <th scope="col">Added on </th>
+       <th scope="col">Buy</th>
+        	</tr>
+          </thead>
+          <tbody><?php
 		include("cr.php");
-	    $q = mysqli_query($dbcon, "SELECT * FROM cpanels WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
-	   	function srl($item)
+	    $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+	   	
+					
+		function srl($item)
 		{
 		$item0 = $item;
 		$item1 = rtrim($item0);

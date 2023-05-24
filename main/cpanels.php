@@ -13,7 +13,7 @@
    ?>
 
 
-<?php include"category/cpanel_table.php"?>
+<?php include"controllers/cpanel_table.php"?>
  <script type="application/json">
 function ajaxinfo() {
         $.ajax({

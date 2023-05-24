@@ -278,6 +278,50 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     
     
     
+    <script>
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+ 
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
+ 
+        // Immediately invoked function to set the theme on initial load
+        (function() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+                document.getElementById('slider').checked = false;
+            } else {
+                setTheme('theme-light');
+                document.getElementById('slider').checked = true;
+            }
+        })();
+    </script>
+    <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
+                                                          position:fixed;
+                                                          background-color: var(--color-nav);
+                                                          z-index:1;
+                                                          top:0;
+                                                          left:0;
+                                                          right:0;
+                                                          line-height: 1.5;
+                                                          font-family: 'Lato', sans-serif;
+                                                          font-size: 15px;
+                                                          padding-top: 0.5rem;
+                                                          padding-right: 1rem;
+                                                          padding-bottom: 0.5rem;
+                                                          padding-left: 1rem;
+                                                        ">
+                                                        
+                                                        
+                                                        
      <li class="nav-item dropdown mr-auto">
                     <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i>
                         Hosts

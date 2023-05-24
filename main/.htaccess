@@ -26,8 +26,8 @@ RewriteRule ^leads$  leads.php
 RewriteRule ^premium.html$  premium.phpt
 RewriteRule ^addBalance.html$  addBalance.php
 RewriteRule ^divPage1.html$  divPage1.php
-RewriteRule ^divPage2.html$  divPage2.php
-RewriteRule ^divPage3.html$  divPage3.php
+RewriteRule ^divPage2.php$  divPage2.php
+RewriteRule ^divPage3.php$  divPage3.php
 RewriteRule ^divPage4.html$  divPage4.php
 RewriteRule ^divPage5.html$  divPage5.php
 RewriteRule ^divPage6.html$  divPage6.php
@@ -63,7 +63,7 @@ RewriteRule ^static.html$  static.php
 RewriteRule ^seller.html$  rindex.php
 RewriteRule ^smtp.html$  smtp.php
 RewriteRule ^AddSingleTool.html$  addt.php
-RewriteRule ^cPanel.html$  cPanel.php
+RewriteRule ^cpanels$  cpanels.php
 RewriteRule ^checkEmailChange.html$  checkEmailChange.php
 RewriteRule ^reports.html$  reports.php
 RewriteRule ^Rules.html$  shoprules.php

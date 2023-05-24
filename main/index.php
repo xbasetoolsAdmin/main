@@ -9,7 +9,7 @@
 <html>
  
 <head>
-    <link rel="stylesheet" type="text/css" href="layout/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="main/layout/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="files/css/flags.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
     <script type="text/javascript" src="layout/js/jquery-3.4.1.min.js?1"></script>

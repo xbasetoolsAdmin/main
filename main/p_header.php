@@ -319,13 +319,22 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
+                                                        <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="navbar-toggler-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
                                                         
                                                         
-                                                        
-     <li class="nav-item dropdown mr-auto">
-                    <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i>
-                        Hosts
-                    </a>
+                                                        	 <span class="midele navbar-toggler-icon"></span> </button>
+																											            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
+																																								
+																																								<ul class="navbar-nav">
+                            <!--------------Host--------------->
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text">
+                                
+                            </i>Hosts </a>
                     <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">39</span></span></a>
                         <a class="dropdown-item" href="cPanel" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-primary">17138</span></span></a>

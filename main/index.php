@@ -21,9 +21,8 @@
 
 
 
-<div id="mainDiv"></div>
+<div id="mainDiv" table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
 <script type="text/javascript">
-
     $(document).keydown(function(event){
         if(event.which=="17")
             cntrlIsPressed = true;

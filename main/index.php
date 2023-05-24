@@ -6,10 +6,13 @@
 
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: index.html");
+   header('location: index.php');
    exit();
 }
 ?>
+
+
+
 <script type="text/javascript">
     function ajaxinfo() {
         $.ajax({

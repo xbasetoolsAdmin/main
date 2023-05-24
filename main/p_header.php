@@ -13,6 +13,8 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
+
+
 <!DOCTYPE html>
 <html>
  
@@ -73,11 +75,11 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 .display td{background:var(--color-card);color:var(--font-color)}.dataTables_wrapper .dataTables_paginate .paginate_button{color:var(--font-color)}#table_paginate .paginate_button{color:var(--font-color)}.alert-info{color:var(--color-info);background-color:var(--color-backinfo);border-color:var(--color-borderinfo)}#table_filter{color:var(--font-color)}#table_length{color:var(--font-color)}#table_paginate{color:var(--font-color)}#table_info{color:var(--font-color)}    }</style>
  
 <body class="them">
-                       <style>.navbar-nav .dropdown-menu{margin:0!important}.theme-light{--color-primary:#0060df;--color-secondary:#fff;--color-secondary2:#ecf0f1;--color-accent:#fd6f53;--font-color:#000;--color-nav:#fff;--color-dropdown:#fff;--color-card:#fff;--color-card2:#d1ecf1;--color-info:#0c5460;--color-backinfo:#d1ecf1;--color-borderinfo:#bee5eb}.theme-dark{--color-primary:#17ed90;--color-secondary:#353B50;--color-secondary2:#353B50;--color-accent:#12cdea;--font-color:#fff;--color-nav:#363947;--color-dropdown:rgba(171,205,239,.3);--color-card:#262A37;--color-card2:#262A37;--color-info:#4DD0E1;--color-backinfo:#262A37;--color-borderinfo:#262A37}.them{background:var(--color-secondary);flex-direction:column;justify-content:center;align-items:center}.them h1{color:var(--font-color);font-family:sans-serif}.card-body{color:var(--font-color)}.them button{color:var(--font-color);background-color:#fff;padding:10px 20px;border:0;border-radius:5px}.navbar.navbar-light .navbar-toggler{color:var(--font-color)}.switch{position:relative;display:inline-block;width:60px;height:34px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:0.4s;transition:0.4s}.slider:before{position:absolute;content:"";height:40px;width:40px;left:0;bottom:4px;top:0;bottom:0;margin:auto 0;-webkit-transition:0.4s;transition:0.4s;box-shadow:0 0 15px #2020203d;background:#fff url(https://i.ibb.co/FxzBYR9/night.png);background-repeat:no-repeat;background-position:center}input:checked+.slider{background-color:#2196f3}input:focus+.slider{box-shadow:0 0 1px #2196f3}input:checked+.slider:before{-webkit-transform:translateX(24px);-ms-transform:translateX(24px);transform:translateX(24px);background:#fff url(https://i.ibb.co/7JfqXxB/sunny.png);background-repeat:no-repeat;background-position:center}.slider.round{border-radius:34px}.slider.round:before{border-radius:50%}
-    </style>
-    <script>function setTheme(themeName){localStorage.setItem('theme',themeName);document.documentElement.className=themeName}
+<style>.navbar-nav .dropdown-menu{margin:0!important}.theme-light{--color-primary:#0060df;--color-secondary:#fff;--color-secondary2:#ecf0f1;--color-accent:#fd6f53;--font-color:#000;--color-nav:#fff;--color-dropdown:#fff;--color-card:#fff;--color-card2:#d1ecf1;--color-info:#0c5460;--color-backinfo:#d1ecf1;--color-borderinfo:#bee5eb}.theme-dark{--color-primary:#17ed90;--color-secondary:#353B50;--color-secondary2:#353B50;--color-accent:#12cdea;--font-color:#fff;--color-nav:#363947;--color-dropdown:rgba(171,205,239,.3);--color-card:#262A37;--color-card2:#262A37;--color-info:#4DD0E1;--color-backinfo:#262A37;--color-borderinfo:#262A37}.them{background:var(--color-secondary);flex-direction:column;justify-content:center;align-items:center}.them h1{color:var(--font-color);font-family:sans-serif}.card-body{color:var(--font-color)}.them button{color:var(--font-color);background-color:#fff;padding:10px 20px;border:0;border-radius:5px}.navbar.navbar-light .navbar-toggler{color:var(--font-color)}.switch{position:relative;display:inline-block;width:60px;height:34px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:0.4s;transition:0.4s}.slider:before{position:absolute;content:"";height:40px;width:40px;left:0;bottom:4px;top:0;bottom:0;margin:auto 0;-webkit-transition:0.4s;transition:0.4s;box-shadow:0 0 15px #2020203d;background:#fff url(https://i.ibb.co/FxzBYR9/night.png);background-repeat:no-repeat;background-position:center}input:checked+.slider{background-color:#2196f3}input:focus+.slider{box-shadow:0 0 1px #2196f3}input:checked+.slider:before{-webkit-transform:translateX(24px);-ms-transform:translateX(24px);transform:translateX(24px);background:#fff url(https://i.ibb.co/7JfqXxB/sunny.png);background-repeat:no-repeat;background-position:center}.slider.round{border-radius:34px}.slider.round:before{border-radius:50%}
+</style>
+ <script>function setTheme(themeName){localStorage.setItem('theme',themeName);document.documentElement.className=themeName}
     function toggleTheme(){if(localStorage.getItem('theme')==='theme-dark'){setTheme('theme-light')}else{setTheme('theme-dark')}}(function(){if(localStorage.getItem('theme')==='theme-dark'){setTheme('theme-dark');document.getElementById('slider').checked=!1}else{setTheme('theme-light');document.getElementById('slider').checked=!0}})()
-    </script>
+</script>
     <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
                                                           position:fixed;
                                                           background-color: var(--color-nav);
@@ -93,7 +95,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-        <a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png">XbaseTools</a>
+        <a class="navbar-brand" href="main/main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png">XbaseTools</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                
             <i class="navbar-toggler-icon"></i>

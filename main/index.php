@@ -77,7 +77,7 @@ $(window).on("popstate", function(e) {
 
 $(window).on('load', function() {
 $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(6,'Leads - JeruxShop','leads.html',1);
+   pageDiv(0,'Leads - JeruxShop','',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
       setTooltip(e.trigger, 'Copied!');
@@ -99,5 +99,5 @@ function setTooltip(btn, message) {
 function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
 }
-<span id="pageDiv(0, 'Main - FeluxShop', 'main', 1);
+
 </script>

@@ -109,12 +109,3 @@ function ajaxinfo() {
             console.log("hide-2");
         }, 1000);
     }
-</script>
-<style>
-    .navbar {
-        background-color: #001f3f;
-    }
-</style>
- 
-    <div id="mainDiv">
- 

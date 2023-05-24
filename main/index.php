@@ -77,8 +77,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             success: function(data) {
                 $("#mainDiv").html(data).show();
                 newTableObject = document.getElementById('table');
-                sorttable.makeSortable(newTableObject);
-                $(".sticky-header").floatThead({
+               // sorttable.makeSortable(newTableObject);
+             //   $(".sticky-header").floatThead({
                     top: 60
                 });
                 if (x == 0) {

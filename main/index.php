@@ -35,19 +35,19 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         {
             cache: false,
             beforeSend: function() {
-                //$(‘#content’).hide();
-                //$(‘#loading’).show();
+                $(‘#mainDiv’).hide();
+                $(‘#table’).show();
             },
             complete: function() {
-                //$(‘#loading’).hide();
-                $hidew(‘#content’).show();
+                $(‘#table’).hide();
+                $hidew(‘#mainDiv’).show();
             },
             success: function() {
-                //$(‘#loading’).hide();
-                $hidew(‘#content’).show();
+                $(‘#table’).hide();
+                $hidew(‘#mainDiv’).show();
             }
         });
-        var $container = $(“#content”);
+        var $container = $(“#mainDiv”);
         $container.load(“divPage1.php”);
 
         var refreshId = setInterval(function()

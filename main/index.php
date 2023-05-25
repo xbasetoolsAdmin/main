@@ -11,16 +11,3 @@
    }
    $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
    ?>
-<script src="category/data02.js"></script>
-
-
-
-
-
-
-
-
-<script type="application/json">
-pageDiv(0, ' - ', '', 1);
-</script>
-</html>

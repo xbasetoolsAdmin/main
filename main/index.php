@@ -379,7 +379,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             $('.dropdown').hover(function() {
                 $('.dropdown-toggle', this).trigger('click');
             });
-            pageDiv(2, 'Add Balance - XBASETOOLS', '', 1);
+            pageDiv(0, 'Add Balance - XBASETOOLS', '', 1);
             var clipboard = new Clipboard('.copyit');
             clipboard.on('success', function(e) {
                 setTooltip(e.trigger, 'Copied!');

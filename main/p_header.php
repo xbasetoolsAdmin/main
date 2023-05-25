@@ -362,14 +362,7 @@ Hosts
                 <a class="dropdown-item" href="smtp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-envelope fa-fw"></i> SMTPs <span class="badge badge-primary">2652</span></span></a>
             </div>
         </li>
-    </div>
-        </li>
-    </div>
-        </li>
-    </div>
-        </li>
-    </div>
-        </li>
+     
         <li class="nav-item dropdown mr-auto">
             <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Leads
 

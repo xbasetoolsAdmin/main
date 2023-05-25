@@ -466,7 +466,125 @@ a.closearb {
     background-position: center center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
 }
-</style> <div class="d-flex flex-row-reverse mt-0">
+</style> 
+
+</head>
+<script type="application/json">
+
+function ajaxinfo() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'ajaxinfo.html',
+                    timeout: 10000,
+
+                    success: function(data) {
+                        if (data != '01') {
+                            var data = JSON.parse(data);
+                            for (var prop in data) {
+                                $("#" + prop).html(data[prop]).show();
+                            }
+                        } else {
+                            window.location = "logout.html";
+                        }
+                    }
+                });
+
+            }
+            setInterval(function() {
+                ajaxinfo()
+            }, 3000);
+
+            ajaxinfo();
+
+$(document).keydown(function(event){
+    if(event.which=="17")
+        cntrlIsPressed = true;
+});
+
+$(document).keyup(function(){
+    cntrlIsPressed = false;
+});
+
+var cntrlIsPressed = false;
+
+
+function pageDiv(n,t,u,x){
+  if(cntrlIsPressed){
+    window.open(u, '_blank');
+    return false;
+  }
+        var obj = { Title: t, Url: u };
+        if ( ("/"+obj.Url) != location.pathname) {
+        	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
+        	else{history.replaceState(obj, obj.Title, obj.Url);}
+
+    	}
+      document.title = obj.Title;
+    $("#mainDiv").html('<div id="mydiv"><img src="/buyer/files/img/load2.gif" class="ajax-loader"></div>').show();
+    $.ajax({
+    type:       'GET',
+    url:        'divPage'+n+'.html',
+    success:    function(data)
+    {
+        $("#mainDiv").html(data).show();
+        newTableObject = document.getElementById('table');
+        sorttable.makeSortable(newTableObject);
+        $(".sticky-header").floatThead({top:60});
+        if(x==0){ajaxinfo();}
+      }});
+    if (typeof stopCheckBTC === 'function') { 
+    var a = stopCheckBTC();
+     }
+
+}
+
+  $(document).keydown(function(event){
+        if(event.which=="17")
+            cntrlIsPressed = true;
+    });
+
+    $(document).keyup(function(){
+        cntrlIsPressed = false;
+    });
+
+    var cntrlIsPressed = false;
+
+
+    $(window).on("popstate", function(e) {
+        location.replace(document.location);
+
+    });
+
+
+   $(window).on('load', function() {
+$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+	   pageDiv(0,'Add Balance - OdinShop','',1);
+	   var clipboard = new Clipboard('.copyit');
+	    clipboard.on('success', function(e) {
+	      setTooltip(e.trigger, 'Copied!');
+	      hideTooltip(e.trigger);
+	      e.clearSelection();
+	   });
+
+});
+
+function setTooltip(btn, message) {
+  //console.log("hide-1");
+  $(btn).tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+     //console.log("show");
+}
+
+function hideTooltip(btn) {
+  setTimeout(function() {$(btn).tooltip('hide'); /*console.log("hide-2");*/}, 1000);
+}
+</script>
+
+<Body style="theme-light">
+        
+        
+<div class="d-flex flex-row-reverse mt-0">
 <div class="p-2">
 <label id="switch" class="switch">
 <input type="checkbox" onchange="toggleTheme()" id="slider">

@@ -31,4 +31,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
              </tr> 
             </thead>
                <tbody>
-               <tr>
+              
+            
+            </thody>
+            </table>

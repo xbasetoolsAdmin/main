@@ -125,6 +125,6 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 
 
 <?php
-require_once('p_footer.php');
+require_once('P_footer.php');
 
 ?>

@@ -9,9 +9,7 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
-<script>
-            pageDiv(2, 'Add Balance - XBASETOOLS', '', 1);
-</script>
+
 <body class="them">
     <style>
         .navbar-nav .dropdown-menu {

@@ -95,18 +95,25 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
         <th data-priority="1">6<th>
         <th data-priority="1">7<th>
          <th data-priority="1">8<th>
-          <th data-priority="1">9<th>
-         <th data-priority="1">10<th>
+                   <th data-priority="1">9<th>
+                  <th data-priority="1">10<th>
                             </tr>
+                        </thead>
                          <thody>
-                            
-                        <thody>
-                    </table>
-            
-    </div>
-    
-
-    
+                        <tr>                                  
+        <th data-priority="1">0<th>
+        <th data-priority="1">2<th>
+         <th data-priority="1">3<th>
+        <th data-priority="1">4<th>
+        <th data-priority="1">5<th>
+        <th data-priority="1">6<th>
+        <th data-priority="1">7<th>
+         <th data-priority="1">8<th>
+        <th data-priority="1">9<th>
+        <th data-priority="1">10<th>
+                        </tr>
+                 </tbody>  
+</table>
     <script>
             pageDiv(2, 'Add Balance - XBASETOOLS', '', 1);
 </script>

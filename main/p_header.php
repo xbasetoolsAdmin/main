@@ -40,6 +40,9 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
  
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+    
     <script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

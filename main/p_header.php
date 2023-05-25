@@ -1,21 +1,13 @@
-<?php
-ob_start();
-session_start();
-date_default_timezone_set('UTC');
-include "../includes/config.php";
-if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
-    header("location: ../");
-    exit();}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
 <!doctype html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="layout/css/bootstrap.min.css?1" />
 <link rel="stylesheet" type="text/css" href="../files/css/flags.css" />
 <link rel="stylesheet" href="layout/css/all.min.css">
-
-<meta charset="utf-8">
+<meta charset="utf-8"> <?php
+ob_start();
+session_start();
+date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit();} $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
 <title>JeruxShop</title>	

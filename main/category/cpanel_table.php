@@ -1,3 +1,5 @@
+
+<!------div category section page------->
 <?php
 ob_start();
 session_start();

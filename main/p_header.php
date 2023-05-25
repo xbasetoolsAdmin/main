@@ -406,5 +406,4 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             </label>
         </div>
     </div>
-
-
+<div class="alert alert-info text-left" role="alert" style="margin: 15px;">

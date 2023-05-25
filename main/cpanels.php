@@ -332,55 +332,6 @@
             }
         })();
     </script>
-
-    <script type="text/javascript">
-        $(document).keydown(function(event) {
-            if (event.which == "17")
-                cntrlIsPressed = true;
-        });
- 
-        $(document).keyup(function() {
-            cntrlIsPressed = false;
-        });
- 
-        var cntrlIsPressed = false;
- 
- 
-        $(window).on("popstate", function(e) {
-            location.replace(document.location);
- 
-        });
- 
- 
-        $(window).on('load', function() {
-            $('.dropdown').hover(function() {
-                $('.dropdown-toggle', this).trigger('click');
-            });
-            pageDiv(2, 'Add Balance - OdinShop', 'cpanels', 1);
-            var clipboard = new Clipboard('.copyit');
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-                e.clearSelection();
-            });
- 
-        });
- 
- 
-        function setTooltip(btn, message) {
-            //console.log("hide-1");
-            $(btn).tooltip('hide')
-                .attr('data-original-title', message)
-                .tooltip('show');
-            //console.log("show");
-        }
- 
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide'); /*console.log("hide-2");*/
-            }, 1000);
-        }
-    </script>
     <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
                                                           position:fixed;
                                                           background-color: var(--color-nav);
@@ -535,11 +486,66 @@
             height: 30px;
             text-indent: -9999px;
             background-size: contain;
-            background-repeat: no-repeat;
+            background-repeat: no-repeat;     
+             
             background-position: center center;
             background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
         }
     </style>
+    </head>
+    
+</header>
+
+        <script type="text/javascript">
+        $(document).keydown(function(event) {
+            if (event.which == "17")
+                cntrlIsPressed = true;
+        });
+ 
+        $(document).keyup(function() {
+            cntrlIsPressed = false;
+        });
+ 
+        var cntrlIsPressed = false;
+ 
+ 
+        $(window).on("popstate", function(e) {
+            location.replace(document.location);
+ 
+        });
+ 
+ 
+        $(window).on('load', function() {
+            $('.dropdown').hover(function() {
+                $('.dropdown-toggle', this).trigger('click');  });
+            pageDiv(2, 'cpanels - XbaseTools', 'cpanels', 1);
+            var clipboard = new Clipboard('.copyit');
+            clipboard.on('success', function(e) {
+                setTooltip(e.trigger, 'Copied!');
+                hideTooltip(e.trigger);
+                e.clearSelection();
+            });
+ 
+        });
+ 
+ 
+        function setTooltip(btn, message) {
+            //console.log("hide-1");
+            $(btn).tooltip('hide')
+                .attr('data-original-title', message)
+                .tooltip('show');
+            //console.log("show");
+        }
+ 
+        function hideTooltip(btn) {
+            setTimeout(function() {
+                $(btn).tooltip('hide'); /*console.log("hide-2");*/
+            }, 1000);
+        }
+    </script>
+    
+    <body style="loading">
+        
     <div class="d-flex flex-row-reverse mt-0">
         <div class="p-2">
             <label id="switch" class="switch">
@@ -549,11 +555,11 @@
             </label>
         </div>
     </div>
- 
     <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
         <span><a href="addBalance.php?do=balance" class="btn btn-primary" style="color:#fff; font-size: 12 px">Add Balance</a></span>
         <span><a href="addBalance.php?do=details" class="btn btn-primary" style="color:#fff; font-size: 12 px">Balance Info</a></span>
     </div>
+    
     <div id="mainDiv"></div>
 </body>
  

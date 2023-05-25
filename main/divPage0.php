@@ -13,8 +13,6 @@
                 <thead>
                     <tr>
         <th class="all"> </th>
-<thead>
-    <tr>
       <th scope="col" >Country</th>
       <th scope="col">TLD</th>
       <th scope="col">Detect Hosting</th>

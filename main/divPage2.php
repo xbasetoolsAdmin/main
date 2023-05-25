@@ -17,21 +17,65 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <div class="col-sm-12 table-responsive">
 <table id="cpanel_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);" ">
 <thead>
-<tr>
-<th data-priority="1"></th>
-<th class="all">ID</th>
-<th data-priority="3">Country</th>
-<th data-priority="8">Type</th>
-<th data-priority="15">TLD</th>
-<th data-priority="14">Domain</th>
-<th data-priority="11">Hosting</th>
-<th data-priority="12">CMS</th>
-<th class="all" style="width:9% !important;">Ip Blacklist</th>
-<th class="all">Seo Info</th>
-             </tr> 
-            </thead>
-               <tbody>
-              
-            
-            </thody>
-            </table>
+    <tr>
+      <th scope="col" >Country</th>
+      <th scope="col">TLD</th>
+      <th scope="col">Detect Hosting</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Check</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+
+      <th scope="col">Buy</th>
+    </tr>
+</thead>
+  <tbody>
+<?php
+		include("cr.php");
+	    $q = mysqli_query($dbcon, "SELECT * FROM cpanels WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+	   	function srl($item)
+		{
+		$item0 = $item;
+		$item1 = rtrim($item0);
+		$item2 = ltrim($item1);
+		return $item2;
+		} 
+
+ while($row = mysqli_fetch_assoc($q)){
+	 	 $countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
+
+	 $url = $row['url'];
+	 	$d = explode("|", $url);
+		$urled = srl($d[0]);
+
+	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
+    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+     echo "
+ <tr>    
+    <td id='cpanel_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+		    <td id='cpanel_tld'> .".$tld." </td>
+    <td id='cpanel_hosting'> ".htmlspecialchars($row['infos'])." </td>
+    <td id='cpanel_seller'> ".htmlspecialchars($SellerNick)."</td>
+";
+	 echo '<td><span id="shop'.$row["id"].'" type="cpanel"><a onclick="javascript:check('.$row["id"].');" class="btn btn-info btn-xs"><font color=white>Check</font></a></span><center></td>';
+echo "
+    <td> ".htmlspecialchars($row['price'])."</td>
+	    <td> ".htmlspecialchars($row['date'])."</td>
+    ";
+
+    echo '
+    <td>
+	<span id="cpanel'.$row['id'].'" title="buy" type="cpanel"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
+    </td>
+            </tr>
+     ';
+ }
+
+ ?>
+
+ </tbody>
+ </table>

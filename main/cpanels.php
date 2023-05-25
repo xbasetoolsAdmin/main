@@ -4,7 +4,7 @@ Hu<?php
    date_default_timezone_set('UTC');
    include "includes/config.php";
     include "p_header.php";?>
-      =.php";
+  
    if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
        header("location: ../");
        exit();
@@ -14,7 +14,18 @@ Hu<?php
 
 
  
-
+<thead>
+    <tr>
+      <th scope=“col” >Country</th>
+      <th scope=“col”>TLD</th>
+      <th scope=“col”>Detect Hosting</th>
+      <th scope=“col”>Seller</th>
+      <th scope=“col”>Check</th>
+      <th scope=“col”>Price</th>
+      <th scope=“col”>Added on </th>
+      <th scope=“col”>Buy</th>
+    </tr>
+</thead>
  </table>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

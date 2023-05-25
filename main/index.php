@@ -41,4 +41,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                 $('.dropdown-toggle', this).trigger('click');
             });
             pageDiv(1, 'Add Balance - OdinShop', 'main', 1);
+<?php 
+      require"p_footer.php";
 
+?>

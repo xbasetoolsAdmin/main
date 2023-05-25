@@ -16,7 +16,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <link rel="stylesheet" href="layout/css/all.min.css">
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js?1"></script>
-<script type="text/javascript" src="/buyer/files/bootstrap/3/js/bootstrap.js?1"></script>
+<script type="text/javascript" src="/buyer/files/bootstrap/3/js/bootstrap.min.js?1"></script>
 <script type="text/javascript" src="/buyer/files/js/sorttable.js"></script>
 <script type="text/javascript" src="/buyer/files/js/table-head.js?3334"></script>
 <script type="text/javascript" src="/buyer/files/js/bootbox.min.js"></script>

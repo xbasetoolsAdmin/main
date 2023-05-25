@@ -23,6 +23,6 @@
 
             ajaxinfo();
 
-	   pageDiv(0,'Add Balance - OdinShop','',1);
+	   pageDiv(2,'Add Balance - OdinShop','',1);
     .tooltip('show');
      //console.log("show");

@@ -99,6 +99,8 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
          <th data-priority="1">10<th>
                             </tr>
                          <thody>
+                            
+                        <thody>
                     </table>
             
     </div>

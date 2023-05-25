@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 date_default_timezone_set('UTC');
-include "includes/config.php";
+include "../includes/config.php";
 
 if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     header("location: ../");
@@ -80,7 +80,29 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 </div>
 
            <!-------End------>
+    
 
+
+<?php
+		include("cr.php");
+	    $q = mysqli_query($dbcon, "SELECT * FROM cpanels WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
+	   	function srl($item)
+		{
+		$item0 = $item;
+		$item1 = rtrim($item0);
+		$item2 = ltrim($item1);
+		return $item2;
+		} 
+
+ while($row = mysqli_fetch_assoc($q)){
+	 	 $countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
+
+	 $url = $row['url'];
+	 	$d = explode("|", $url);
+		$urled = srl($d[0]);
+	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); ?>
 <div class="row m-2 pt-3" style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive" id="mainDiv">
 <table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);" ">
@@ -108,36 +130,15 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 <th class="all">Buy</th>
                </tr>
                </thead>
-               <tbody>          
-
-
-<?php
-		include("cr.php");
-	    $q = mysqli_query($dbcon, "SELECT * FROM cpanels WHERE sold='0' ORDER BY RAND()")or die(mysql_error());
-	   	function srl($item)
-		{
-		$item0 = $item;
-		$item1 = rtrim($item0);
-		$item2 = ltrim($item1);
-		return $item2;
-		} 
-
- while($row = mysqli_fetch_assoc($q)){
-	 	 $countryfullname = $row['country'];
-	  $code = array_search("$countryfullname", $countrycodes);
-	 $countrycode = strtolower($code);
-
-	 $url = $row['url'];
-	 	$d = explode("|", $url);
-		$urled = srl($d[0]);
-
-	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
+               <tbody>      
+       
+        
+ <?php
     $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>    
-
    <td data-priority='1'>
 
     </td>
@@ -164,7 +165,6 @@ echo "
 
  </tbody>
  </table>
-
 <script type="text/javascript">
 $('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#cpanel_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#cpanel_tld").text().toLowerCase() );var ck3 = $.trim( $(this).find("#cpanel_hosting").text().toLowerCase() );var ck4 = $.trim( $(this).find("#cpanel_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="cpanel_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="cpanel_tld"]').val().toLowerCase() );var val3 = $.trim( $('input[name="cpanel_hosting"]').val().toLowerCase() );var val4 = $.trim( $('select[name="cpanel_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || ck3.indexOf(val3)==-1 || (ck4 != val4 && val4 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 function buythistool(id){

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
- 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +64,6 @@
             margin: 0 !important
         }
     </style>
-</head>
 <style>
     .panel-default {
         border-color: #ecf0f1;
@@ -333,6 +331,7 @@
             }
         })();
     </script>
+    </head>
     <script type="text/javascript">
         $(document).keydown(function(event) {
             if (event.which == "17")
@@ -356,7 +355,7 @@
             $('.dropdown').hover(function() {
                 $('.dropdown-toggle', this).trigger('click');
             });
-            pageDiv(13, 'Add Balance - OdinShop', 'addBalance', 1);
+            pageDiv(2, 'Add Balance - OdinShop', 'cpanels', 1);
             var clipboard = new Clipboard('.copyit');
             clipboard.on('success', function(e) {
                 setTooltip(e.trigger, 'Copied!');

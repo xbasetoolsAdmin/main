@@ -581,7 +581,7 @@ function hideTooltip(btn) {
 }
 </script>
 
-<Body style="theme-light">
+<Body style="theme-dark">
         
         
 <div class="d-flex flex-row-reverse mt-0">

@@ -103,6 +103,13 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
   </div>
 </div>
     <script type="text/javascript">
+            $(document).ready(function() {
+            	$('#cpanel_data').DataTable( {
+            		"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
+            		'iDisplayLength': 1000,
+            		"aaSorting": []
+            	} );
+            } );
         $(document).keydown(function(event) {
             if (event.which == "17")
                 cntrlIsPressed = true;

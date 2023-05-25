@@ -363,8 +363,9 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </div>
     </nav>
 </head>
+
 </header>
 
 <body style="them">
 
-
+<!------div include section page 1------->

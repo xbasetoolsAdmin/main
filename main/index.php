@@ -12,7 +12,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <?php
 
-include"main/category/cpanel_table.php";
+include"category/cpanel_table.php";
 
 ?>
 

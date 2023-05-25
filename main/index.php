@@ -1,4 +1,4 @@
 <?php
-require_once(__ROOT__.'/p_header.php');
+require_once('p_header.php');
 
 ?>

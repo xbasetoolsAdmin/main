@@ -11,59 +11,10 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 
-<div Id="mainDiv">
-
-          <thead>
-                           <tr>
-        <th data-priority="1">0<th>
-        <th data-priority="1">2<th>
-         <th data-priority="1">3<th>
-        <th data-priority="1">4<th>
-        <th data-priority="1">5<th>
-        <th data-priority="1">6<th>
-        <th data-priority="1">7<th>
-         <th data-priority="1">8<th>
-          <th data-priority="1">9<th>
-         <th data-priority="1">10<th>
-                            </tr>
-                         <thody>
-                    </table>
-    
-    
-</div>
+<div Id="mainDiv"></div>
 <script>
     pageDiv(2,'Add Balance - OdinShop','',1);
 </script>
 
-    <script>
-     function ajaxinfo() {
-                $.ajax({
-                    type: 'Post',
-                    url: 'divPage2.html',
-                    timeout: 10000,
-
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
-                            }
-                        } else {
-                            window.location = "logout.html";
-                        }
-                    }
-                });
-
-            }
-            setInterval(function() {
-                ajaxinfo()
-            }, 3000);
-
-            ajaxinfo();
-            
-
-    .tooltip('show');
-     //console.log("show");
-</script>
 </body>
 </html>

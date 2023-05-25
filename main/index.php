@@ -104,7 +104,7 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 </div>
     <script type="text/javascript">
             $(document).ready(function() {
-            	$('#cpanel_data').DataTable( {
+            	$('#mainDiv').DataTable( {
             		"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
             		'iDisplayLength': 1000,
             		"aaSorting": []

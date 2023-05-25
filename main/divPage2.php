@@ -19,3 +19,7 @@
 <th data-priority="12">CMS</th>
 <th class="all" style="width:9% !important;">Ip Blacklist</th>
 <th class="all">Seo Info</th>
+             </tr> 
+            </thead>
+               <tbody>
+               <tr>

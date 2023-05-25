@@ -8,8 +8,11 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+?>
 
-include"category/cpanel_table";
+<?php
+
+include"main/category/cpanel_table.php";
 
 ?>
 

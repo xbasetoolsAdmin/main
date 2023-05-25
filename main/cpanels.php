@@ -166,7 +166,8 @@
         color: var(--font-color);
     }
 </style>
- 
+     </head>
+    
 <body class="them">
     <style>
         .navbar-nav .dropdown-menu {
@@ -331,7 +332,7 @@
             }
         })();
     </script>
-    </head>
+
     <script type="text/javascript">
         $(document).keydown(function(event) {
             if (event.which == "17")

@@ -346,8 +346,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
     <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
-        <span><a href="addBalance.php?do=balance" class="btn btn-primary" style="color:#fff; font-size: 12 px">Add Balance</a></span>
-        <span><a href="addBalance.php?do=details" class="btn btn-primary" style="color:#fff; font-size: 12 px">Balance Info</a></span>
+        <span><a href="addBalance.php" class="btn btn-primary" style="color:#fff; font-size: 12 px">Add Balance</a></span>
+        <span><a href="addBalance.php" class="btn btn-primary" style="color:#fff; font-size: 12 px">Balance Info</a></span>
     </div>
     
     

@@ -11,7 +11,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 
-<div Id="mainDiv"></div>
+<div Id="mainDiv">
 
           <thead>
                            <tr>

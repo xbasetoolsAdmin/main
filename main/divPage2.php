@@ -1,6 +1,6 @@
 
 
-HELLO THIS CPABEL
+HELLO THIS CPANEl
 
           <!-------Start------>
 

@@ -109,9 +109,7 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
                </tr>
                </thead>
                <tbody>          
-   <th data-priority="1"></th>
-            <tr>
-            
+
 
 <?php
 		include("cr.php");
@@ -139,8 +137,11 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>    
+
+   <td data-priority='1'>
+
+    </td>
     <td id='cpanel_country'>
-    
     <i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
 		    <td id='cpanel_tld'> .".$tld." </td>
     <td id='cpanel_hosting'> ".($row['infos'])." </td>

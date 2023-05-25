@@ -26,7 +26,7 @@ RewriteRule ^leads$  leads.php
 RewriteRule ^premium.html$  premium.phpt
 RewriteRule ^addBalance.html$  addBalance.php
 RewriteRule ^divPage1.html$  divPage1.php
-RewriteRule ^divPage2.php$  divPage2.php
+RewriteRule ^divPage2.html$  divPage2.php
 RewriteRule ^divPage3.php$  divPage3.php
 RewriteRule ^divPage4.html$  divPage4.php
 RewriteRule ^divPage5.html$  divPage5.php

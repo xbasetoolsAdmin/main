@@ -35,5 +35,7 @@
                  </tbody>  
 </table>
     <script>
-            pageDiv(2, 'Add Balance - XBASETOOLS', '', 1);
+
 </script>
+</div>
+<

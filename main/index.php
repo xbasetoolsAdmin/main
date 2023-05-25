@@ -1,7 +1,8 @@
-<?php
-require_once('p_header.php');
-
-?>
+<?php require_once('p_header.php'); ?>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	
 
 
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
@@ -101,7 +102,8 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 </table>
 </div>
 </div>
-     <script type="text/javascript">
+	       
+     <script type="application/json">
   $(document).keydown(function(event){
         if(event.which=="17")
             cntrlIsPressed = true;
@@ -120,9 +122,9 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
     });
 
 
-    $(window).on('load', function() {
-		$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-	   	pageDiv(0,'Add Balance - OdinShop','',1);
+                       $(window).on('load', function() {
+$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+	   pageDiv(0,'Add Balance - OdinShop','',1);
 	   var clipboard = new Clipboard('.copyit');
 	    clipboard.on('success', function(e) {
 	      setTooltip(e.trigger, 'Copied!');

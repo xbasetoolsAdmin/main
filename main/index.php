@@ -355,7 +355,10 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <div id="mainDiv"></div>
     
     
-    
+    <script>
+            pageDiv(2, 'Add Balance - XBASETOOLS', '', 1);
+</script>
+
     <script>
      function ajaxinfo() {
                 $.ajax({

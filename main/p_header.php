@@ -66,7 +66,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         }
     </style>
     <link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
-    <script src="layout/js/main.js"></script>
+    <script src="layout/plugin.js"></script>
     <script type="text/javascript">
         // Notice how this gets configured before we load Font Awesome
         window.FontAwesomeConfig = {

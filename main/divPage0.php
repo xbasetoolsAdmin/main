@@ -43,27 +43,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                </thead>
                <tbody>          
    <th data-priority="1"></th>
-              <tr>       
-<td class='all'>ID</td>
-<td data-priority='3'>Country</td>
-<td data-priority='8'>Type</td>
-<td data-priority='15'>TLD</td>
-<td data-priority='14'>Domain</td>
-<td data-priority='11'>Hosting</td>
-<td data-priority='12'>CMS</td>
-<td class='all' style="width:9% !important;">Ip Blacklist</td>
-<td class='all'>Seo Info</td>
-<td data-priority=''9">Source</td>
-<td class='all'>Technologies</td>
-<td data-priority='10'>Seller</td>
-<th class='all'>Check</td>
-<td class='all'>Price</td>
-<td data-priority='13'>Added on </td>
-<td class='all'>Send Test</td>
-<td data-priority='4'>DA</td>
-<td data-priority="5">PA</td>
-<td class="all">Buy</td>
-</tr>
-       </tbody>  
-      </table>
- 
+            <tr>
+            
+</thody>
+</table>

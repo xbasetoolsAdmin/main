@@ -15,65 +15,54 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <link rel="stylesheet" type="text/css" href="../files/css/flags.css" />
 <link rel="stylesheet" href="layout/css/all.min.css">
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js?1"></script>
-<script type="text/javascript" src="/buyer/files/bootstrap/3/js/bootstrap.min.js?1"></script>
-<script type="text/javascript" src="/buyer/files/js/sorttable.js"></script>
-<script type="text/javascript" src="/buyer/files/js/table-head.js?3334"></script>
-<script type="text/javascript" src="/buyer/files/js/bootbox.min.js"></script>
-<script type="text/javascript" src="layout/js/clipboard.min.js"></script>
-
-<link rel="shortcut icon" href="/buyer/files/img/favicon.ico" />
-<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
- <meta name="referrer" content="no-referrer" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
-<title>JeruxShop</title>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
+<title>JeruxShop</title>	
+<link rel="stylesheet" href="layout/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="layout/js/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="layout/js/bootstrap.min.js"></script>
+<script src="layout/js/bootbox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-177092549-1');
+        </script>
+<link rel="stylesheet" href="layout/css/all.min.css" />
+<link rel="stylesheet" href="layout/css/main.css?v=12.9" />
+<link rel="stylesheet" href="layout/css/util.css" />
+<style>body{padding-top:80px}</style>
+<link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
+<script src="layout/js/main.js"></script>
+<script type="text/javascript">
+            // Notice how this gets configured before we load Font Awesome
+            window.FontAwesomeConfig = { autoReplaceSvg: false }
+        </script>
 <style>
-#table {
-  .sortable
-}
-table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25BE" 
-}
-
-.label-as-badge {
-    border-radius: 0.5em;
-}
-
-body {
-    padding-top:50px;
-}
-table.floatThead-table {
-    border-top: none;
-    border-bottom: none;
-    background-color: #fff;
-}
-@media (min-width: 768px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-}
-
-#mydiv {
-  height: 400px;
-  position: relative;
-}
-.ajax-loader {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; /* presto! */
-
-}
-
-   
-    
-
-</style>
+            @import url(//fonts.googleapis.com/css?family=Roboto:400);
+            .navbar-nav .dropdown-menu
+            {
+            margin:0 !important
+            }
+        </style>
 <script type="text/javascript">
              function ajaxinfo() {
                 $.ajax({
@@ -160,11 +149,7 @@ function hideTooltip(btn) {
   setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
 }
 </script>
-		<style>
-            .navbar {
-                background-color: #001f3f;
-            }
-        </style>
+	
 <body style="padding-top: 70px; padding-bottom: 70px;">
 
 <nav class="navbar navbar-default navbar-fixed-top ">
@@ -266,7 +251,11 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
-
+<style>
+            .navbar {
+                background-color: #001f3f;
+            }
+        </style>
 <div id="mainDiv">
 
 

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="/cdn-cgi/apps/head/AGN3NmUziwZfMV-TNTe1kdyeR2Y.js"></script>
     <link rel="shortcut icon" href="../../favicon.ico" />
-    <title>AddBalance</title>
+    <title>xbaseTools</title>
     <link rel="stylesheet" href="layout/css/bootstrap.min.css">
     <script src="layout/js/jquery-3.4.1.min.js"></script>
     <script src="layout/js/clipboard.min.js"></script>
@@ -140,7 +140,7 @@
  
     }
  
-    #balance_data_paginate .paginate_button {
+    #table_paginate .paginate_button {
         color: var(--font-color);
  
     }
@@ -152,19 +152,19 @@
  
     }
  
-    #balance_data_filter {
+    #table_filter {
         color: var(--font-color);
     }
  
-    #balance_data_length {
+    #table_length {
         color: var(--font-color);
     }
  
-    #balance_data_paginate {
+    #table_paginate {
         color: var(--font-color);
     }
  
-    #balance_data_info {
+    #table_info {
         color: var(--font-color);
     }
 </style>

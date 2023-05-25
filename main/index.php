@@ -40,7 +40,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
             $('.dropdown').hover(function() {
                 $('.dropdown-toggle', this).trigger('click');
             });
-            pageDiv(1, 'Add Balance - OdinShop', 'main', 1);
+            pageDiv(2, 'Cpanels - XbaseTools', 'main', 1);
 <?php 
       require"p_footer.php";
 

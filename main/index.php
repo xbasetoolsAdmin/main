@@ -11,12 +11,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 
- 
-    <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
-    
-    
-    
-
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
 <ul>
 monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising)<img style="width: 40px;" src="layout/images/new-icon.jpg"> </li>

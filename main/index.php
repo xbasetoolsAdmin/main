@@ -17,8 +17,27 @@ include"category/cpanel_table.php";
 ?>
 
 
-
-
+          <thead>
+                           <tr>
+        <th data-priority="1">0<th>
+        <th data-priority="1">2<th>
+         <th data-priority="1">3<th>
+        <th data-priority="1">4<th>
+        <th data-priority="1">5<th>
+        <th data-priority="1">6<th>
+        <th data-priority="1">7<th>
+         <th data-priority="1">8<th>
+          <th data-priority="1">9<th>
+         <th data-priority="1">10<th>
+                            </tr>
+                         <thody>
+                    </table>
+    
+    
+</div>
+<script>
+    pageDiv(2,'Add Balance - OdinShop','',1);
+</script>
 
     <script>
      function ajaxinfo() {
@@ -46,7 +65,7 @@ include"category/cpanel_table.php";
 
             ajaxinfo();
             
-    pageDiv(0,'Add Balance - OdinShop','',1);
+
     .tooltip('show');
      //console.log("show");
 </script>

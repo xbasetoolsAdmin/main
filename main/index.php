@@ -74,9 +74,9 @@ monthly pageviews, Alexa Ranks , unique visitors, site revenue (from advertising
 	                                             require_once('main.php');
 	
 	?>
-<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);" ">
+<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);" id=mainDiv">
 <thead>
-<tr>
+<tr
 <th data-priority="1"></th>
 <th class="all">ID</th>
 <th data-priority="3">Country</th>

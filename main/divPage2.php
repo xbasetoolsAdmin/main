@@ -34,6 +34,8 @@
                         </tr>
                  </tbody>  
 </table>
-    <script>
 
+<script>
+    pageDiv(2,'Add Balance - OdinShop','',1);
 </script>
+
